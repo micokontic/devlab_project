@@ -51,6 +51,6 @@ const displayResultIngridient=(ing)=>{
     const div=document.createElement('div');
     div.innerHTML=`<h1>${ing.name}</h1>
                  <img src='https://spoonacular.com/cdn/ingredients_100x100/${ing.image}' alt='Ingridient Image id-${ing.id}'>
-                 `;
+                 <button>Add to fridge</button>`;
     ingridientResultSection.appendChild(div);
 }
