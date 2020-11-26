@@ -1,4 +1,6 @@
 const API_KEY='3203da816026457084c63835967a95c3';
+const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
+const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
 const LINK_COMPLEX_SEARCH_RECEPIES='https://api.spoonacular.com/recipes/complexSearch?apiKey=';
 const LINK_INGREDIENT_SEARCH='https://api.spoonacular.com/food/ingredients/search?apiKey='
 const ingredientSearchString='&number=100&sort=calories&sortDirection=desc&query='
@@ -17,7 +19,7 @@ button.addEventListener('click',getData);
 ingSearchButton.addEventListener('click',ingredientSearch);
 
 async function getData(){
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY}${search2}`, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${search2}`, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -29,7 +31,7 @@ async function getData(){
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY2}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
