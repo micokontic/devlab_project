@@ -11,15 +11,17 @@ const button=document.getElementById('button');
 const ingridientSearchInput=document.getElementById('ing-search');
 const ingridientResultSection=document.getElementById('ingridients-result');
 
+
 var ingridientString='';
 var ingridientResult;
+var ingridientsInFridge=[];
 
-
+ingridientResultSection.addEventListener('click',addToFridge)
 button.addEventListener('click',getData);
 ingSearchButton.addEventListener('click',ingredientSearch);
 
 async function getData(){
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${search2}`, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${search2}`, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -31,12 +33,13 @@ async function getData(){
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY2}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY3}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
     .then((json)=>{
         displayIngridientResults(json.results);
+        return (json.results)
     })
     .catch(error => console.error(error))
 }
@@ -51,8 +54,29 @@ const displayIngridientResults=(ingridientResult)=>{
 
 const displayResultIngridient=(ing)=>{
     const div=document.createElement('div');
-    div.innerHTML=`<h1>${ing.name}</h1>
-                 <img src='https://spoonacular.com/cdn/ingredients_100x100/${ing.image}' alt='Ingridient Image id-${ing.id}'>
-                 <button>Add to fridge</button>`;
+    div.innerHTML=`
+                        <h1>${ing.name}</h1>
+                        <img src='https://spoonacular.com/cdn/ingredients_100x100/${ing.image}' alt='Ingridient Image id-${ing.id}'>
+                        <button class="add-to-fridge">Add to fridge</button>`;
     ingridientResultSection.appendChild(div);
 }
+
+function addToFridge(e) {
+    if (e.target.classList.contains("add-to-fridge")){
+        console.dir(e.target.parentNode);
+        var  index=whichChild(e.target.parentNode);
+        console.log(ingridientResult);
+        console.log(ingridientsInFridge);
+        ingridientsInFridge.push(ingridientResult[index]);
+        console.log(ingridientsInFridge);
+    }
+}
+
+function whichChild(elem){
+    console.log(elem)
+    var  i= 0;
+    while((elem=elem.previousSibling)!=null) ++i;
+    return i;
+}
+
+export {ingridientsInFridge,displayResultIngridient};
