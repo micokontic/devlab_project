@@ -45,7 +45,6 @@ async function ingredientSearch(){
 }
 
 const displayIngridientResults=(ingridientResult)=>{
-    console.log(ingridientResult);
     ingridientResultSection.innerHTML='';
     ingridientResult.map((ing)=>{
         displayResultIngridient(ing);
@@ -65,15 +64,12 @@ function addToFridge(e) {
     if (e.target.classList.contains("add-to-fridge")){
         console.dir(e.target.parentNode);
         var  index=whichChild(e.target.parentNode);
-        console.log(ingridientResult);
-        console.log(ingridientsInFridge);
         ingridientsInFridge.push(ingridientResult[index]);
         console.log(ingridientsInFridge);
     }
 }
 
 function whichChild(elem){
-    console.log(elem)
     var  i= 0;
     while((elem=elem.previousSibling)!=null) ++i;
     return i;
