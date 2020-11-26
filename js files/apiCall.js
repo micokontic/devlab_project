@@ -29,7 +29,7 @@ async function getData(){
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}`, {
+    fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -50,6 +50,7 @@ const displayIngridientResults=(ingridientResult)=>{
 const displayResultIngridient=(ing)=>{
     const div=document.createElement('div');
     div.innerHTML=`<h1>${ing.name}</h1>
-                 <img src='https://spoonacular.com/cdn/ingredients_100x100/${ing.image}' alt='Ingridient Image id-${ing.id}'>`;
+                 <img src='https://spoonacular.com/cdn/ingredients_100x100/${ing.image}' alt='Ingridient Image id-${ing.id}'>
+                 `;
     ingridientResultSection.appendChild(div);
 }
