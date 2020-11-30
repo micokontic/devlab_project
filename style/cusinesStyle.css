@@ -26,10 +26,11 @@
   margin-top: 0.5rem;
 }
 .cuisineBtn:first-child {
-  background: url("../resources/italy.png") no-repeat center center/cover;
+  background: url("../resources/images/italy.png") no-repeat center center/cover;
 }
 .cuisineBtn:nth-child(2) {
-  background: url("../resources/africa.png") no-repeat center center/cover;
+  background: url("../resources/images/africa.png") no-repeat center
+    center/cover;
 }
 
 #cuisine-result {
