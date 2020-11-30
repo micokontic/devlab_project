@@ -1,0 +1,46 @@
+#cuisines {
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  text-align: center;
+}
+.cuisinesBtns {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cuisineBtn {
+  width: 5rem;
+  padding: 1rem;
+  border-radius: 60%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.cuisinesCheckB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.typesCb {
+  margin-top: 0.5rem;
+}
+.cuisineBtn:first-child {
+  background: url("../resources/images/italy.png") no-repeat center center/cover;
+}
+.cuisineBtn:nth-child(2) {
+  background: url("../resources/images/africa.png") no-repeat center
+    center/cover;
+}
+
+#cuisine-result {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+#cuisine-result h2 {
+  font-size: 1.2rem;
+}
