@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Bite;
+  src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
+}
+
 #cuisines {
   width: 90%;
   margin: 5rem auto;
@@ -9,9 +14,20 @@
   display: flex;
   justify-content: space-evenly;
 }
+.cuisineBtnWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cuisineBtnWrap span {
+  margin-top: 0.9rem;
+  font-family: Bite;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
 .cuisineBtn {
   width: 5rem;
-  padding: 1rem;
+  padding: 1.5rem 1.4rem;
   border-radius: 60%;
   border: none;
   outline: none;
@@ -32,7 +48,13 @@
   background: url("../resources/images/africa.png") no-repeat center
     center/cover;
 }
-
+.cuisineBtn:nth-child(3) {
+  background: url("../resources/images/china.png") no-repeat center center/cover;
+}
+.cuisineBtn:nth-child(4) {
+  background: url("../resources/images/france.jpg") no-repeat center
+    center/cover;
+}
 #cuisine-result {
   width: 90%;
   margin: 2rem auto;
@@ -43,4 +65,23 @@
 }
 #cuisine-result h2 {
   font-size: 1.2rem;
+}
+#internationalCuisine {
+  width: 74%;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: Bite;
+  font-weight: 100;
+}
+
+#flagAboutCuisine {
+  text-align: center;
+  font-family: Bite;
+  text-transform: capitalize;
+  font-style: italic;
+}
+#flagAboutText {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
 }
