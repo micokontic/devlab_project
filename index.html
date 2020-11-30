@@ -27,14 +27,21 @@
     </header>
       
     <main>
+        <div class="aboutCuisine">
+            <div id="internationalCuisine">
+                <p id="internationalCuisineText">
+                   Delicious food is made all over the world and every region has its own characteristics. From the hot and spicy Asian kitchen, through the exquisitely staged dishes of France to the barbeques of Northen America you can be ensured to never go hungry if you are open and willing to try new taste experiences. It is impossible to objectively decide which cuisine is most delicious, but if you consider your taste buds, they know what will make you mouth water.
+                </p>
+            </div>
+        </div>
         <section id="cuisines">
             <div class="cuisinesBtns">
              <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="african"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">Indian</button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="korean">Korean</button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
             </div>
-             <div class="cuisinesCheckB">
+            <!--  <div class="cuisinesCheckB">
                 <div class="typesCb"> 
                     <label for="soup">Soup</label>
                  <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
@@ -43,9 +50,12 @@
                  <label for="salad">Salad</label>
              <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
              </div>
-             </div>
+             </div> -->
          </section>
-         <section id="cuisine-result"></section>
+         <div id="flagAboutCuisine">
+            <h1 id="flagAboutTitle"></h1>
+            <p id="flagAboutText"></p>
+        </div>
     </main>
       <footer>
           <div class="firstFooterRow">
