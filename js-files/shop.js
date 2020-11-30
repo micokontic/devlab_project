@@ -13,38 +13,8 @@ var ingridientString='';
 var ingridientResult;
 var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
 
-document.addEventListener("DOMContentLoaded",displayIngridientsInFridge);
-ingridients.addEventListener('click',deleteFromFridge)
 ingridientResultSection.addEventListener('click',addToFridge);
 ingSearchButton.addEventListener('click',ingredientSearch);
-
-
-function displayIngridientsInFridge(){
-    console.log(ingridientsInFridge);
-    ingridients.innerHTML='';
-    ingridientsInFridge.map((ing)=>{
-        const div=document.createElement('div');
-        div.classList.add('col');
-        div.innerHTML=`
-                    
-                            <div class="container">
-                                <div class="front" style="background-image: url(https://spoonacular.com/cdn/ingredients_500x500/${ing.image})">
-                                    <div class="inner">
-                                        <p>${ing.name}</p>
-                                    </div>
-                                </div>
-                                <div class="back">
-                                    <div class="inner">
-                                        <div class="back-content"> 
-                                            <p>Remove from fridge</br><img class="utensils-img" src="../resources/images/utensils.svg" ></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        `
-        ingridients.appendChild(div);
-    })
-}
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
@@ -99,10 +69,11 @@ function addToFridge(e) {
         var parentDiv=e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
         var textNode=e.target.parentNode.childNodes[0];
         var  index=whichChild(parentDiv);
+        console.log(ingridientsInFridge);
+        console.log(ingridientResult[index]);
         if(!containsObject(ingridientResult[index],ingridientsInFridge)){
             ingridientsInFridge.push(ingridientResult[index]);
             localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
-            displayIngridientsInFridge();
             e.target.src='../resources/images/fridge.svg';
             textNode.nodeValue=`${ingridientResult[index].name} added to fridge!`;
             setTimeout(()=>{
