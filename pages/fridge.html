@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/fridge.css">
+    <link rel="stylesheet" href="../style/ingridients.In.Fridge.Cards.css">
+    <link rel="stylesheet" href="../style/fridge-animation.css">
+
 </head>
 <body>
     <header>
@@ -12,6 +16,24 @@
             <li><a href="fridge.html">FRIDGE</a></li>
         </ul>
     </header>
+
+    <section id="ing-search-section">
+        <h1>Stack up your fridge!</h1>
+        <input type="text" id="ing-search">
+        <button id="ing-search-btn">Search for ingridient</button>
+    </section>
+
+    <div class="wrapper" >
+        <h1>Results of Search</h1>
+        <div class="cols" id="ingridients-result">
+        </div> 
+    </div>
+
+    <div class="wrapper" >
+        <h1>Items in your fridge</h1>
+        <div class="cols" id="ingridients">
+        </div> 
+    </div>
     
 </body>
 <script src="../js-files/fridge.js" type="module"></script>
