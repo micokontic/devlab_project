@@ -83,7 +83,7 @@ function addToFridge(e) {
         }else{
             e.target.parentNode.innerHTML='You already have it';
             setTimeout(()=>{
-                parentDiv.classList.add('slide-out-bck-tr');
+                parentDiv.classList.add('slide-out-bck-center');
                 setTimeout(()=>{parentDiv.style.display='none'
             },700)
             },800)
