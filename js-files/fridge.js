@@ -36,7 +36,7 @@ function displayIngridientsInFridge(){
                                 <div class="back">
                                     <div class="inner">
                                         <div class="back-content"> 
-                                            <p>Remove from fridge</br><img class="utensils-img" src="../images/utensils.svg" ></p>
+                                            <p>Remove from fridge</br><img class="utensils-img" src="../resources/images/utensils.svg" ></p>
                                         </div>
                                     </div>
                                 </div>
@@ -81,9 +81,9 @@ const displayResultIngridient=(ing)=>{
                 <div class="inner">
                     <div class="back-content"> 
                         <p>Add to fridge</br><img class="utensils-img add-to-fridge"
-                         src="../images/fridge.svg" 
-                         onmouseover="this.src='../images/fridge-open.svg'"
-                         onmouseout="this.src='../images/fridge.svg'"
+                         src="../resources/images/fridge.svg" 
+                         onmouseover="this.src='../resources/images/fridge-open.svg'"
+                         onmouseout="this.src='../resources/images/fridge.svg'"
                          ></p>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ function addToFridge(e) {
             ingridientsInFridge.push(ingridientResult[index]);
             localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
             displayIngridientsInFridge();
-            e.target.src='../images/fridge.svg';
+            e.target.src='../resources/images/fridge.svg';
             textNode.nodeValue=`${ingridientResult[index].name} added to fridge!`;
             setTimeout(()=>{
                 parentDiv.classList.add('slide-out-bck-tr');
