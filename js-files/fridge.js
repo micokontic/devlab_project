@@ -125,7 +125,7 @@ function deleteFromFridge(e){
         var parentDiv=e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
         var  index=whichChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
         localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
-        e.target.parentNode.innerHTML=`You disposed ${ingridientsInFridge[index].name}`;
+        e.target.parentNode.innerHTML=`You have eaten ${ingridientsInFridge[index].name}`;
         setTimeout(()=>{
                 parentDiv.classList.add('slide-out-bck-center');
                 setTimeout(()=>{
@@ -133,7 +133,7 @@ function deleteFromFridge(e){
                 ingridientsInFridge.splice(index, 1);
                 localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
                 displayIngridientsInFridge();
-        },700)
+        },1200)
         
     })
 }
