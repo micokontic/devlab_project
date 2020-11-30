@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/ingridients.Result.Section.css">
     <title>Reciphy</title>
     <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić,Lazar Vuletić">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/cusinesStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,24 +14,42 @@
 <body>
     <header class="header" id="myTopnav">
         <a href="" class="logo">
-            <img src="./Img/Logo.png" alt="reciphy logo" width="50%">
+            <img src="./resources/images/Logo.png" alt="reciphy logo" width="50%">
         </a>
         <input class="menu-btn" type="checkbox" id="menu-btn"/>
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-          <li><a href="#work">Home</a></li>
-          <li><a href="#fridge">Fridge</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="./pages/fridge.html">Fridge</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </header>
+    </header>
       
-    <body>
-             
-    </body>
+    <main>
+        <section id="cuisines">
+            <div class="cuisinesBtns">
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="african"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">Indian</button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="korean">Korean</button>
+            </div>
+             <div class="cuisinesCheckB">
+                <div class="typesCb"> 
+                    <label for="soup">Soup</label>
+                 <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
+             </div>
+             <div class="typesCb">
+                 <label for="salad">Salad</label>
+             <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
+             </div>
+             </div>
+         </section>
+         <section id="cuisine-result"></section>
+    </main>
       <footer>
           <div class="firstFooterRow">
-              <img src="./Img/FooterLog.png" alt="" width="100%">
+              <img src="./resources/images/FooterLog.png" alt="" width="100%">
           </div>
           <div class="secondFooterRow">
               <h1>Who we are?</h1>
@@ -39,19 +57,19 @@
           </div>
           <div class="thirdFooterRow">
             <div class="firstSocial">
-                <img src="./Img/instagram (1).png" alt="">
+                <img src="./resources/images/instagram (1).pngs" alt="">
                 
             </div> 
             <div class="secondSocial">
-                <img src="./Img/instagram (1).png" alt="">
+                <img src="./resources/images/instagram (1).pngs" alt="">
                 
             </div>
             <div class="thirdSocial">
-                <img src="./Img/instagram (1).png" alt="">
+                <img src="./resources/images/instagram (1).pngs" alt="">
                 
             </div>
             <div class="forthSocial">
-                <img src="./Img/instagram (1).png" alt="">
+                <img src="./resources/images/instagram (1).pngs" alt="">
                 
             </div>
             
@@ -61,7 +79,7 @@
               Copyrights by Reciphy
           </div>
       </footer>
-<script src="script.js"></script>
-<script src="./js-files/apiCall.js"  type="module"></script>
+<script src="../js-files/script.js"></script>
+<script src="../js-files/cusines.js"></script>
 </body>
 </html>
