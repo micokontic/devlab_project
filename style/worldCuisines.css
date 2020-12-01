@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #1d1f20;
+}
+.cuisinesImg {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("../resources/images/internationalCuisine.jpg")
+    no-repeat center center/cover;
+}
+.cuisinesImg img {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -5;
+}
+.cuisinesSearch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#flagAboutCuisine {
+  margin-top: 5rem;
+}
+
+form {
+  position: relative;
+  width: 18rem;
+}
+
+.chosen-value,
+.value-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.chosen-value {
+  font-family: "Ek Mukta";
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+  height: 4rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: #fafcfd;
+  border: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.chosen-value:hover {
+  background-color: #facb0b;
+  cursor: pointer;
+}
+
+.chosen-value:focus,
+.chosen-value.open {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  outline: 0;
+  background-color: #facb0b;
+  color: #000;
+}
+
+.value-list {
+  list-style: none;
+  margin-top: 4rem;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in-out;
+}
+.value-list.open {
+  max-height: 320px;
+  overflow: auto;
+}
+
+li {
+  position: relative;
+  height: 4rem;
+  background-color: #fafcfd;
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 1;
+}
+
+li:hover {
+  background-color: #facb0b;
+  /*color: white;          kicasto? :'D */
+}
+
+li.closed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+
+#cuisine-result {
+  margin-top: 5rem;
+}

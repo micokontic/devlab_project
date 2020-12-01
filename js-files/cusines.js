@@ -20,6 +20,8 @@ const cuisineBtn = document.querySelectorAll(".cuisineBtn");
 const cuisineResultSection = document.getElementById("cuisine-result");
 const aboutCuisineTxt = document.getElementById("internationalCuisineText");
 
+
+
 const search3='&cuisine=';
 
 var ingridientString='';
@@ -47,6 +49,9 @@ const displayCuisineResult=(cuisineResult)=>{
         displayResultCuisine(cuisine);
     })
 }
+function hrefTo(){
+    location.href='pages/cuisine.html';
+}
 
 const displayResultCuisine=(cuisine)=>{
     const div = document.createElement('div');
@@ -65,10 +70,35 @@ const contentF = document.getElementById("flagAboutText");
  titleF.innerHTML = cuisineId;
  for (var key in p) {
     if (p.hasOwnProperty(key) && key=== cuisineId) {
-        contentF.innerHTML = key + " -> " + p[key];
+        contentF.innerHTML =  p[key];
     }
 }
 }
 
+dropdownArray.forEach(item => {
+    item.addEventListener('click', (evt) => {
+      inputField.value = item.textContent;
+      console.log(inputField.value);
+      getCuisines(inputField.value);
+      dropdownArray.forEach(dropdown => {
+        dropdown.classList.add('closed');
+      });
+    });
+  })
 
+/*
+function prepareLinks() {
+    var links = document.getElementsByTagName('a');
 
+    for(var i = 0; i < links.length; i++) {
+        var thisLink = links[i];
+
+        if(thisLink.getAttribute('class') == 'imgLink') {
+            thisLink.onclick = function() {
+                showPic(this.href);
+                return false;
+            };
+        }
+    }
+}
+*/
