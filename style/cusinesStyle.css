@@ -32,6 +32,43 @@
   border: none;
   outline: none;
   cursor: pointer;
+  position: relative;
+}
+.cuisineBtn::before {
+  content: "";
+  border-radius: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #222222c2;
+  z-index: 2;
+  transition: 0.3s all;
+  opacity: 0;
+}
+#italian:hover::before {
+  content: "Italian";
+}
+#indian:hover::before {
+  content: "Indian";
+}
+#chinese:hover::before {
+  content: "Chinese";
+}
+#french:hover::before {
+  content: "French";
+}
+.cuisineBtn:hover::before {
+  opacity: 1;
+  text-align: center;
+  color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Bite;
+  font-size: 0.7rem;
 }
 .cuisinesCheckB {
   display: flex;
