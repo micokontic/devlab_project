@@ -29,7 +29,7 @@ async function getCuisines(cuisineId){
     console.log(cuisineId);
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${search3}${cuisineId}`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${search3}${cuisineId}`/*&type=${checkedValue}*/, {
     method: 'GET',
 })
     .then(response => response.json())
