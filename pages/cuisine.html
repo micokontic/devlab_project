@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/cusinesStyle.css">
     <link rel="stylesheet" href="../style/worldCuisines.css">
+    <!--font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
 <body>
     <header class="header" id="myTopnav">
@@ -26,10 +28,37 @@
 
 
 <main>
+    <section class="welcome">
+    <div class="container">
+        <h2 class="sub-headline">
+            <span class="first-letter">W</span>elcome
+        </h2>
+        <h1 class="headline">Reciphy</h1>
+        <div class="headline-description">
+            <div class="separator">
+                <div class="line line-left"></div>
+                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                <div class="line line-right"></div>
 
-    <div class="cuisinesImg">
-        <img src="../resources/images/internationalCuisine.jpg" alt="">
-        <div class="cuisinesSearch">
+            </div>
+            <div class="single-animation">
+                <h5>World Cuisine</h5>
+                <a href="#introduction" class="btn cta-btn">Explore the world</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="introduction"class="introduction">
+            <div class="introductionTitle">
+                <h1>Worldwide Cusine</h1>
+            </div>
+            <div class="introductionText">
+                <p>Delicious food is made all over the world and every region has its own characteristics. From the hot and spicy Asian kitchen, through the exquisitely staged dishes of France to the barbeques of Northen America you can be ensured to never go hungry if you are open and willing to try new taste experiences. It is impossible to objectively decide which cuisine is most delicious, but if you consider your taste buds, they know what will make you mouth water.</p>
+            </div>
+        </section>
+
+        <div id="searchNav"class="cuisinesSearch">
             <form>
                 <input class="chosen-value" type="text" value="" placeholder="Type to filter">
                 <ul class="value-list">
@@ -59,12 +88,10 @@
                   <li>Spanish</li>
                   <li>Thai</li>
                   <li>Vietnamese</li>
-                
-
                 </ul>
               </form>
         </div>
-    </div>
+    
    
     <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
     <div id="flagAboutCuisine">
