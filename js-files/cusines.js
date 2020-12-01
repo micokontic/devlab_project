@@ -6,7 +6,9 @@ var p = {
 
     "french":"Home of the gourmet meal and the Michelin Guide, French cooking is known for its class and superb ingredients. Onions, foie gras, truffles, sea food, crossaints and the baguette, everything arranged with exceptional attention to detail and served with a glass of wine.",
 
-    "chinese": "Most meals are served in bite-sized pieces ready to be picked up by chopsticks. Basics include rice and noodles. Meat includes every variety known to man. Vegetables including chilies are always a part of the dishes as well as fish sauce."
+    "chinese": "Most meals are served in bite-sized pieces ready to be picked up by chopsticks. Basics include rice and noodles. Meat includes every variety known to man. Vegetables including chilies are always a part of the dishes as well as fish sauce.",
+
+    "african":"Rice, grains, vegetables, milk and all kinds of meat. Fruit is a valuable part of many meals. Maize and peanuts are widely used as well as chilies and sweet potatoes.",
 };
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
@@ -28,7 +30,7 @@ var ingridientString='';
 var ingridientResult;
 
 async function getCuisines(cuisineId){
-    console.log(cuisineId);
+   /*  console.log(cuisineId); */
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
 
     fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${search3}${cuisineId}`/*&type=${checkedValue}*/, {
@@ -68,17 +70,19 @@ const displayAboutCuisine=(cuisineId)=>{
 const titleF = document.getElementById("flagAboutTitle");
 const contentF = document.getElementById("flagAboutText");
  titleF.innerHTML = cuisineId;
+ 
  for (var key in p) {
-    if (p.hasOwnProperty(key) && key=== cuisineId) {
-        contentF.innerHTML =  p[key];
+    if (p.hasOwnProperty(key) && key === cuisineId) {
+        contentF.innerHTML = "test" + p[key];
     }
 }
 }
 
+/* WORLD WIDE CUISINES SELECTED FROM DROPDOWN */
 dropdownArray.forEach(item => {
     item.addEventListener('click', (evt) => {
       inputField.value = item.textContent;
-      console.log(inputField.value);
+      /* console.log(inputField.value); */
       getCuisines(inputField.value);
       dropdownArray.forEach(dropdown => {
         dropdown.classList.add('closed');
