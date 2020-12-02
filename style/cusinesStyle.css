@@ -2,7 +2,10 @@
   font-family: Bite;
   src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
 }
-
+:root {
+  --main-font-color: #facb0b;
+  --fav-font-color: #c59d5f;
+}
 #cuisines {
   width: 90%;
   margin: 5rem auto;
@@ -133,3 +136,34 @@
 }
 
 /* WORLD WIDE CUISINES */
+.divTest {
+  border: 2px solid var(--fav-font-color);
+  color: var(--fav-font-color);
+  line-height: 2rem;
+  padding: 1.1rem;
+  box-shadow: 6px 17px 12px rgba(206, 164, 99, 0.1);
+}
+.divTest h2 {
+}
+.greenW {
+  position: relative;
+  z-index: -1;
+  line-height: 2rem;
+}
+.redW {
+  color: var(--fav-font-color);
+}
+.greenW::before {
+  position: absolute;
+  top: -0.9rem;
+  right: 0.3rem;
+  content: "Vegan";
+  color: wheat;
+  font-family: Bite;
+  width: 5.3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(63, 156, 63, 0.863);
+  z-index: 1;
+  font-size: 0.99rem;
+}
