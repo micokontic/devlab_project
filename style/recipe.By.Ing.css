@@ -1,0 +1,21 @@
+.ing-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.used,.missing,.unused{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ing-container img{
+    width: 35px;
+    height: 35px;
+}
+.white-bck{
+background-color: white;
+width: auto;
+}
+
+.recepie-img{
+    max-width: 90%;
+}
