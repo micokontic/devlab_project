@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-font-color: #facb0b;
+  --fav-font-color: #c59d5f;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #1d1f20;
+}
+/*Welcome Section*/
+.welcome {
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../resources/images/internationalCuisine.jpg") center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+.sub-headline {
+  font-size: 6rem;
+  font-family: Bite, cursive;
+  color: var(--fav-font-color);
+  font-weight: 200;
+  line-height: 0.4;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 0.5s;
+}
+/*Make first letter twice bigger than the rest of the text*/
+.first-letter {
+  text-transform: uppercase;
+  font-size: 10.3rem;
+}
+
+.headline {
+  color: #fff;
+  font-size: 3.7rem;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
+  animation: scale 0.5s forwards;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.line {
+  width: 100%;
+  max-width: 8.4rem;
+  height: 0.25rem;
+  background-color: #fff;
+  position: relative;
+  opacity: 0;
+  animation: grow 2s forwards;
+  animation-delay: 0.9s;
+}
+.line-right::before,
+.line-left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0.5rem solid transparent;
+  opacity: 0;
+  animation: grow 0.5s forwards;
+  animation-delay: 1.2s;
+}
+.line-right::before {
+  border-right-color: #fff;
+  right: 0;
+}
+.line-left::before {
+  border-left-color: #fff;
+  left: 0;
+}
+.asterisk {
+  font-size: 1.2rem;
+  color: var(--fav-font-color);
+  margin: 0 1.6rem;
+  opacity: 0;
+  animation: spin 0.5s forwards;
+  animation-delay: 0.7s;
+}
+.single-animation {
+  opacity: 0;
+  animation: fadeDown 0.5s forwards;
+  animation-delay: 1.5s;
+}
+.headline-description h5 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+}
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: -2px;
+}
+.cta-btn {
+  font-size: 1.1rem;
+  background-color: #fff;
+  padding: 0.9rem 1.8rem;
+  color: var(--body-font-color);
+  border-radius: 0.4rem;
+  transition: background-color 0.5s;
+}
+.cta-btn:hover,
+.cta-btn:focus {
+  color: #fff;
+  background-color: var(--fav-font-color);
+}
+/*//////////////////END OF WELCOME SECTION///////////////////////*/
+
+/*INTRODUCTION SECTION*/
+.introduction {
+  width: 80%;
+  margin: 2rem auto;
+  text-align: center;
+}
+.introductionTitle h1 {
+  font-family: Bite;
+  color: var(--fav-font-color);
+  font-size: 1.7rem;
+}
+.introductionText {
+  margin-top: 2rem;
+}
+.introductionText p {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+/*CUISINE DROPDOWN SEARCH*/
+.cuisinesSearch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#flagAboutCuisine {
+  margin-top: 5rem;
+}
+
+form {
+  position: relative;
+  width: 18rem;
+}
+
+.chosen-value,
+.value-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.chosen-value {
+  font-family: "Ek Mukta";
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+  height: 4rem;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background-color: #fafcfd;
+  border: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.chosen-value:hover {
+  background-color: var(--fav-font-color);
+  cursor: pointer;
+}
+
+.chosen-value:focus,
+.chosen-value.open {
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  outline: 0;
+  background-color: var(--fav-font-color);
+  color: #000;
+}
+
+.value-list {
+  list-style: none;
+  margin-top: 4rem;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in-out;
+}
+.value-list.open {
+  max-height: 320px;
+  overflow: auto;
+}
+
+li {
+  position: relative;
+  height: 4rem;
+  background-color: #fafcfd;
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 1;
+}
+
+li:hover {
+  background-color: #facb0b;
+  /*color: white;          kicasto? :'D */
+}
+
+li.closed {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+}
+
+#cuisine-result {
+  margin-top: 5rem;
+}
+
+/*Animations*/
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0s);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0s);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+@keyframes up {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
