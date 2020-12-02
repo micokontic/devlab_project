@@ -50,9 +50,9 @@ const displayResultRecipeByIng=(cuisine)=>{
     div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
         <div class="ing-container">
-            <h4>USED</h4>
+            <h4 class="text">USED</h4>
             <h4 class="used white-bck"></h4>
-            <h4>MISSING</h4>
+            <h4 class="text">MISSING</h4>
             <h4 class="missing  white-bck"></h4>
         </div>
     </span>
@@ -61,15 +61,24 @@ const displayResultRecipeByIng=(cuisine)=>{
     var missingChild=div.querySelector('.missing');
 
     cuisine.usedIngredients.map((ing)=>{
-        let imgElem=document.createElement('img');
-        imgElem.src=ing.image;
-        usedChild.appendChild(imgElem);
-    })
+        //let imgElem=document.createElement('img');
+        //imgElem.src=ing.image;
+        //imgElem.title="Text you want to display in the tooltip"
+        //usedChild.appendChild(imgElem);
 
+        let imgDiv=document.createElement('div');
+        imgDiv.classList.add('container2');
+        imgDiv.innerHTML=`<img src=${ing.image} class='image'>
+        <span class="tooltiptext2">${ing.name}</span>`
+        usedChild.appendChild(imgDiv);
+    })
+    
     cuisine.missedIngredients.map((ing)=>{
-        let imgElem=document.createElement('img');
-        imgElem.src=ing.image;
-        missingChild.appendChild(imgElem);
+        let imgDiv=document.createElement('div');
+        imgDiv.classList.add('container2');
+        imgDiv.innerHTML=`<img src=${ing.image} class='image'>
+        <span class="tooltiptext2">${ing.name}</span>`
+        missingChild.appendChild(imgDiv);
     })
     
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */

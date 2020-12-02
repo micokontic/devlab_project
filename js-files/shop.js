@@ -19,6 +19,11 @@ var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
 ingridientResultSection.addEventListener('click',addToFridge);
 ingSearchButton.addEventListener('click',ingredientSearch);
 
+if (localStorage.getItem("ingridientsInFridge") === null) {
+    localStorage.setItem('ingridientsInFridge', JSON.stringify([]));
+}
+
+
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
     ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY11}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
@@ -72,8 +77,6 @@ function addToFridge(e) {
         var parentDiv=e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
         var textNode=e.target.parentNode.childNodes[0];
         var  index=whichChild(parentDiv);
-        console.log(ingridientsInFridge);
-        console.log(ingridientResult[index]);
         if(!containsObject(ingridientResult[index],ingridientsInFridge)){
             ingridientsInFridge.push(ingridientResult[index]);
             localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
@@ -120,7 +123,7 @@ function whichChild(elem){
 }
 
 function containsObject(obj, list) {
-    console.log('tu sam');
+    
     var i;
     for (i = 0; i < list.length; i++) {
         if (list[i].id === obj.id) {
