@@ -13,6 +13,7 @@ var p = {
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
 const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
+const API_KEY4='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 
 const LINK_COMPLEX_SEARCH_RECEPIES='https://api.spoonacular.com/recipes/complexSearch?apiKey=';
 
@@ -25,6 +26,7 @@ const aboutCuisineTxt = document.getElementById("internationalCuisineText");
 
 
 const search3='&cuisine=';
+const search4='&addRecipeInformation=true';
 
 var ingridientString='';
 var ingridientResult;
@@ -33,7 +35,7 @@ async function getCuisines(cuisineId){
    /*  console.log(cuisineId); */
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${search3}${cuisineId}`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${search3}${cuisineId}&addRecipeInformation=true&number=15`/*&type=${checkedValue}*/, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -55,11 +57,19 @@ function hrefTo(){
     location.href='pages/cuisine.html';
 }
 
+/*<p>${cuisine.summary}</p> ZA OPIS RECEPTA ( DODATI LOAD MORE BTN ILI PREBACANJE NA STRANICU RECEPTA) */
 const displayResultCuisine=(cuisine)=>{
     const div = document.createElement('div');
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
-    <h2>${cuisine.title}</h2>
+    <h2>${cuisine.title}</h2><span>Total time: ${cuisine.readyInMinutes}min</span>
     `
+    /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
+    if(cuisine.vegan){
+        div.classList.add("greenW");
+    }else{
+        div.classList.add("redW");
+    }
+    div.classList.add("divTest");
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
 }
