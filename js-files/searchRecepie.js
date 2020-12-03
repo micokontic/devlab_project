@@ -3,8 +3,9 @@ const API_KEY11='55aaab3f111448719c70a7565dd7bf38';
 const ingridientSearcButton=document.getElementById('ingridient-search');
 var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
 
-
 ingridientSearcButton.addEventListener('click',getCuisinesByIng)
+
+
 
 function createIngridientsString(){
     var ingridientsString=''
@@ -91,40 +92,3 @@ const displayResultRecipeByIng=(cuisine)=>{
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
 }
-
-/*function createIngridientsString2(){
-    var ingridientsString=''
-    if(ingridientsInFridge.length!=0){
-        ingridientsString='&includeIngredients='
-        ingridientsInFridge.map((ing)=>{
-        ingridientsString=ingridientsString+ing.name+',+';
-        })
-        ingridientsString=ingridientsString.slice(0, -2)
-    }else{
-        console.log('nula je');
-        ingridientsString=''
-    }
-    return ingridientsString;
-}
-*/
-
-
-
-/*async function getCuisines2(cuisineId){
-    console.log(cuisineId);
-    var ingString=createIngridientsString2();
-   console.log(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}${ingString}&fillIngredients=true&number=100`)
-    fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY10}${ingString}&number=100&fillIngredients=true`, {
-    method: 'GET',
-    
-})
-    .then(response => response.json())
-    .then((json)=>{
-        console.log(json);
-    })
-    .catch(error => console.error(error))   
-}
-*/
-
-//getCuisines();
-//getCuisines2();

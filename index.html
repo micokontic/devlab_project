@@ -51,16 +51,32 @@
         </div>
     </div>
 </section>
-        <section id="introduction"class="introduction">
-            <div class="introductionTitle">
-                <h1>Worldwide Cusine</h1>
-            </div>
-            <div class="introductionText">
-                <p>Delicious food is made all over the world and every region has its own characteristics. From the hot and spicy Asian kitchen, through the exquisitely staged dishes of France to the barbeques of Northen America you can be ensured to never go hungry if you are open and willing to try new taste experiences. It is impossible to objectively decide which cuisine is most delicious, but if you consider your taste buds, they know what will make you mouth water.</p>
-            </div>
-        </section>
 
-        <div id="searchNav"class="cuisinesSearch">
+        
+
+    
+        <section id="cuisines">
+            <div class="cuisinesBtns">
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
+             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other">
+            </button>
+             <button type="button" class="cuisineBtn" onclick="hrefTo()" id="world"></button>
+            </div>
+            <!--  <div class="cuisinesCheckB">
+                <div class="typesCb"> 
+                    <label for="soup">Soup</label>
+                 <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
+             </div>
+             <div class="typesCb">
+                 <label for="salad">Salad</label>
+             <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
+             </div>
+             </div> -->
+         </section>
+         <div id="searchNav"class="cuisinesSearch">
             <form>
                 <input class="chosen-value" type="text" value="" placeholder="Type to filter">
                 <ul class="value-list">
@@ -93,30 +109,38 @@
                 </ul>
               </form>
         </div>
-    
-        <section id="cuisines">
-            <div class="cuisinesBtns">
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
-             <button type="button" class="cuisineBtn" onclick="hrefTo()" id="others"></button>
+         <section>
+            <div id="search-recepie"class="cuisinesSearch">
+                <form>
+                    <input class="chosen-value" id="input-text" type="text" value="" placeholder="Type what you are looking for">
+                </form>
             </div>
-            <!--  <div class="cuisinesCheckB">
-                <div class="typesCb"> 
-                    <label for="soup">Soup</label>
-                 <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
-             </div>
-             <div class="typesCb">
-                 <label for="salad">Salad</label>
-             <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
-             </div>
-             </div> -->
+            
+            <div>
+                <button id='search-recipe'>Search</button>
+            </div>
+            
          </section>
+         
+        <!--<section id="introduction"class="introduction">
+            <div class="introductionTitle">
+                <h1>Worldwide Cusine</h1>
+            </div>
+            <div class="introductionText">
+                <p>Delicious food is made all over the world and every region has its own characteristics. From the hot and spicy Asian kitchen, through the exquisitely staged dishes of France to the barbeques of Northen America you can be ensured to never go hungry if you are open and willing to try new taste experiences. It is impossible to objectively decide which cuisine is most delicious, but if you consider your taste buds, they know what will make you mouth water.</p>
+            </div>
+        </section>
+    -->
+
+
     <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
     <div id="flagAboutCuisine">
+        <div class="introductionTitle">
         <h1 id="flagAboutTitle"></h1>
-        <p id="flagAboutText"></p>
+        </div>
+        <div class="introductionText">
+            <p id="flagAboutText" ></p>
+        </div>
     </div>
 <section id="cuisine-result"></section>
 

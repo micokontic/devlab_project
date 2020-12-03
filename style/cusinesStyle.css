@@ -63,11 +63,11 @@
 #french:hover::before {
   content: "French";
 }
-#others:hover::before {
-  content: "World";
-  border-radius: 50%;
-  width: 85%;
-  margin-left: 0.41rem;
+#other:hover::before {
+  content: "Other";
+}
+#world:hover::before {
+  content: "World Wide";
 }
 .cuisineBtn:hover::before {
   opacity: 1;
@@ -102,6 +102,9 @@
     center/cover;
 }
 .cuisineBtn:nth-child(5) {
+  background: url("../resources/images/world-flags.png") no-repeat center center/cover;
+}
+.cuisineBtn:nth-child(6) {
   background: url("../resources/images/globe.jpg") no-repeat center center/cover;
 }
 #cuisine-result {
@@ -133,6 +136,10 @@
 #flagAboutText {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: none;
+}
+
+#searchNav{
+  position: relative;
 }
 
 /* WORLD WIDE CUISINES */

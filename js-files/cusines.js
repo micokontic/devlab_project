@@ -9,43 +9,59 @@ var p = {
     "chinese": "Most meals are served in bite-sized pieces ready to be picked up by chopsticks. Basics include rice and noodles. Meat includes every variety known to man. Vegetables including chilies are always a part of the dishes as well as fish sauce.",
 
     "african":"Rice, grains, vegetables, milk and all kinds of meat. Fruit is a valuable part of many meals. Maize and peanuts are widely used as well as chilies and sweet potatoes.",
+
+    "other":"Traveling the world and experiencing the different cultures and cuisines is something we all dream about.",
+
+    "world": 'Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes.'
 };
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
 const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
 const API_KEY4='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
-
 const LINK_COMPLEX_SEARCH_RECEPIES='https://api.spoonacular.com/recipes/complexSearch?apiKey=';
-
-const search1='&query=pasta&number=20';
-
 const cuisineBtn = document.querySelectorAll(".cuisineBtn");
 const cuisineResultSection = document.getElementById("cuisine-result");
 const aboutCuisineTxt = document.getElementById("internationalCuisineText");
+const searchRecipeButton=document.getElementById('search-recipe');
+const inputText=document.getElementById('input-text');
 
-
-
-const search3='&cuisine=';
-const search4='&addRecipeInformation=true';
 
 var ingridientString='';
 var ingridientResult;
+var cuisineId='';
+var inputTextString='';
 
-async function getCuisines(cuisineId){
+
+searchRecipeButton.addEventListener('click',()=>{
+    fetchData(cuisineId,inputTextString);
+})
+
+inputText.addEventListener('input',inputTextHandle)
+
+async function getCuisines(cuisine){
    /*  console.log(cuisineId); */
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
-
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${search3}${cuisineId}&addRecipeInformation=true&number=15`/*&type=${checkedValue}*/, {
-    method: 'GET',
-})
-    .then(response => response.json())
-    .then((json)=>{
-        cuisineResultSection.innerHTML='';
-        displayCuisineResult(json.results);
-        displayAboutCuisine(cuisineId);
-    })
-    .catch(error => console.error(error))   
+      cuisineId=cuisine;
 }
+
+function inputTextHandle(e){
+    inputTextString='&query='+e.target.value;
+}
+async function fetchData(cuisineId,inputTextString){
+
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}&cuisine='${cuisineId}${inputTextString}&addRecipeInformation=true&number=15`/*&type=${checkedValue}*/, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then((json)=>{
+            cuisineResultSection.innerHTML='';
+            displayCuisineResult(json.results);
+            displayAboutCuisine(cuisineId);
+        })
+        .catch(error => console.error(error))
+
+}
+
 const displayCuisineResult=(cuisineResult)=>{
     console.log(cuisineResult);
     cuisineResultSection.innerHTML='';
