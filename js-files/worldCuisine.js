@@ -1,8 +1,8 @@
-const inputField = document.querySelector('.chosen-value');
-const dropdown = document.querySelector('.value-list');
-const dropdownArray = [... document.querySelectorAll('li')];
+const inputField = document.querySelector('#country-filter');
+const dropdown = document.querySelector('.value-list-country');
+const dropdownArray = [... document.querySelectorAll('.value-list-country li')];
 console.log(typeof dropdownArray)
-dropdown.classList.add('open');
+//dropdown.classList.add('open');
 
 let valueArray = [];
 dropdownArray.forEach(item => {
@@ -16,7 +16,6 @@ const closeDropdown = () => {
 inputField.addEventListener('input', () => {
   dropdown.classList.add('open');
   let inputValue = inputField.value.toLowerCase();
-  let valueSubstring;
   if (inputValue.length > 0) {
     for (let j = 0; j < valueArray.length; j++) {
       if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {

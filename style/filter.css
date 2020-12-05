@@ -1,0 +1,11 @@
+.filter-and-slider{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.slider{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

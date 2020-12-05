@@ -29,11 +29,12 @@ const inputText=document.getElementById('input-text');
 var ingridientString='';
 var ingridientResult;
 var cuisineId='';
+var dietId='';
 var inputTextString='';
 
 
 searchRecipeButton.addEventListener('click',()=>{
-    fetchData(cuisineId,inputTextString);
+    fetchData(cuisineId,dietId,inputTextString);
 })
 
 inputText.addEventListener('input',inputTextHandle)
@@ -44,12 +45,18 @@ async function getCuisines(cuisine){
       cuisineId=cuisine;
 }
 
+async function getDiet(diet){
+    /*  console.log(cuisineId); */
+     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
+       dietId=diet;
+ }
+
 function inputTextHandle(e){
     inputTextString='&query='+e.target.value;
 }
-async function fetchData(cuisineId,inputTextString){
+async function fetchData(cuisineId,dietId,inputTextString){
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}&cuisine='${cuisineId}${inputTextString}&addRecipeInformation=true&number=15`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}&cuisine='${cuisineId}&diet='${dietId}${inputTextString}&addRecipeInformation=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -115,6 +122,18 @@ dropdownArray.forEach(item => {
       });
     });
   })
+
+  dropdownArrayDiet.forEach(item => {
+    item.addEventListener('click', (evt) => {
+        inputFieldDiet.value = item.textContent;
+      /* console.log(inputField.value); */
+      getDiet(inputFieldDiet.value);
+      dropdownArrayDiet.forEach(dropdown => {
+        dropdownDiet.classList.add('closed');
+      });
+    });
+  })
+
 
 /*
 function prepareLinks() {

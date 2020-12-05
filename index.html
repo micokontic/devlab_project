@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../style/worldCuisines.css">
     <link rel="stylesheet" href="../style/ingridients.In.Fridge.Cards.css">
     <link rel="stylesheet" href="../style/recipe.By.Ing.css">
+    <link rel="stylesheet" href="../style/filter.css">
     <!--font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Reciphy</title>
@@ -31,8 +32,8 @@
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
      <ul class="menu">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="./fridge.html">Fridge</a></li>
-        <li><a href="./shop.html">Shop</a></li>
+        <li><a href="./pages/fridge.html">Fridge</a></li>
+        <li><a href="./pages/fridge.html">Shop</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         </ul>
@@ -65,82 +66,98 @@
         
 
     
-        <section id="cuisines">
-            <div class="cuisinesBtns">
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
-             <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other">
-            </button>
-             <button type="button" class="cuisineBtn" onclick="hrefTo()" id="world"></button>
-            </div>
-            <!--  <div class="cuisinesCheckB">
-                <div class="typesCb"> 
-                    <label for="soup">Soup</label>
-                 <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
-             </div>
-             <div class="typesCb">
-                 <label for="salad">Salad</label>
-             <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
-             </div>
-             </div> -->
-         </section>
-         <div id="searchNav"class="cuisinesSearch">
-            <form>
-                <input class="chosen-value" type="text" value="" placeholder="Type to filter">
-                <ul class="value-list">
-                  <li>African</li>
-                  <li>American</li>
-                  <li>British</li>
-                  <li>Cajun</li>
-                  <li>Caribbean</li> 
-                  <li>Chinese</li>
-                  <li>Eastern European</li>
-                  <li>European</li>
-                  <li>French</li>
-                  <li>German</li>
-                  <li>Greek</li>
-                  <li>Indian</li>
-                  <li>Irish</li>
-                  <li>Italian</li>
-                  <li>Japanese</li>
-                  <li>Jewish</li>
-                  <li>Korean</li>
-                  <li>Latin American</li>
-                  <li>Mediterranean</li>
-                  <li>Mexican</li>
-                  <li>Middle Eastern</li>
-                  <li>Nordic</li>
-                  <li>Southern</li>
-                  <li>Spanish</li>
-                  <li>Thai</li>
-                  <li>Vietnamese</li>
-                </ul>
-              </form>
-        </div>
-         <section>
-            <div id="search-recepie"class="cuisinesSearch">
+        
+
+    <section class="filter-and-slider">
+            <div id="searchNav"class="cuisinesSearch">
+                <section id="cuisines">
+                    <div class="cuisinesBtns">
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other">
+                    </button>
+                    <button type="button" class="cuisineBtn" onclick="hrefTo()" id="world"></button>
+                    </div>
+                    <!--  <div class="cuisinesCheckB">
+                        <div class="typesCb"> 
+                            <label for="soup">Soup</label>
+                        <input type="checkbox" name="soup" value="soup" class="messageCheckbox">
+                    </div>
+                    <div class="typesCb">
+                        <label for="salad">Salad</label>
+                    <input type="checkbox" name="salad"value="salad" class="messageCheckbox">
+                    </div>
+                    </div> -->
+                </section>
                 <form>
-                    <input class="chosen-value" id="input-text" type="text" value="" placeholder="Type what you are looking for">
-                </form>
-            </div>
+                    <div>
+                    <input class="chosen-value" id='country-filter' type="text" value="" placeholder="Type country to filter">
+                    <ul class="value-list value-list-country">
+                    <li>Any</li>
+                    <li>African</li>
+                    <li>American</li>
+                    <li>British</li>
+                    <li>Cajun</li>
+                    <li>Caribbean</li> 
+                    <li>Chinese</li>
+                    <li>Eastern European</li>
+                    <li>European</li>
+                    <li>French</li>
+                    <li>German</li>
+                    <li>Greek</li>
+                    <li>Indian</li>
+                    <li>Irish</li>
+                    <li>Italian</li>
+                    <li>Japanese</li>
+                    <li>Jewish</li>
+                    <li>Korean</li>
+                    <li>Latin American</li>
+                    <li>Mediterranean</li>
+                    <li>Mexican</li>
+                    <li>Middle Eastern</li>
+                    <li>Nordic</li>
+                    <li>Southern</li>
+                    <li>Spanish</li>
+                    <li>Thai</li>
+                    <li>Vietnamese</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <input class="chosen-value" id="diet-filter" type="text" value="" placeholder="Type diet to filter">
+                    <ul class="value-list value-list-diet">
+                    <li>Any</li>
+                    <li>Gluten Free</li>
+                    <li>Ketogenic</li>
+                    <li>Vegetarian</li>
+                    <li>Vegan</li>
+                    <li>Lacto-Vegetarian</li>
+                    <li>Ovo-Vegetarian</li>
+                    <li>Pescetarian</li>
+                    <li>Paleo</li>
+                    <li>Primal</li>
+                    <li>Whole30</li>
+                    </ul>
+                </div>
+
+                <div id="search-recepie"class="cuisinesSearch">
+                    <form>
+                        <input class="chosen-value" id="input-text" type="text" value="" placeholder="Type what you are looking for">
+                    </form>
+                </div>
             
-            <div>
-                <button id='search-recipe'>Search</button>
+                <section>
+                    <div>
+                        <button id='search-recipe'>Search</button>
+                    </div>
+                </section>
             </div>
-            
-         </section>
-         
-        <!--<section id="introduction"class="introduction">
-            <div class="introductionTitle">
-                <h1>Worldwide Cusine</h1>
-            </div>
-            <div class="introductionText">
-                <p>Delicious food is made all over the world and every region has its own characteristics. From the hot and spicy Asian kitchen, through the exquisitely staged dishes of France to the barbeques of Northen America you can be ensured to never go hungry if you are open and willing to try new taste experiences. It is impossible to objectively decide which cuisine is most delicious, but if you consider your taste buds, they know what will make you mouth water.</p>
+            <div class="slider">
+                <h1>Slider</h1>
             </div>
         </section>
-    -->
 
 
     <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
@@ -155,7 +172,7 @@
 <section id="cuisine-result"></section>
 
 
-</main>s
+</main>
 
     <footer>
         <div class="footerContent">
@@ -193,6 +210,7 @@
         </div>
     </footer>
     <script src="../js-files/worldCuisine.js"></script>
+    <script src="../js-files/dietFilter.js"></script>
     <script src="../js-files/script.js"></script>
     <script src="../js-files/cusines.js"></script>
     <script src="../js-files/searchRecepie.js"></script>

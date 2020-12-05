@@ -199,12 +199,17 @@ form {
 }
 
 .value-list {
+  z-index: 2;
+  position: relative;
+  top:0rem;
+  left: 0;
   list-style: none;
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   max-height: 0;
   transition: 0.3s ease-in-out;
 }
+
 .value-list.open {
   max-height: 320px;
   overflow: auto;
