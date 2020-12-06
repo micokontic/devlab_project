@@ -9,10 +9,12 @@ var p = {
     "chinese": "Most meals are served in bite-sized pieces ready to be picked up by chopsticks. Basics include rice and noodles. Meat includes every variety known to man. Vegetables including chilies are always a part of the dishes as well as fish sauce.",
 
     "african":"Rice, grains, vegetables, milk and all kinds of meat. Fruit is a valuable part of many meals. Maize and peanuts are widely used as well as chilies and sweet potatoes.",
+    
+    "world": 'Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes.',
 
     "other":"Traveling the world and experiencing the different cultures and cuisines is something we all dream about.",
 
-    "world": 'Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes.'
+    
 };
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
@@ -56,14 +58,13 @@ function inputTextHandle(e){
 }
 async function fetchData(cuisineId,dietId,inputTextString){
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}&cuisine='${cuisineId}&diet='${dietId}${inputTextString}&addRecipeInformation=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}&cuisine='${cuisineId}&diet='${dietId}${inputTextString}&addRecipeInformation=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
         .then((json)=>{
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
-            displayAboutCuisine(cuisineId);
         })
         .catch(error => console.error(error))
 

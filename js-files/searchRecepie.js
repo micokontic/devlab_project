@@ -39,9 +39,9 @@ async function getCuisinesByIng(){
 }
 
 function displayResultCousineByIng(json){
+    cuisineResultSection.innerHTML='';
     json.map((recipe)=>{
         displayResultRecipeByIng(recipe);
-        console.log(recipe)
     })
 
 }

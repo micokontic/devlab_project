@@ -164,7 +164,7 @@ a {
 
 form {
   position: relative;
-  width: 18rem;
+  /*width: 18rem;*/
 }
 
 .chosen-value,

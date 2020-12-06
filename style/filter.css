@@ -1,11 +1,28 @@
-.filter-and-slider{
+#filter{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3,1fr);
 }
 
-.slider{
-    color: white;
+#filter div{
+    margin: 1rem;
+}
+
+#all-country-filter{
+    width: 30%;
+    margin: 5% auto;
+}
+
+#filter{
+    width: 80%;
+    margin: 3% auto;
+}
+
+#search-recepie-div{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+#search-recipe{
+    padding: 1rem;
 }

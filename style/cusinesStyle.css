@@ -51,24 +51,30 @@
   transition: 0.3s all;
   opacity: 0;
 }
-#italian:hover::before {
+#italian:hover::before,#italian:focus::before {
   content: "Italian";
 }
-#indian:hover::before {
+
+#indian:hover::before,#indian:focus::before {
   content: "Indian";
 }
-#chinese:hover::before {
+
+#chinese:hover::before,#chinese:focus::before {
   content: "Chinese";
 }
-#french:hover::before {
+
+#french:hover::before,#french:focus::before {
   content: "French";
 }
-#other:hover::before {
+
+#other:hover::before,#other:focus::before {
   content: "Other";
 }
-#world:hover::before {
+
+#world:hover::before,#world:focus::before {
   content: "World Wide";
 }
+
 .cuisineBtn:hover::before {
   opacity: 1;
   text-align: center;
@@ -79,6 +85,18 @@
   font-family: Bite;
   font-size: 0.7rem;
 }
+
+.cuisineBtn:hover::before,.cuisineBtn:focus::before {
+  opacity: 1;
+  text-align: center;
+  color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Bite;
+  font-size: 0.7rem;
+}
+
 .cuisinesCheckB {
   display: flex;
   flex-direction: column;
@@ -101,10 +119,10 @@
   background: url("../resources/images/france.jpg") no-repeat center
     center/cover;
 }
-.cuisineBtn:nth-child(5) {
+.cuisineBtn:nth-child(6) {
   background: url("../resources/images/world-flags.png") no-repeat center center/cover;
 }
-.cuisineBtn:nth-child(6) {
+.cuisineBtn:nth-child(5) {
   background: url("../resources/images/globe.jpg") no-repeat center center/cover;
 }
 #cuisine-result {

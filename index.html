@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../style/ingridients.In.Fridge.Cards.css">
     <link rel="stylesheet" href="../style/recipe.By.Ing.css">
     <link rel="stylesheet" href="../style/filter.css">
+    <link rel="stylesheet" href="../style/indexPage.css">
     <!--font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Reciphy</title>
@@ -56,7 +57,7 @@
             </div>
             <div class="single-animation">
                 <h5>World Cuisine</h5>
-                <a href="#introduction" class="btn cta-btn">Explore the world</a>
+                <a id="explore-the-world" class="btn cta-btn">Explore the world</a>
                 <a id='ingridient-search' class="btn cta-btn">Cook with what you have</a>
             </div>
         </div>
@@ -68,17 +69,16 @@
     
         
 
-    <section class="filter-and-slider">
+    <section id="filter-all">
             <div id="searchNav"class="cuisinesSearch">
                 <section id="cuisines">
-                    <div class="cuisinesBtns">
+                    <div class="cuisinesBtns" id='cuisinesBtns'>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other">
-                    </button>
-                    <button type="button" class="cuisineBtn" onclick="hrefTo()" id="world"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="world"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other"></button>
                     </div>
                     <!--  <div class="cuisinesCheckB">
                         <div class="typesCb"> 
@@ -91,9 +91,9 @@
                     </div>
                     </div> -->
                 </section>
-                <form>
-                    <div>
-                    <input class="chosen-value" id='country-filter' type="text" value="" placeholder="Type country to filter">
+
+                <div id="all-country-filter">
+                    <input class="chosen-value" id='country-filter' type="text" value="" placeholder="Type country to filter" autocomplete="off">
                     <ul class="value-list value-list-country">
                     <li>Any</li>
                     <li>African</li>
@@ -125,38 +125,38 @@
                     </ul>
                 </div>
 
-                <div>
-                    <input class="chosen-value" id="diet-filter" type="text" value="" placeholder="Type diet to filter">
-                    <ul class="value-list value-list-diet">
-                    <li>Any</li>
-                    <li>Gluten Free</li>
-                    <li>Ketogenic</li>
-                    <li>Vegetarian</li>
-                    <li>Vegan</li>
-                    <li>Lacto-Vegetarian</li>
-                    <li>Ovo-Vegetarian</li>
-                    <li>Pescetarian</li>
-                    <li>Paleo</li>
-                    <li>Primal</li>
-                    <li>Whole30</li>
-                    </ul>
-                </div>
+                
+                    <div id="filter">
+                        <div class="cuisinesSearch">
+                            <form>
+                                <input class="chosen-value" id="input-text" type="text" value="" placeholder="What you are looking for?">
+                            </form>
+                        </div>
 
-                <div id="search-recepie"class="cuisinesSearch">
-                    <form>
-                        <input class="chosen-value" id="input-text" type="text" value="" placeholder="Type what you are looking for">
-                    </form>
-                </div>
-            
-                <section>
-                    <div>
-                        <button id='search-recipe'>Search</button>
+                        <div>
+                            <input class="chosen-value" id="diet-filter" type="text" value="" placeholder="Type diet to filter" autocomplete="off">
+                            <ul class="value-list value-list-diet">
+                            <li>Any</li>
+                            <li>Gluten Free</li>
+                            <li>Ketogenic</li>
+                            <li>Vegetarian</li>
+                            <li>Vegan</li>
+                            <li>Lacto-Vegetarian</li>
+                            <li>Ovo-Vegetarian</li>
+                            <li>Pescetarian</li>
+                            <li>Paleo</li>
+                            <li>Primal</li>
+                            <li>Whole30</li>
+                            </ul>
+                        </div>
+
+                        <div id='search-recepie-div'>
+                            <button id='search-recipe'>Search</button>
+                        </div>  
                     </div>
-                </section>
+                
             </div>
-            <div class="slider">
-                <h1>Slider</h1>
-            </div>
+            
         </section>
 
 
@@ -169,6 +169,7 @@
             <p id="flagAboutText" ></p>
         </div>
     </div>
+    
 <section id="cuisine-result"></section>
 
 
@@ -215,6 +216,7 @@
     <script src="../js-files/cusines.js"></script>
     <script src="../js-files/searchRecepie.js"></script>
     <script src="script.js"></script>
+    <script src='./js-files/filterBehavior.js'></script>
 </body>
 
 </html>
