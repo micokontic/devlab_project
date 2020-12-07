@@ -232,7 +232,9 @@ function toggleModal(){
   modalContent.innerHTML = modalOutput;
 }
 
-
+function windowOnClick() {
+   modal.classList.remove("show-modal");
+}
 
 
 function displayAboutCuisine(cuisineId) {
