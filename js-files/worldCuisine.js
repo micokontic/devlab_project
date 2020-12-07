@@ -16,6 +16,8 @@ const closeDropdown = () => {
 inputField.addEventListener('input', () => {
   dropdown.classList.add('open');
   let inputValue = inputField.value.toLowerCase();
+
+
   if (inputValue.length > 0) {
     for (let j = 0; j < valueArray.length; j++) {
       if (!(inputValue.substring(0, inputValue.length) === valueArray[j].substring(0, inputValue.length).toLowerCase())) {
@@ -42,6 +44,12 @@ dropdownArray.forEach(item => {
 })
 
 inputField.addEventListener('focus', () => {
+  
+  cuisineResultSection.classList.add('hide');
+  cuisineResultSection.classList.remove('show-grid');
+  loadMoreButton.classList.add('hide');
+  loadMoreButton.classList.remove('show');
+
    inputField.placeholder = 'Type to filter';
    dropdown.classList.add('open');
    dropdownArray.forEach(dropdown => {

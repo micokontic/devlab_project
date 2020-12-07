@@ -67,12 +67,12 @@
   content: "French";
 }
 
-#other:hover::before,#other:focus::before {
-  content: "Other";
+#Exploring:hover::before,#other:focus::before {
+  content: "Explore";
 }
 
 #world:hover::before,#world:focus::before {
-  content: "World Wide";
+  content: "World";
 }
 
 .cuisineBtn:hover::before {
@@ -128,13 +128,16 @@
 #cuisine-result {
   width: 90%;
   margin: 2rem auto;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   text-align: center;
 }
 #cuisine-result h2 {
   font-size: 1.2rem;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #internationalCuisine {
   width: 74%;
@@ -190,4 +193,46 @@
   background: rgba(63, 156, 63, 0.863);
   z-index: 1;
   font-size: 0.99rem;
+}
+
+.icon-container{
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.icon-container span{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.health-rating img{
+  width: 78px;
+  height: 51px;
+}
+.dollar-container img{
+  width: 51px;
+  height: 51px;
+}
+
+.icons{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0.5rem;
+  margin-top: 2rem;
+}
+
+.data-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.data-container .right{
+  justify-self: right;
+}
+
+.data-container .left{
+  justify-self: left;
 }

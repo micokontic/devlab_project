@@ -10,9 +10,9 @@ var p = {
 
     "african":"Rice, grains, vegetables, milk and all kinds of meat. Fruit is a valuable part of many meals. Maize and peanuts are widely used as well as chilies and sweet potatoes.",
     
-    "world": 'Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes.',
+    "World": 'Explore classic recipes from around the world and try new cuisines. Take Mexican beyond fajitas and Italian beyond pasta with our top recipes.',
 
-    "other":"Traveling the world and experiencing the different cultures and cuisines is something we all dream about.",
+    "Exploring":"Traveling the world and experiencing the different cultures and cuisines is something we all dream about.",
 
     
 };
@@ -26,6 +26,9 @@ const cuisineResultSection = document.getElementById("cuisine-result");
 const aboutCuisineTxt = document.getElementById("internationalCuisineText");
 const searchRecipeButton=document.getElementById('search-recipe');
 const inputText=document.getElementById('input-text');
+const loadMoreButton=document.getElementById('load-more-btn');
+const cuisinesButtons=document.getElementById('cuisinesBtns');
+
 
 
 var ingridientString='';
@@ -33,59 +36,127 @@ var ingridientResult;
 var cuisineId='';
 var dietId='';
 var inputTextString='';
-
+var number=6;
+var cuisineResult;
 
 searchRecipeButton.addEventListener('click',()=>{
     fetchData(cuisineId,dietId,inputTextString);
+    number=6;
+    loadMoreButton.classList.add('show');
+    loadMoreButton.classList.remove('hide');
+    cuisineResultSection.classList.remove('hide');
+    cuisineResultSection.classList.add('show-grid');
+
 })
 
-inputText.addEventListener('input',inputTextHandle)
+inputText.addEventListener('input',inputTextHandle);
+
+loadMoreButton.addEventListener('click',loadMoreData)
+
+cuisinesButtons.addEventListener('click',(e)=>{
+    console.log(e.target);
+    if(e.target.classList.contains('cuisineBtn')){
+        cuisineResultSection.classList.add('hide');
+        cuisineResultSection.classList.remove('show-grid');
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+    }
+})
+
 
 async function getCuisines(cuisine){
    /*  console.log(cuisineId); */
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
-      cuisineId=cuisine;
+    cuisineId=cuisine;
 }
 
 async function getDiet(diet){
-    /*  console.log(cuisineId); */
-     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
        dietId=diet;
  }
 
 function inputTextHandle(e){
     inputTextString='&query='+e.target.value;
 }
-async function fetchData(cuisineId,dietId,inputTextString){
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}&cuisine='${cuisineId}&diet='${dietId}${inputTextString}&addRecipeInformation=true&number=50`/*&type=${checkedValue}*/, {
+const displayCuisineResult=(cuisineResult)=>{
+
+    if(number>cuisineResult.length){
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+    }
+
+    cuisineResultSection.innerHTML='';
+    cuisineResult.map((cuisine,i)=>{
+        if(i<number){
+            displayResultCuisine(cuisine);
+        }
+        
+    })
+}
+
+async function fetchData(cuisine,dietId,inputTextString){
+    
+    let cuisineString
+    number=6;
+    if(cuisine==='World'){
+        cuisineString='';
+    }else{
+        cuisineString=`&cuisine=${cuisine}`;
+    }
+
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
         .then((json)=>{
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
+            cuisineResult=json.results;
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.error(error)})
 
 }
 
-const displayCuisineResult=(cuisineResult)=>{
-    console.log(cuisineResult);
-    cuisineResultSection.innerHTML='';
-    cuisineResult.map((cuisine)=>{
-        displayResultCuisine(cuisine);
-    })
+function loadMoreData() {
+    number = number + 6;
+    displayCuisineResult(cuisineResult);
+    
 }
+
+
+
 function hrefTo(){
     location.href='pages/cuisine.html';
 }
 
 /*<p>${cuisine.summary}</p> ZA OPIS RECEPTA ( DODATI LOAD MORE BTN ILI PREBACANJE NA STRANICU RECEPTA) */
 const displayResultCuisine=(cuisine)=>{
+    console.log(cuisine);
     const div = document.createElement('div');
+    console.log(cuisine.nutrition.nutrients.Calories);
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
-    <h2>${cuisine.title}</h2><span>Total time: ${cuisine.readyInMinutes}min</span>
+    <h2>${cuisine.title}</h2>
+    <div class="data-container">
+        <span class='right'>Proteins per serving:&nbsp;&nbsp;</span> 
+        <span  class='left'>${cuisine.nutrition.nutrients[8].amount}g</span>
+        <span class='right'>Carbohydrates per serving:&nbsp;&nbsp;</span> 
+        <span  class='left'>${cuisine.nutrition.nutrients[3].amount}g</span>
+        <span class='right'>Fat per serving:&nbsp;&nbsp;</span>
+        <span class='left'>${cuisine.nutrition.nutrients[1].amount}g</span>
+    </div>
+    <div class='icons'>
+        <div class="health-rating">
+            <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
+        </div>
+        <div class="health-rating dollar-container">
+            <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)}$</span>
+        </div>
+        <div class="health-rating dollar-container">
+            <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
+        </div>
+    </div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
     if(cuisine.vegan){
@@ -99,17 +170,17 @@ const displayResultCuisine=(cuisine)=>{
 }
 
 
-const displayAboutCuisine=(cuisineId)=>{
- const divF = document.getElementById("flagAboutCuisine");
-const titleF = document.getElementById("flagAboutTitle");
-const contentF = document.getElementById("flagAboutText");
- titleF.innerHTML = cuisineId;
- 
- for (var key in p) {
-    if (p.hasOwnProperty(key) && key === cuisineId) {
-        contentF.innerHTML = "test" + p[key];
+function displayAboutCuisine(cuisineId) {
+    const divF = document.getElementById("flagAboutCuisine");
+    const titleF = document.getElementById("flagAboutTitle");
+    const contentF = document.getElementById("flagAboutText");
+    titleF.innerHTML = cuisineId;
+
+    for (var key in p) {
+        if (p.hasOwnProperty(key) && key === cuisineId) {
+            contentF.innerHTML = "test" + p[key];
+        }
     }
-}
 }
 
 /* WORLD WIDE CUISINES SELECTED FROM DROPDOWN */

@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="../style/recipe.By.Ing.css">
     <link rel="stylesheet" href="../style/filter.css">
     <link rel="stylesheet" href="../style/indexPage.css">
-    <!--font Awesome-->
+    <link rel="stylesheet" href="../style/animations.css">
+    <link rel="stylesheet" href="./style/range-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Reciphy</title>
     <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić,Lazar Vuletić">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -57,8 +57,8 @@
             </div>
             <div class="single-animation">
                 <h5>World Cuisine</h5>
-                <a id="explore-the-world" class="btn cta-btn">Explore the world</a>
-                <a id='ingridient-search' class="btn cta-btn">Cook with what you have</a>
+                <a id="explore-the-world" href="#filter-alla" class="btn cta-btn">Explore the world</a>
+                <a id='ingridient-search' href='#cuisine-result' class="btn cta-btn">Cook with what you have</a>
             </div>
         </div>
     </div>
@@ -77,8 +77,8 @@
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
                     <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="world"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="other"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines('World')" id="world"></button>
+                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="Exploring"></button>
                     </div>
                     <!--  <div class="cuisinesCheckB">
                         <div class="typesCb"> 
@@ -149,6 +149,13 @@
                             <li>Whole30</li>
                             </ul>
                         </div>
+                        <div class="slider-container">
+                            <section class="range-slider">
+                            <span class="rangeValues"></span>
+                            <input value="50" min="50" max="800" step="5" type="range">
+                            <input value="800" min="50" max="800" step="5" type="range">
+                            </section>
+                        </div>
 
                         <div id='search-recepie-div'>
                             <button id='search-recipe'>Search</button>
@@ -169,8 +176,11 @@
             <p id="flagAboutText" ></p>
         </div>
     </div>
-    
-<section id="cuisine-result"></section>
+
+    <section id="cuisine-result" class="hide"></section>
+    <button id="load-more-btn" class='hide load-more-btn-style'>Load more</button>
+    <button id="load-more-btn-ing" class='hide load-more-btn-style'>Load more</button>
+
 
 
 </main>
@@ -210,12 +220,12 @@
             Copyrights by Reciphy
         </div>
     </footer>
+    <script src="../js-files/slider-range.js"></script>
     <script src="../js-files/worldCuisine.js"></script>
     <script src="../js-files/dietFilter.js"></script>
     <script src="../js-files/script.js"></script>
     <script src="../js-files/cusines.js"></script>
     <script src="../js-files/searchRecepie.js"></script>
-    <script src="script.js"></script>
     <script src='./js-files/filterBehavior.js'></script>
 </body>
 

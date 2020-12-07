@@ -4,3 +4,6 @@
 .show{
     display: block;
 }
+.show-grid{
+    display: grid;
+}

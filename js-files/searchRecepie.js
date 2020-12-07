@@ -1,11 +1,15 @@
 const API_KEY10='3cd18534149a4cc1b19ebd6f1c8ef472';
 const API_KEY11='55aaab3f111448719c70a7565dd7bf38';
 const ingridientSearcButton=document.getElementById('ingridient-search');
+const loadMoreButtonIng=document.getElementById('load-more-btn-ing');
+
 var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
 
 ingridientSearcButton.addEventListener('click',getCuisinesByIng)
+loadMoreButtonIng.addEventListener('click',loadMoreDataIng)
 
-
+var numberIng=6;
+var recepiesByIng
 
 function createIngridientsString(){
     var ingridientsString=''
@@ -23,6 +27,11 @@ function createIngridientsString(){
 }
 
 async function getCuisinesByIng(){
+    loadMoreButtonIng.classList.add('show');
+    loadMoreButtonIng.classList.remove('hide');
+    cuisineResultSection.classList.add('show-grid');
+    cuisineResultSection.classList.remove('hide-grid');
+    numberIng=6;
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`/*&type=${checkedValue}*/, {
@@ -34,16 +43,29 @@ async function getCuisinesByIng(){
         console.log(json);
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
         displayResultCousineByIng(json)
+        recepiesByIng=json;
     })
     .catch(error => console.error(error))   
 }
 
 function displayResultCousineByIng(json){
     cuisineResultSection.innerHTML='';
-    json.map((recipe)=>{
-        displayResultRecipeByIng(recipe);
+    json.map((recipe,i)=>{
+        if(i<numberIng){
+            displayResultRecipeByIng(recipe);
+        }
+        
     })
 
+}
+
+function loadMoreDataIng(){
+    numberIng=numberIng+6;
+    displayResultCousineByIng(recepiesByIng)
+    if(numberIng>recepiesByIng.length){
+        loadMoreButtonIng.classList.add('hide');
+    loadMoreButtonIng.classList.remove('show');
+    }
 }
 
 const displayResultRecipeByIng=(cuisine)=>{

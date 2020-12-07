@@ -2,10 +2,12 @@ const exploreWorldButton=document.getElementById('explore-the-world');
 const filterAll=document.getElementById('filter-all');
 const ingridientSearchButton=document.getElementById('ingridient-search');
 const allCountryFilter=document.getElementById('all-country-filter');
-const otherCountryButton=document.getElementById('other');
+const otherCountryButton=document.getElementById('Exploring');
 const countryButtons=document.getElementById('cuisines');
 const cuisinesBtns=document.getElementById('cuisinesBtns');
 const flagAboutCuisine=document.getElementById('flagAboutCuisine');
+
+
 
 filterAll.classList.add('hide');
 allCountryFilter.classList.add('hide');
@@ -17,6 +19,7 @@ otherCountryButton.addEventListener('click',showAllCountryFilter);
 cuisinesBtns.addEventListener('click',cuisinesBtnsClickHandler)
 
 function showFilter(){
+    filterAll.classList.add('slide-in-right');
     filterAll.classList.add('show');
     cuisineResultSection.innerHTML='';
 }
@@ -24,6 +27,8 @@ function showFilter(){
 function hideFilter(){
     filterAll.classList.remove('show');
     filterAll.classList.add('hide');
+    flagAboutCuisine.classList.remove('show');
+    flagAboutCuisine.classList.add('hide');
 }
 
 function showAllCountryFilter(){
