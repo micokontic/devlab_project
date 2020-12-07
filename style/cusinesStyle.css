@@ -51,27 +51,33 @@
   transition: 0.3s all;
   opacity: 0;
 }
-#italian:hover::before,#italian:focus::before {
+#italian:hover::before,
+#italian:focus::before {
   content: "Italian";
 }
 
-#indian:hover::before,#indian:focus::before {
+#indian:hover::before,
+#indian:focus::before {
   content: "Indian";
 }
 
-#chinese:hover::before,#chinese:focus::before {
+#chinese:hover::before,
+#chinese:focus::before {
   content: "Chinese";
 }
 
-#french:hover::before,#french:focus::before {
+#french:hover::before,
+#french:focus::before {
   content: "French";
 }
 
-#Exploring:hover::before,#other:focus::before {
+#Exploring:hover::before,
+#other:focus::before {
   content: "Explore";
 }
 
-#world:hover::before,#world:focus::before {
+#world:hover::before,
+#world:focus::before {
   content: "World";
 }
 
@@ -86,7 +92,8 @@
   font-size: 0.7rem;
 }
 
-.cuisineBtn:hover::before,.cuisineBtn:focus::before {
+.cuisineBtn:hover::before,
+.cuisineBtn:focus::before {
   opacity: 1;
   text-align: center;
   color: wheat;
@@ -120,7 +127,8 @@
     center/cover;
 }
 .cuisineBtn:nth-child(6) {
-  background: url("../resources/images/world-flags.png") no-repeat center center/cover;
+  background: url("../resources/images/world-flags.png") no-repeat center
+    center/cover;
 }
 .cuisineBtn:nth-child(5) {
   background: url("../resources/images/globe.jpg") no-repeat center center/cover;
@@ -159,7 +167,7 @@
   text-transform: none;
 }
 
-#searchNav{
+#searchNav {
   position: relative;
 }
 
@@ -195,44 +203,44 @@
   font-size: 0.99rem;
 }
 
-.icon-container{
-width: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.icon-container span{
+.icon-container {
+  width: 50%;
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.health-rating img{
+.icon-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health-rating img {
   width: 78px;
   height: 51px;
 }
-.dollar-container img{
+.dollar-container img {
   width: 51px;
   height: 51px;
 }
 
-.icons{
+.icons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0.5rem;
   margin-top: 2rem;
 }
 
-.data-container{
+.data-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.data-container .right{
+.data-container .right {
   justify-self: right;
 }
 
-.data-container .left{
+.data-container .left {
   justify-self: left;
 }

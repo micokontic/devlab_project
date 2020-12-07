@@ -28,7 +28,7 @@ const searchRecipeButton=document.getElementById('search-recipe');
 const inputText=document.getElementById('input-text');
 const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
-
+const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
 
 
 var ingridientString='';
@@ -104,7 +104,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -112,6 +112,7 @@ async function fetchData(cuisine,dietId,inputTextString){
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
             cuisineResult=json.results;
+           
         })
         .catch(error => {
             console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
@@ -157,6 +158,7 @@ const displayResultCuisine=(cuisine)=>{
             <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
         </div>
     </div>
+    <button onclick='toggleModal()'id="modalBtn">Show more</div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
     if(cuisine.vegan){
@@ -164,10 +166,73 @@ const displayResultCuisine=(cuisine)=>{
     }else{
         div.classList.add("redW");
     }
+    
     div.classList.add("divTest");
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
 }
+/*
+ var modalBtn = document.createElement("button");
+    modalBtn.innerHTML = "CLICK ME";  
+    div.appendChild(modalBtn);
+*/
+
+
+
+
+
+/*******************MODAL***************** */
+
+var modal = document.querySelector(".modal");
+var modalContent = document.querySelector(".modal-content");
+var modalOutput = "";
+
+ 
+
+function toggleModal(){
+   
+    modalOutput =`
+      <div class="modalTop">
+        <button onclick='windowOnClick()'class="close-button">&times;</button>
+      </div>
+        <div class="modalTitle">
+            <h1>Naslov</h1>
+        </div>
+
+        <div class="modalMain">
+            <div class="modalLeft">
+                
+                <div class="modalBottom">
+                    <h3>Summary</h3>
+                    <p>Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary <a href="#">show more...</a></p>
+                </div>
+            </div>
+
+            <div class="modalRight">
+                <div class="modalTop">
+                    <img src="../resources/images/internationalCuisine.jpg" alt="">
+                </div>
+                
+                <div class="modalBottom">
+                    <div class="modalNutritionFacts">
+                        <h2>Nutrition Facts</h2>
+                        <p>Calories: </p>
+                        <p>Protein: </p>
+                        <p>Fats: </p>
+                        <p>Carbs: </p>
+                    </div>
+                    <div class="modalStikeri">
+                        <h2>Labels</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+  `;
+  modal.classList.toggle("show-modal");
+  modalContent.innerHTML = modalOutput;
+}
+
+
 
 
 function displayAboutCuisine(cuisineId) {
