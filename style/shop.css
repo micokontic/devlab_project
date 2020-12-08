@@ -11,14 +11,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #1d1f20;
 }
 /*Welcome Section*/
 .welcome {
   width: 100%;
   height: 90vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../resources/images/internationalCuisine.jpg") center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.712)),
+    url("../resources/images/shopBck.jpg") center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -38,6 +37,7 @@ a {
   opacity: 0;
   animation: fadeUp 0.5s forwards;
   animation-delay: 0.5s;
+  margin-bottom: 0.6rem;
 }
 /*Make first letter twice bigger than the rest of the text*/
 .first-letter {
@@ -89,7 +89,7 @@ a {
   left: 0;
 }
 .asterisk {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   color: var(--fav-font-color);
   margin: 0 1.6rem;
   opacity: 0;
@@ -108,141 +108,36 @@ a {
   text-transform: uppercase;
   margin-bottom: 1.2rem;
   letter-spacing: 3px;
-  margin-right: -3px;
+  margin-top: 1.3rem;
 }
-.btn {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-right: -2px;
-}
-.cta-btn {
-  font-size: 1.1rem;
-  background-color: #fff;
-  padding: 0.9rem 1.8rem;
-  color: var(--body-font-color);
-  border-radius: 0.4rem;
-  transition: background-color 0.5s;
-}
-.cta-btn:hover,
-.cta-btn:focus {
-  color: #fff;
-  background-color: var(--fav-font-color);
-}
-/*//////////////////END OF WELCOME SECTION///////////////////////*/
-
-/*INTRODUCTION SECTION*/
-.introduction {
-  width: 80%;
-  margin: 2rem auto;
+#ing-search {
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--fav-font-color);
+  width: 15rem;
+  background: transparent;
+  color: white;
   text-align: center;
+  font-size: 1.4rem;
 }
-.introductionTitle h1 {
-  font-family: Bite;
-  color: var(--fav-font-color);
-  font-size: 1.7rem;
-}
-.introductionText {
-  margin-top: 2rem;
-}
-.introductionText p {
-  font-family: "Source Sans Pro", sans-serif;
-  color: #fff;
-  letter-spacing: 2px;
-  line-height: 2;
-}
-/*CUISINE DROPDOWN SEARCH*/
-/*.cuisinesSearch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
-
-#flagAboutCuisine {
-  margin-top: 5rem;
-}
-
-form {
-  position: relative;
-  /*width: 18rem;*/
-}
-
-.chosen-value,
-.value-list {
-  width: 100%;
-  text-align: center;
-}
-
-.chosen-value {
-  font-family: "Ek Mukta";
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 4px;
-  height: 4rem;
-  font-size: 1.1rem;
-  padding: 1rem;
-  background-color: #fafcfd;
-  border: 3px solid transparent;
-  transition: 0.3s ease-in-out;
-}
-.chosen-value:hover {
-  background-color: var(--fav-font-color);
+#ing-search-btn {
+  padding: 0.5rem;
+  width: 8rem;
+  border-radius: 2rem;
+  outline: none;
+  border: none;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+  background: var(--fav-font-color);
   cursor: pointer;
 }
-
-.chosen-value:focus,
-.chosen-value.open {
-  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
-  outline: 0;
-  background-color: var(--fav-font-color);
-  color: #000;
+#ing-search-btn:hover {
+  background: #7c5f33ce;
 }
-
-.value-list {
-  z-index: 2;
-  position: relative;
-  top: 0rem;
-  left: 0;
-  list-style: none;
-  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  max-height: 0;
-  transition: 0.3s ease-in-out;
-}
-
-.value-list.open {
-  max-height: 320px;
-  overflow: auto;
-}
-
-li {
-  position: relative;
-  height: 4rem;
-  background-color: #fafcfd;
-  padding: 1rem;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  opacity: 1;
-}
-
-li:hover {
-  background-color: #facb0b;
-  /*color: white;          kicasto? :'D */
-}
-
-li.closed {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
-  opacity: 0;
-}
-
-#cuisine-result {
-  margin-top: 5rem;
-}
+/*Button test*/
 
 /*Animations*/
 @keyframes fadeUp {
