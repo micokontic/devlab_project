@@ -139,6 +139,8 @@ const displayResultCuisine=(cuisine)=>{
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
     <div class="data-container">
+        <span class='right'>Calories per serving:&nbsp;&nbsp;</span> 
+        <span  class='left'>${cuisine.Calories}g</span>
         <span class='right'>Proteins per serving:&nbsp;&nbsp;</span> 
         <span  class='left'>${cuisine.nutrition.nutrients[8].amount}g</span>
         <span class='right'>Carbohydrates per serving:&nbsp;&nbsp;</span> 
