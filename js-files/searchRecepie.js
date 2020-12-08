@@ -28,21 +28,24 @@ function createIngridientsString(){
 }
 
 async function getCuisinesByIng(){
-    loadMoreButton.classList.add('hide');
-    loadMoreButton.classList.remove('show');
-    loadMoreButtonIng.classList.add('show');
-    loadMoreButtonIng.classList.remove('hide');
-    cuisineResultSection.classList.add('show-grid');
-    cuisineResultSection.classList.remove('hide-grid');
-    numberIng=6;
+
+    cuisineResultSection.innerHTML=loader;
+    cuisineResultSection.classList.remove('hide');
+    
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`/*&type=${checkedValue}*/, {
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY5}${ingString}&number=20`/*&type=${checkedValue}*/, {
     method: 'GET',
-    
-})
+    })
     .then(response => response.json())
     .then((json)=>{
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButtonIng.classList.add('show');
+        loadMoreButtonIng.classList.remove('hide');
+        cuisineResultSection.classList.add('show-grid');
+        cuisineResultSection.classList.remove('hide-grid');
+        numberIng=6;
         console.log(json);
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
         displayResultCousineByIng(json)
@@ -55,7 +58,7 @@ function displayResultCousineByIng(json){
     cuisineResultSection.innerHTML='';
     json.map((recipe,i)=>{
         if(i<numberIng){
-            displayResultRecipeByIng(recipe);
+            displayResultRecipeByIng(recipe,i);
         }
         
     })
@@ -72,8 +75,10 @@ function loadMoreDataIng(){
     }
 }
 
-const displayResultRecipeByIng=(cuisine)=>{
+const displayResultRecipeByIng=(cuisine,i)=>{
+    var animationString=getAnimationString(i);
     const div = document.createElement('div');
+    div.classList.add(animationString);
     div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
         <div class="ing-container">

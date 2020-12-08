@@ -158,7 +158,6 @@ function hrefTo(){
 /*<p>${cuisine.summary}</p> ZA OPIS RECEPTA ( DODATI LOAD MORE BTN ILI PREBACANJE NA STRANICU RECEPTA) */
 const displayResultCuisine=(cuisine,i)=>{
     var animationString=getAnimationString(i);
-    console.log(cuisine);
     const div = document.createElement('div');
     div.classList.add(animationString)
     console.log(cuisine.nutrition.nutrients.Calories);
