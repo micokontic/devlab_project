@@ -169,7 +169,7 @@ const displayResultCuisine=(cuisine,i)=>{
         <span  class='left'>${cuisine.nutrition.nutrients[0].amount}kCal</span>
         <span class='right'>Proteins per serving:&nbsp;&nbsp;</span> 
         <span  class='left'>${cuisine.nutrition.nutrients[8].amount}g</span>
-        <span class='right'>Carbohydrates per serving:&nbsp;&nbsp;</span> 
+        <span class='right'>Carbohydrates:&nbsp;&nbsp;</span> 
         <span  class='left'>${cuisine.nutrition.nutrients[3].amount}g</span>
         <span class='right'>Fat per serving:&nbsp;&nbsp;</span>
         <span class='left'>${cuisine.nutrition.nutrients[1].amount}g</span>
