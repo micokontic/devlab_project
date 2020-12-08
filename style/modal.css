@@ -24,10 +24,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background: url(../resources/images/marbleModal.jpg);
   padding: 1rem 1.5rem;
   width: 75vw;
-  height: 75vh;
+  height: 80vh;
   border-radius: 0.9rem;
 }
 
@@ -40,15 +40,20 @@
 
 .close-button {
   float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
+  width: 1.9rem;
+  line-height: 2rem;
+  font-size: 1.7rem;
+  margin-top: 0.2rem;
+  outline: none;
+  border: none;
+  color: rgb(66, 121, 15);
+  background-color: var(--fav-font-color);
   text-align: center;
   cursor: pointer;
-  border-radius: 0.25rem;
-  background-color: lightgray;
+  border-radius: 50%;
 }
 .close-button:hover {
-  background-color: darkgray;
+  color: red;
 }
 
 #modalBtn {
@@ -68,7 +73,8 @@
 .modalTitle {
   text-align: center;
   font-family: "Source Sans Pro", sans-serif;
-  color: var(--fav-font-color);
+  color: rgb(66, 121, 15);
+  background-color: rgba(247, 244, 244, 0.644);
   font-size: 1rem;
   margin-bottom: 2rem;
 }
@@ -85,15 +91,12 @@
   text-align: center;
 }
 
-.modalLeft .modalBottom h3 {
-  text-align: center;
-  font-family: Bite;
-  color: var(--fav-font-color);
-}
-h2 {
+.modal-content h2 {
   color: var(--fav-font-color);
   font-family: Bite;
+  color: rgb(66, 121, 15);
   font-size: 1.3rem;
+  text-align: center;
 }
 
 .modalRight img {
@@ -109,5 +112,11 @@ h2 {
 }
 .modalRight .modalBottom {
   display: flex;
+  margin-top: 2rem;
   justify-content: space-between;
+}
+table tr td {
+  border: 1px solid var(--fav-font-color);
+  padding: 0.5rem;
+  text-align: center;
 }

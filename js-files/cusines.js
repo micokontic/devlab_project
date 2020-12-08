@@ -134,6 +134,8 @@ async function fetchData(cuisine,dietId,inputTextString){
             loadMoreButton.classList.add('show');
             loadMoreButton.classList.remove('hide');
             cuisineResultSection.classList.add('show-grid');
+            showTopResults(cuisineResult);
+           
         })
         .catch(error => {
             console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
@@ -240,7 +242,7 @@ function toggleModal(){
             <div class="modalLeft">
                 
                 <div class="modalBottom">
-                    <h3>Summary</h3>
+                    <h2>Summary</h2>
                     <p>Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary <a href="#">show more...</a></p>
                 </div>
             </div>
@@ -253,10 +255,13 @@ function toggleModal(){
                 <div class="modalBottom">
                     <div class="modalNutritionFacts">
                         <h2>Nutrition Facts</h2>
-                        <p>Calories: </p>
-                        <p>Protein: </p>
-                        <p>Fats: </p>
-                        <p>Carbs: </p>
+                        <table id="nutrition">
+                        <tr><td>Calories: </td><td>$cuisine.Calories </td></tr>
+                        <tr><td>Protein: </td><td>(tu se unose proteini)</td></tr>
+                        <tr><td>Fats: </td><td>mmmmasti</td></tr>
+                        <tr><td>Carbs: </td><td>mastii</td></tr>
+                        </table>
+                     
                     </div>
                     <div class="modalStikeri">
                         <h2>Labels</h2>
@@ -318,6 +323,36 @@ dropdownArray.forEach(item => {
       });
     });
   })
+
+
+
+  /*SIDE BAR TOP THREE */
+
+  function showTopResults(cuisineResult){
+    showBest(cuisineResult);
+  }
+function showBest(cuisineResult){
+let best = document.querySelector(".topThree");
+let bestArr = [];
+for(let i = 1; i<4; i++){
+    let bestItem = document.createElement("img");
+    bestItem.className = "topThreeImg";
+    bestItem.src = cuisineResult[i].image;
+   /*  console.log(cuisineResult[i].healthScore);
+    best.appendChild(bestItem); */
+    bestArr.push([bestItem, cuisineResult[i].healthScore]);
+}
+let sortArr = bestArr.filter(elem => elem[1] !== 0);
+sortArr.sort((a,b) => b[1]-a[1]);
+best.innerHTML = `The healthiest recipes`;
+for(let i = 0; i < 3; i++){
+    best.appendChild(sortArr[i][0]);
+    sortArr[i][0].onclick = toggleModal;
+    /*console.log("Radiiii radii radiii radiii !!!!") */
+}
+
+
+}
 
 
 /*
