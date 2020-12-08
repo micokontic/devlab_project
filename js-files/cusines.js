@@ -104,7 +104,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -112,6 +112,7 @@ async function fetchData(cuisine,dietId,inputTextString){
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
             cuisineResult=json.results;
+            showTopResults(cuisineResult);
            
         })
         .catch(error => {
@@ -275,6 +276,35 @@ dropdownArray.forEach(item => {
       });
     });
   })
+
+
+
+  /*SIDE BAR TOP THREE */
+
+  function showTopResults(cuisineResult){
+    showBest(cuisineResult);
+  }
+function showBest(cuisineResult){
+let best = document.querySelector(".topThree");
+let bestArr = [];
+for(let i = 1; i<4; i++){
+    let bestItem = document.createElement("img");
+    bestItem.className = "topThreeImg";
+    bestItem.src = cuisineResult[i].image;
+   /*  console.log(cuisineResult[i].healthScore);
+    best.appendChild(bestItem); */
+    bestArr.push([bestItem, cuisineResult[i].healthScore]);
+}
+let sortArr = bestArr.filter(elem => elem[1] !== 0);
+sortArr.sort((a,b) => b[1]-a[1]);
+best.innerHTML = `The healthiest recipes`;
+for(let i = 0; i < 3; i++){
+    best.appendChild(sortArr[i][0]);
+    sortArr[i][0].onclick = toggleModal;
+}
+
+
+}
 
 
 /*
