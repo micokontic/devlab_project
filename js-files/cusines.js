@@ -122,7 +122,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY11}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY5}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -138,7 +138,7 @@ async function fetchData(cuisine,dietId,inputTextString){
            
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
@@ -185,7 +185,7 @@ const displayResultCuisine=(cuisine,i)=>{
             <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
         </div>
     </div>
-    <button onclick='toggleModal()'id="modalBtn">Show more</div>
+    <button id="modalBtn" class='show-more'>Show more</div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
     if(cuisine.vegan){
@@ -219,64 +219,6 @@ function getAnimationString(i){
 
 
 
-
-/*******************MODAL***************** */
-
-var modal = document.querySelector(".modal");
-var modalContent = document.querySelector(".modal-content");
-var modalOutput = "";
-
- 
-
-function toggleModal(){
-   
-    modalOutput =`
-      <div class="modalTop">
-        <button onclick='windowOnClick()'class="close-button">&times;</button>
-      </div>
-        <div class="modalTitle">
-            <h1>Naslov</h1>
-        </div>
-
-        <div class="modalMain">
-            <div class="modalLeft">
-                
-                <div class="modalBottom">
-                    <h2>Summary</h2>
-                    <p>Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary <a href="#">show more...</a></p>
-                </div>
-            </div>
-
-            <div class="modalRight">
-                <div class="modalTop">
-                    <img src="../resources/images/internationalCuisine.jpg" alt="">
-                </div>
-                
-                <div class="modalBottom">
-                    <div class="modalNutritionFacts">
-                        <h2>Nutrition Facts</h2>
-                        <table id="nutrition">
-                        <tr><td>Calories: </td><td>$cuisine.Calories </td></tr>
-                        <tr><td>Protein: </td><td>(tu se unose proteini)</td></tr>
-                        <tr><td>Fats: </td><td>mmmmasti</td></tr>
-                        <tr><td>Carbs: </td><td>mastii</td></tr>
-                        </table>
-                     
-                    </div>
-                    <div class="modalStikeri">
-                        <h2>Labels</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-  `;
-  modal.classList.toggle("show-modal");
-  modalContent.innerHTML = modalOutput;
-}
-
-function windowOnClick() {
-   modal.classList.remove("show-modal");
-}
 
 
 function displayAboutCuisine(cuisineId) {
