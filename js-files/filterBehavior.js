@@ -6,7 +6,7 @@ const otherCountryButton=document.getElementById('Exploring');
 const countryButtons=document.getElementById('cuisines');
 const cuisinesBtns=document.getElementById('cuisinesBtns');
 const flagAboutCuisine=document.getElementById('flagAboutCuisine');
-
+const healthiest = document.querySelector(".sliderBestFb");
 
 
 filterAll.classList.add('hide');
@@ -29,6 +29,7 @@ function hideFilter(){
     filterAll.classList.add('hide');
     flagAboutCuisine.classList.remove('show');
     flagAboutCuisine.classList.add('hide');
+    healthiest.classList.add('hide');
 }
 
 function showAllCountryFilter(){
