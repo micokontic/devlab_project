@@ -104,7 +104,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -203,7 +203,7 @@ function toggleModal(){
             <div class="modalLeft">
                 
                 <div class="modalBottom">
-                    <h3>Summary</h3>
+                    <h2>Summary</h2>
                     <p>Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary <a href="#">show more...</a></p>
                 </div>
             </div>
@@ -216,10 +216,13 @@ function toggleModal(){
                 <div class="modalBottom">
                     <div class="modalNutritionFacts">
                         <h2>Nutrition Facts</h2>
-                        <p>Calories: </p>
-                        <p>Protein: </p>
-                        <p>Fats: </p>
-                        <p>Carbs: </p>
+                        <table id="nutrition">
+                        <tr><td>Calories: </td><td>$cuisine.Calories </td></tr>
+                        <tr><td>Protein: </td><td>(tu se unose proteini)</td></tr>
+                        <tr><td>Fats: </td><td>mmmmasti</td></tr>
+                        <tr><td>Carbs: </td><td>mastii</td></tr>
+                        </table>
+                     
                     </div>
                     <div class="modalStikeri">
                         <h2>Labels</h2>
