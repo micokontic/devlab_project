@@ -16,6 +16,27 @@ var p = {
 
     
 };
+
+const loader = `<div id="loading-contaier">
+<h1>Cooking in progress..</h1>
+<div id="cooking">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div id="area">
+        <div id="sides">
+            <div id="pan"></div>
+            <div id="handle"></div>
+        </div>
+        <div id="pancake">
+            <div id="pastry"></div>
+        </div>
+    </div>
+</div>
+</div>`;
+
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
 const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
@@ -41,12 +62,6 @@ var cuisineResult;
 
 searchRecipeButton.addEventListener('click',()=>{
     fetchData(cuisineId,dietId,inputTextString);
-    number=6;
-    loadMoreButton.classList.add('show');
-    loadMoreButton.classList.remove('hide');
-    cuisineResultSection.classList.remove('hide');
-    cuisineResultSection.classList.add('show-grid');
-
 })
 
 inputText.addEventListener('input',inputTextHandle);
@@ -88,14 +103,17 @@ const displayCuisineResult=(cuisineResult)=>{
     cuisineResultSection.innerHTML='';
     cuisineResult.map((cuisine,i)=>{
         if(i<number){
-            displayResultCuisine(cuisine);
+            displayResultCuisine(cuisine,i);
         }
         
     })
 }
 
 async function fetchData(cuisine,dietId,inputTextString){
-    
+
+    cuisineResultSection.innerHTML=loader;
+    cuisineResultSection.classList.remove('hide');
+
     let cuisineString
     number=6;
     if(cuisine==='World'){
@@ -104,7 +122,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY11}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -112,10 +130,13 @@ async function fetchData(cuisine,dietId,inputTextString){
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
             cuisineResult=json.results;
-           
+            number=6;
+            loadMoreButton.classList.add('show');
+            loadMoreButton.classList.remove('hide');
+            cuisineResultSection.classList.add('show-grid');
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY2}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
@@ -133,15 +154,17 @@ function hrefTo(){
 }
 
 /*<p>${cuisine.summary}</p> ZA OPIS RECEPTA ( DODATI LOAD MORE BTN ILI PREBACANJE NA STRANICU RECEPTA) */
-const displayResultCuisine=(cuisine)=>{
+const displayResultCuisine=(cuisine,i)=>{
+    var animationString=getAnimationString(i);
     console.log(cuisine);
     const div = document.createElement('div');
+    div.classList.add(animationString)
     console.log(cuisine.nutrition.nutrients.Calories);
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
     <div class="data-container">
         <span class='right'>Calories per serving:&nbsp;&nbsp;</span> 
-        <span  class='left'>${cuisine.Calories}g</span>
+        <span  class='left'>${cuisine.nutrition.nutrients[0].amount}kCal</span>
         <span class='right'>Proteins per serving:&nbsp;&nbsp;</span> 
         <span  class='left'>${cuisine.nutrition.nutrients[8].amount}g</span>
         <span class='right'>Carbohydrates per serving:&nbsp;&nbsp;</span> 
@@ -172,6 +195,18 @@ const displayResultCuisine=(cuisine)=>{
     div.classList.add("divTest");
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
+}
+
+function getAnimationString(i){
+    var animationString=''
+    if((i+1)%3===1){
+        animationString='slide-in-left'
+    }else if((i+1)%3===2){
+        animationString='scale-in-center'
+    }else if((i+1)%3===0){
+        animationString='slide-in-right'
+    }
+    return animationString;
 }
 /*
  var modalBtn = document.createElement("button");
@@ -240,9 +275,13 @@ function windowOnClick() {
 
 
 function displayAboutCuisine(cuisineId) {
+   
     const divF = document.getElementById("flagAboutCuisine");
     const titleF = document.getElementById("flagAboutTitle");
     const contentF = document.getElementById("flagAboutText");
+
+    titleF.classList.add('pre-animation');
+    contentF.classList.add('pre-animation');
     titleF.innerHTML = cuisineId;
 
     for (var key in p) {
@@ -250,6 +289,11 @@ function displayAboutCuisine(cuisineId) {
             contentF.innerHTML = "test" + p[key];
         }
     }
+    setTimeout(function(){
+        titleF.classList.remove('pre-animation');
+        contentF.classList.remove('pre-animation');
+    },100)
+
 }
 
 /* WORLD WIDE CUISINES SELECTED FROM DROPDOWN */

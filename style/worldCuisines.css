@@ -242,6 +242,7 @@ li.closed {
 
 #cuisine-result {
   margin-top: 5rem;
+  overflow-anchor: none;
 }
 
 /*Animations*/

@@ -27,6 +27,8 @@ function createIngridientsString(){
 }
 
 async function getCuisinesByIng(){
+    loadMoreButton.classList.add('hide');
+    loadMoreButton.classList.remove('show');
     loadMoreButtonIng.classList.add('show');
     loadMoreButtonIng.classList.remove('hide');
     cuisineResultSection.classList.add('show-grid');
@@ -61,10 +63,11 @@ function displayResultCousineByIng(json){
 
 function loadMoreDataIng(){
     numberIng=numberIng+6;
+ 
     displayResultCousineByIng(recepiesByIng)
     if(numberIng>recepiesByIng.length){
         loadMoreButtonIng.classList.add('hide');
-    loadMoreButtonIng.classList.remove('show');
+        loadMoreButtonIng.classList.remove('show');
     }
 }
 

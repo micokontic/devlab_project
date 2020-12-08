@@ -12,6 +12,8 @@ a{
     color: black;
 }
 
+html{scroll-behavior:smooth}
+
   .header {
     background-color: #fff;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -164,6 +166,10 @@ footer p{
     text-align: center;
     padding: 10px 0px 10px 0px;
 }
+.cursor-pointer{
+  cursor: pointer;
+}
+
 
 
 
