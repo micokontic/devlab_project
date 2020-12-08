@@ -96,8 +96,8 @@ input {
   }
   nav {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
   nav .logo {
     margin-left: 3rem;

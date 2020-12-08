@@ -301,6 +301,7 @@ best.innerHTML = `The healthiest recipes`;
 for(let i = 0; i < 3; i++){
     best.appendChild(sortArr[i][0]);
     sortArr[i][0].onclick = toggleModal;
+    /*console.log("Radiiii radii radiii radiii !!!!") */
 }
 
 
