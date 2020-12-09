@@ -7,11 +7,16 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.spoonacular.com/recipes/random?apiKey=a807bbb33f68406b846d84b7ad507d55", requestOptions)
+var params = {type:"snack",app_key:" 0ac01560cfa44454a2b6af0ef094de76"}
+
+
+var url = new URL ("https://api.spoonacular.com/recipes/complexSearch");
+url.search = new URLSearchParams(params).toString();
+fetch(url, requestOptions)
   .then(response => response.json())
-  .then(json => {
-    result = json;
-    console.log(json.result);
+  .then(result => {
+    obj= result;
+    console.log(makeSlider(result));
 
   })
   .catch(error => console.log('error', error));
@@ -67,14 +72,14 @@ function showImages (curr = 0, prev=0){
     newFood.className = "newFood";
     let newFoodImg = document.createElement("img");
 
-    newFoodImg.src = result['img'][i];
-    newFoodImg.className = "newFoodImg";
+    //newFoodImg.src = result.img[i];
+   // newFoodImg.className = "newFoodImg";
 
     let newFoodName = document.createElement(h4);
-    newFoodName.innerText = ['title'][i];
+    newFoodName.innerText = result.title[i];
 
     let newFoodSummary = document.createElement(p);
-    newFoodSummary = result['summary'][i];
+    newFoodSummary = result.summary[i];
 
     newFood.appendChild(newFoodImg);
     newFood.appendChild(newFoodName);
