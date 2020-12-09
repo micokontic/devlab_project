@@ -17,7 +17,7 @@ recipeCard.addEventListener('click',(e)=>{
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY1}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY20}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -89,6 +89,8 @@ function toggleModal(cuisine){
                 </table>
              
             </div>
+            <a href="${cuisine.sourceUrl}" target="_blank"id="modalLink">Show more</a>
+          
             </div>
 
             <div class="modalRight">

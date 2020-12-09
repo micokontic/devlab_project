@@ -51,6 +51,7 @@ const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
 const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
 
+const API_KEY20='75e96fce580b461aa763efbb905fb93d';
 
 var ingridientString='';
 var ingridientResult;
@@ -122,7 +123,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY1}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -138,7 +139,7 @@ async function fetchData(cuisine,dietId,inputTextString){
            
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY131}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }

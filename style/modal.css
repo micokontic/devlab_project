@@ -178,3 +178,33 @@ table tr td {
 .data-container .left {
   justify-self: left;
 }
+#modalLink {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    height: 90vh;
+  }
+  .modalTitle {
+    font-size: 0.7rem;
+  }
+  .modalLeft {
+    width: 100%;
+  }
+
+  .modalRight {
+    display: none;
+  }
+  #modalLink {
+    display: block;
+    color: rgb(66, 121, 15);
+    border-bottom: 1px solid var(--fav-font-color);
+    width: 50%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+  }
+  #modalLink:hover {
+    font-weight: bold;
+  }
+}
