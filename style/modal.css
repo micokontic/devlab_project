@@ -114,8 +114,8 @@
 }
 .modalRight p {
   width: 90%;
+  height: 60%;
   margin: 0 auto;
-  line-height: 1.8;
   letter-spacing: 2;
   background-color: rgba(247, 244, 244, 0.644);
 }
@@ -130,12 +130,12 @@ table tr td {
   text-align: center;
 }
 
-.modalStikeri {
+.modalStikerim {
   width: 90%;
   margin: 0 auto;
 }
 .health-rating img {
-  width: 100%;
+  /* width: 100%; */
 }
 .icon-container {
   width: 100%;
@@ -149,16 +149,16 @@ table tr td {
   flex-direction: column;
 }
 
-.health-rating img {
+.health-ratingm img {
   width: 5.5rem;
   height: 4.5rem;
 }
-.dollar-container img {
+.dollar-containerm img {
   width: 4.5rem;
   height: 4.5rem;
 }
 
-.icons {
+.iconsm {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0.5rem;

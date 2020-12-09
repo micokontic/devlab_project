@@ -37,6 +37,7 @@
   cursor: pointer;
   position: relative;
 }
+
 .cuisineBtn::before {
   content: "";
   border-radius: 60%;
@@ -217,12 +218,12 @@
 }
 
 .health-rating img {
-  width: 78px;
-  height: 51px;
+  width: 4.875rem;
+  height: 3.2875rem;
 }
 .dollar-container img {
-  width: 51px;
-  height: 51px;
+  width: 3.2875rem;
+  height: 3.2875rem;
 }
 
 .icons {
