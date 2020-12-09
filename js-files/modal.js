@@ -17,7 +17,7 @@ recipeCard.addEventListener('click',(e)=>{
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY11}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY20}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
@@ -74,42 +74,46 @@ function toggleModal(cuisine){
             <div class="modalLeft">
                 
                 <div class="modalBottom">
-                    <h2>Summary</h2>
-                    <p>${cuisine.summary}</a></p>
+                <div class="modalTop">
+                    <img src="${cuisine.image}" class="cuisineImgModal" alt="">
                 </div>
+                    
+                </div>
+                <div class="modalNutritionFacts">
+                <h2>Nutrition Facts</h2>
+                <table id="nutrition">
+                <tr><td>Calories: </td><td>${cuisine.nutrition.nutrients[0].amount}kCal</td></tr>
+                <tr><td>Protein: </td><td>${cuisine.nutrition.nutrients[8].amount}g</td></tr>
+                <tr><td>Fats: </td><td>${cuisine.nutrition.nutrients[1].amount}g</td></tr>
+                <tr><td>Carbs: </td><td>${cuisine.nutrition.nutrients[3].amount}g</td></tr>
+                </table>
+             
+            </div>
+            <a href="${cuisine.sourceUrl}" target="_blank"id="modalLink">Show more</a>
+          
             </div>
 
             <div class="modalRight">
-                <div class="modalTop">
-                    <img src="${cuisine.image}" alt="">
-                </div>
                 
+            <h2>Summary</h2>
+            <p>${cuisine.summary}</a></p>
                 <div class="modalBottom">
-                    <div class="modalNutritionFacts">
-                        <h2>Nutrition Facts</h2>
-                        <table id="nutrition">
-                        <tr><td>Calories: </td><td>${cuisine.nutrition.nutrients[0].amount}kCal</td></tr>
-                        <tr><td>Protein: </td><td>${cuisine.nutrition.nutrients[8].amount}g</td></tr>
-                        <tr><td>Fats: </td><td>${cuisine.nutrition.nutrients[1].amount}gi</td></tr>
-                        <tr><td>Carbs: </td><td>${cuisine.nutrition.nutrients[3].amount}g</td></tr>
-                        </table>
-                     
-                    </div>
-                    <div class="modalStikeri">
-                        <h2>Labels</h2>
-                    </div>
-                    
-                    <div class='icons'>
-                    <div class="health-rating">
+                   
+                    <div class="modalStikerim">
+                        <div class='iconsm'>
+                    <div class="health-ratingm">
                         <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
                     </div>
-                    <div class="health-rating dollar-container">
+                    <div class="health-rating dollar-containerm">
                         <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)}$</span>
                     </div>
-                    <div class="health-rating dollar-container">
+                    <div class="health-rating dollar-containerm">
                         <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
                     </div>
                 </div>
+                    </div>
+                    
+                    
                     
                 </div>
             </div>

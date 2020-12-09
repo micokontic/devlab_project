@@ -71,9 +71,12 @@ function displayResultCousineByIng(json){
 
 function loadMoreDataIng(){
     numberIng=numberIng+6;
-    
+ 
     displayResultCousineByIng(recepiesByIng)
-    
+    if(numberIng>recepiesByIng.length){
+        loadMoreButtonIng.classList.add('hide');
+        loadMoreButtonIng.classList.remove('show');
+    }
 }
 
 const displayResultRecipeByIng=(cuisine,i)=>{

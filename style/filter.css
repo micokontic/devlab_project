@@ -1,30 +1,46 @@
-#filter{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+#filter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-#filter div{
-    margin: 1rem;
+#filter div {
+  margin: 1rem;
 }
 
-#all-country-filter{
-    width: 30%;
-    margin: 5% auto;
+#all-country-filter {
+  width: 30%;
+  margin: 5% auto;
 }
 
-#filter{
-    width: 80%;
-    margin: 3% auto;
+#filter {
+  width: 80%;
+  margin: 3% auto;
 }
 
-#search-recepie-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#search-recepie-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#search-recipe{
-    padding: 1rem;
+#search-recipe {
+  padding: 1rem;
+}
+#search-recipe .a {
+  width: 100%;
+  height: 100%;
+}
+
+.load-more-btn-style {
+  padding: 0.5rem 1rem;
+  margin: 5rem auto;
+  font-size: 1.1rem;
+  padding: 0.9rem 1.8rem;
+  color: black;
+  background-color: rgb(208, 208, 208);
+  border-radius: 0.4rem;
+  transition: background-color 0.5s;
+  outline: none;
 }
 #search-recipe .a{
     width: 100%;
@@ -49,3 +65,30 @@
     background-color: var(--fav-font-color);
     opacity: 1;
   }
+
+  
+@media only screen and (max-width: 768px) {
+  .cuisinesSearch {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  #country-filter {
+    font-size: 1rem;
+  }
+  #all-country-filter {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  #filter {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  #input-text {
+    font-size: 0.8rem;
+  }
+  #search-recipe {
+    margin-top: 2rem;
+  }
+}

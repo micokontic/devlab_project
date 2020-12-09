@@ -139,6 +139,49 @@ a {
 }
 /*Button test*/
 
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .sub-headline {
+    font-size: 2.6rem;
+  }
+  .first-letter {
+    font-size: 3.8rem;
+  }
+  .headline {
+    font-size: 1.8rem;
+    margin-top: 0.4rem;
+  }
+  .line {
+    max-width: 5.5rem;
+    height: 0.15rem;
+  }
+  .asterisk {
+    font-size: 1rem;
+  }
+  .headline-description h5 {
+    font-size: 1rem;
+  }
+  .btn {
+    width: 13rem;
+  }
+  .cta-btn {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  .searchField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchField button {
+    margin-top: 1rem;
+  }
+}
+
 /*Animations*/
 @keyframes fadeUp {
   0% {

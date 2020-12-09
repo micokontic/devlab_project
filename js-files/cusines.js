@@ -51,6 +51,7 @@ const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
 const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
 
+const API_KEY20='75e96fce580b461aa763efbb905fb93d';
 
 var ingridientString='';
 var ingridientResult;
@@ -187,15 +188,30 @@ const displayResultCuisine=(cuisine,i)=>{
     <button id="modalBtn" class='show-more'>Show more</div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
-    if(cuisine.vegan){
-        div.classList.add("greenW");
-    }else{
-        div.classList.add("redW");
-    }
-    
     div.classList.add("divTest");
+    if(cuisine.vegan){
+        div.classList.toggle('greenW');
+    }
+  
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
+    
+    
+   /*  else{
+        div.classList.add("redW");
+    }  */
+}
+
+function getAnimationString(i){
+    var animationString=''
+    if((i+1)%3===1){
+        animationString='slide-in-left'
+    }else if((i+1)%3===2){
+        animationString='scale-in-center'
+    }else if((i+1)%3===0){
+        animationString='slide-in-right'
+    }
+    return animationString;
 }
 
 function getAnimationString(i){

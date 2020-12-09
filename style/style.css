@@ -1,34 +1,36 @@
-body{
-    font-family: "lato",sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding:0;
+body {
+  font-family: "lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-h1{
-    font-family: "poppins",sans-serif;
-    font-weight: 700;
+h1 {
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
 }
-a{
-    color: black;
+a {
+  color: black;
 }
 
-html{scroll-behavior:smooth}
+html {
+  scroll-behavior: smooth;
+}
 
-  .header {
-    background-color: #fff;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-        width: 100%;
-    z-index: 3;
-    height: 40vh;
-  }
-  
-  .header ul {
-    margin: 0;
-    padding: 0 10% 0px 0px;
-    list-style: none;
-    overflow: hidden;
-    background-color: #fff;
-  }
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 3;
+  height: 40vh;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0 10% 0px 0px;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
 @font-face {
   font-family: Bite;
   src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
@@ -179,12 +181,52 @@ a {
   flex-direction: column;
   text-align: center;
   padding-top: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   font-family: Bite;
-  color: black;
+  font-weight: 100;
+  color: rgba(36, 34, 34, 0.863);
   opacity: 0.8;
+  position: relative;
 }
+.topThree .tooltiptext {
+  visibility: hidden;
+  width: 10rem;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 102%;
+  left: 50%;
+  margin-left: -60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.topThree .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.topThree:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .topThreeImg {
   width: 9vw;
   margin: 1.5vw auto 0;
@@ -232,6 +274,123 @@ footer p {
   color: white;
   text-align: center;
   padding: 10px 0px 10px 0px;
+}
+
+#fridgeText {
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .side-bar {
+    display: none;
+  }
+}
+
+@media (min-width: 1028px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .logo {
+    padding-left: 10%;
+  }
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color 0.2s ease-out;
+    width: 28px;
+    text-align: center;
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 100px auto;
+  }
+  .firstFooterRow,
+  .secondFooterRow,
+  .thirdFooterRow {
+    width: 33%;
+  }
+  .firstFooterRow img {
+    width: 50%;
+    margin: auto;
+  }
+  .copyrights {
+    width: 100%;
+  }
+  footer .secondFooterRow h1 {
+    text-align: left;
+  }
+  footer .secondFooterRow p {
+    text-align: left;
+    padding: 0px 50px 0px 0px;
+  }
+  footer img {
+    margin-top: -70px;
+  }
+}
+.firstFooterRow img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+footer h1 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+footer p {
+  color: white;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+}
+
+.thirdFooterRow {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  justify-items: center;
+  margin: 50px 0px 50px 0px;
+  justify-self: center;
+}
+.thirdFooterRow img {
+  width: 50%;
+  justify-self: center;
+}
+
+.copyrights {
+  background-color: rgb(83, 83, 83);
+  color: white;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 
 @media (min-width: 1028px) {
