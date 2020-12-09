@@ -7,16 +7,11 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-var params = {type:"snack",app_key:" 0ac01560cfa44454a2b6af0ef094de76"}
-
-
-var url = new URL ("https://api.spoonacular.com/recipes/complexSearch");
-url.search = new URLSearchParams(params).toString();
-fetch(url, requestOptions)
+fetch("https://api.spoonacular.com/recipes/random?apiKey=e611f39bf8a443e3ae2bfbfc63beb5ff&number=12", requestOptions)
   .then(response => response.json())
-  .then(result => {
-    obj= result;
-    console.log(makeSlider(result));
+  .then(json => {
+    result = json;
+    makeSlider(result);
 
   })
   .catch(error => console.log('error', error));
@@ -58,46 +53,22 @@ function makeSlider (result){
         }
       }
 
-      showImages (curr, prev);
-
-  }
-
-function showImages (curr = 0, prev=0){
-
-  slider.innerHTML= "";
-  let helpList2 = [];
-  for (let i=1; i<12;i++){
-
-    let newFood = document.createElement("div");
-    newFood.className = "newFood";
-    let newFoodImg = document.createElement("img");
-
-    //newFoodImg.src = result.img[i];
-   // newFoodImg.className = "newFoodImg";
-
-    let newFoodName = document.createElement(h4);
-    newFoodName.innerText = result.title[i];
-
-    let newFoodSummary = document.createElement(p);
-    newFoodSummary = result.summary[i];
-
-    newFood.appendChild(newFoodImg);
-    newFood.appendChild(newFoodName);
-    newFood.appendChild(newFoodSummary);
-
-    if (i%3 !==0){
-      helpList2.push(newFood);
-    }else{
-      helpList2.push(newFood);
-
-      let newFoodGroup = document.createElement("div");
-      newFoodGroup.className = "newFoodGroup";
-      helpList2.forEach((elem)=> newFoodGroup.appendChild(elem))
-      helpList2 = [];
-
-      slider.appendChild(newFoodGroup);
+      showImages(curr, prev);
     }
-  }
+  
+
+  function showImages(curr=0, prev=0){
+
+    slider.innerHTML = "";
+    result.array.forEach(element => {
+      let output = `
+      <div>
+      <img src="${result.image}"></img>
+      <h3 class="foodTitle">"${result.title}"</h3>
+      <p>"${result.summary}"</p>
+
+      </div>`
+    });
 
   if (curr !==0 && prev!==0){
     foodPrev = document.querySelector(".sliderContent").children[prev-1];
@@ -111,11 +82,7 @@ function showImages (curr = 0, prev=0){
 
 }
 
-if(count === 0){
-  
-  
 
-}
 
 document.querySelector(".prev").addEventListener("click",function(){moveImg(-1)});
 document.querySelector(".next").addEventListener("click",function(){moveImg(1)});
@@ -124,7 +91,7 @@ document.querySelector(".sliderContent").addEventListener("mouseover",function()
 
 setInterval(() => moveImg(-1), 3000);
 
-function checkKey (event){
+function checkKey(event){
   let key = event.key;
   if(key === "ArrowRight"){
     moveImg(1);
@@ -134,4 +101,4 @@ function checkKey (event){
 }
 
 
-}
+  }
