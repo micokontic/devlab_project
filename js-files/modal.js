@@ -74,32 +74,31 @@ function toggleModal(cuisine){
             <div class="modalLeft">
                 
                 <div class="modalBottom">
-                    <h2>Summary</h2>
-                    <p>${cuisine.summary}</a></p>
+                <div class="modalTop">
+                    <img src="${cuisine.image}" class="cuisineImgModal" alt="">
                 </div>
+                    
+                </div>
+                <div class="modalNutritionFacts">
+                <h2>Nutrition Facts</h2>
+                <table id="nutrition">
+                <tr><td>Calories: </td><td>${cuisine.nutrition.nutrients[0].amount}kCal</td></tr>
+                <tr><td>Protein: </td><td>${cuisine.nutrition.nutrients[8].amount}g</td></tr>
+                <tr><td>Fats: </td><td>${cuisine.nutrition.nutrients[1].amount}g</td></tr>
+                <tr><td>Carbs: </td><td>${cuisine.nutrition.nutrients[3].amount}g</td></tr>
+                </table>
+             
+            </div>
             </div>
 
             <div class="modalRight">
-                <div class="modalTop">
-                    <img src="${cuisine.image}" alt="">
-                </div>
                 
+            <h2>Summary</h2>
+            <p>${cuisine.summary}</a></p>
                 <div class="modalBottom">
-                    <div class="modalNutritionFacts">
-                        <h2>Nutrition Facts</h2>
-                        <table id="nutrition">
-                        <tr><td>Calories: </td><td>${cuisine.nutrition.nutrients[0].amount}kCal</td></tr>
-                        <tr><td>Protein: </td><td>${cuisine.nutrition.nutrients[8].amount}g</td></tr>
-                        <tr><td>Fats: </td><td>${cuisine.nutrition.nutrients[1].amount}g</td></tr>
-                        <tr><td>Carbs: </td><td>${cuisine.nutrition.nutrients[3].amount}g</td></tr>
-                        </table>
-                     
-                    </div>
+                   
                     <div class="modalStikeri">
-                        <h2>Labels</h2>
-                    </div>
-                    
-                    <div class='icons'>
+                        <div class='icons'>
                     <div class="health-rating">
                         <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
                     </div>
@@ -110,6 +109,9 @@ function toggleModal(cuisine){
                         <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
                     </div>
                 </div>
+                    </div>
+                    
+                    
                     
                 </div>
             </div>
