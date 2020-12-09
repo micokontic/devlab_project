@@ -183,7 +183,6 @@
 
 .greenW {
   position: relative;
-  z-index: -1;
   line-height: 2rem;
 }
 .redW {

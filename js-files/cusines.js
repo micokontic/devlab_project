@@ -122,7 +122,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY5}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY1}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -138,7 +138,7 @@ async function fetchData(cuisine,dietId,inputTextString){
            
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY131}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
@@ -187,15 +187,18 @@ const displayResultCuisine=(cuisine,i)=>{
     <button id="modalBtn" class='show-more'>Show more</div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
-    if(cuisine.vegan){
-        div.classList.add("greenW");
-    }else{
-        div.classList.add("redW");
-    }
-    
     div.classList.add("divTest");
+    if(cuisine.vegan){
+        div.classList.toggle('greenW');
+    }
+  
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
+    
+    
+   /*  else{
+        div.classList.add("redW");
+    }  */
 }
 
 function getAnimationString(i){
