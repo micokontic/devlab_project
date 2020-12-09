@@ -48,14 +48,18 @@ async function getCuisinesByIng(){
         numberIng=6;
         console.log(json);
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
-        displayResultCousineByIng(json)
         recepiesByIng=json;
+        displayResultCousineByIng(json)
     })
     .catch(error => console.error(error))   
 }
 
 function displayResultCousineByIng(json){
     cuisineResultSection.innerHTML='';
+    if(numberIng>recepiesByIng.length){
+        loadMoreButtonIng.classList.add('hide');
+        loadMoreButtonIng.classList.remove('show');
+    }
     json.map((recipe,i)=>{
         if(i<numberIng){
             displayResultRecipeByIng(recipe,i);
@@ -67,12 +71,9 @@ function displayResultCousineByIng(json){
 
 function loadMoreDataIng(){
     numberIng=numberIng+6;
- 
+    
     displayResultCousineByIng(recepiesByIng)
-    if(numberIng>recepiesByIng.length){
-        loadMoreButtonIng.classList.add('hide');
-        loadMoreButtonIng.classList.remove('show');
-    }
+    
 }
 
 const displayResultRecipeByIng=(cuisine,i)=>{

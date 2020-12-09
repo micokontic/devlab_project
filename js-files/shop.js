@@ -16,6 +16,7 @@ const ingridients=document.getElementById('ingridients');
 var ingridientString='';
 var ingridientResult;
 var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
+var nombrePage=0;
 
 ingridientResultSection.addEventListener('click',addToFridge);
 ingSearchButton.addEventListener('click',ingredientSearch);
@@ -38,11 +39,52 @@ async function ingredientSearch(){
     .catch(error => console.error(error))
 }
 
+
+var divCols
 const displayIngridientResults=(ingridientResult)=>{
     ingridientResultSection.innerHTML='';
-    ingridientResult.map((ing)=>{
+    divCols=document.createElement('div')
+    divCols.classList.add('content');
+    divCols.classList.add('cols');
+    ingridientResult.map((ing,i)=>{
         displayResultIngridient(ing);
+        if((i+1)%10===0){
+            ingridientResultSection.appendChild(divCols);
+            divCols=document.createElement('div')
+            divCols.classList.add('content');
+            divCols.classList.add('cols');
+        }
     })
+    ingridientResultSection.appendChild(divCols);
+    const articlePageIn=document.createElement('article');
+    articlePageIn.id='pagin';
+    let articlePageInNuberString=''
+    let i=10;
+    let num=2;
+    console.log(ingridientResult.length);
+    while(i-10<=ingridientResult.length){
+        if(i===10){
+            articlePageInNuberString='<li class="active"><a href="#">1</a></li>'
+        }else{
+            articlePageInNuberString+=`<li><a href="#">${num++}</a></li>`
+        }
+        i=i+10;
+    }
+
+  articlePageIn.innerHTML=(`<nav>
+    <span><a class="prev"><<</a></span>
+    <ul>
+      ${articlePageInNuberString}
+    </ul>
+    <span><a class="next">>></a></span>
+  </nav>`);
+
+
+
+  ingridientResultSection.appendChild(articlePageIn);
+  setPaginationHandlers();
+  showPage(0);
+    
 }
 
 const displayResultIngridient=(ing)=>{
@@ -69,7 +111,7 @@ const displayResultIngridient=(ing)=>{
             </div>
         </div>
     `
-        ingridientResultSection.appendChild(div);
+        divCols.appendChild(div);
     
 }
 
