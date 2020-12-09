@@ -54,6 +54,9 @@
     margin: 0 auto;
     font-size: 1rem;
   }
+  #country-filter {
+    font-size: 1rem;
+  }
   #all-country-filter {
     width: 90%;
     display: flex;
