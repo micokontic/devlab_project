@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../style/indexPage.css">
     <link rel="stylesheet" href="../style/animations.css">
     <link rel="stylesheet" href="./style/range-slider.css">
+    <link rel="stylesheet" href="./style/loader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./style/modal.css">
     <title>Reciphy</title>
@@ -58,7 +59,7 @@
             </div>
             <div class="single-animation">
                 <h5>World Cuisine</h5>
-                <a id="explore-the-world" href="#filter-alla" class="btn cta-btn">Explore the world</a>
+                <a id="explore-the-world" href="#filter-all-before" class="btn cta-btn">Explore the world</a>
                 <a id='ingridient-search' href='#cuisine-result' class="btn cta-btn">Cook with what you have</a>
             </div>
         </div>
@@ -76,7 +77,7 @@
 
     
         
-
+    <div id="filter-all-before"></div> <!--empty one used for href navigation-->
     <section id="filter-all">
             <div id="searchNav"class="cuisinesSearch">
                 <section id="cuisines">
@@ -137,7 +138,7 @@
                     <div id="filter">
                         <div class="cuisinesSearch">
                             <form>
-                                <input class="chosen-value" id="input-text" type="text" value="" placeholder="What you are looking for?">
+                                <input class="chosen-value" id="input-text" type="text" value="" placeholder="What would you like to eat?">
                             </form>
                         </div>
 
@@ -166,7 +167,7 @@
                         </div>
 
                         <div id='search-recepie-div'>
-                            <button id='search-recipe'>Search</button>
+                            <a href="#cuisine-result-href"><button id='search-recipe'>Search</button></a>
                         </div>  
                     </div>
                 
@@ -176,21 +177,20 @@
 
 
     <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
-    <div id="flagAboutCuisine">
+    <div id="flagAboutCuisine" >
         <div class="introductionTitle">
-        <h1 id="flagAboutTitle"></h1>
+        <h1 id="flagAboutTitle" class="html-animation-container"></h1>
         </div>
         <div class="introductionText">
-            <p id="flagAboutText" ></p>
+            <p id="flagAboutText" class="html-animation-container"></p>
         </div>
     </div>
-
+    <div id="cuisine-result-href"></div>
     <section id="cuisine-result" class="hide"></section>
-    <button id="load-more-btn" class='hide load-more-btn-style'>Load more</button>
-    <button id="load-more-btn-ing" class='hide load-more-btn-style'>Load more</button>
-
-
-
+    <button id="load-more-btn" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
+    <button id="load-more-btn-ing" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
+    
+    
 <!------------------MODAL---------------------->
 <div class="modal">
     <div class="modal-content">
@@ -246,6 +246,8 @@
     <script src="../js-files/cusines.js"></script>
     <script src="../js-files/searchRecepie.js"></script>
     <script src='./js-files/filterBehavior.js'></script>
+    <script src='./js-files/modal.js'></script>
+
 </body>
 
 </html>

@@ -16,6 +16,27 @@ var p = {
 
     
 };
+
+const loader = `<div id="loading-contaier">
+<h1>Cooking in progress..</h1>
+<div id="cooking">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div id="area">
+        <div id="sides">
+            <div id="pan"></div>
+            <div id="handle"></div>
+        </div>
+        <div id="pancake">
+            <div id="pastry"></div>
+        </div>
+    </div>
+</div>
+</div>`;
+
 const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
 const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
 const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
@@ -41,12 +62,6 @@ var cuisineResult;
 
 searchRecipeButton.addEventListener('click',()=>{
     fetchData(cuisineId,dietId,inputTextString);
-    number=6;
-    loadMoreButton.classList.add('show');
-    loadMoreButton.classList.remove('hide');
-    cuisineResultSection.classList.remove('hide');
-    cuisineResultSection.classList.add('show-grid');
-
 })
 
 inputText.addEventListener('input',inputTextHandle);
@@ -88,14 +103,17 @@ const displayCuisineResult=(cuisineResult)=>{
     cuisineResultSection.innerHTML='';
     cuisineResult.map((cuisine,i)=>{
         if(i<number){
-            displayResultCuisine(cuisine);
+            displayResultCuisine(cuisine,i);
         }
         
     })
 }
 
 async function fetchData(cuisine,dietId,inputTextString){
-    
+
+    cuisineResultSection.innerHTML=loader;
+    cuisineResultSection.classList.remove('hide');
+
     let cuisineString
     number=6;
     if(cuisine==='World'){
@@ -104,7 +122,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY5}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -112,11 +130,15 @@ async function fetchData(cuisine,dietId,inputTextString){
             cuisineResultSection.innerHTML='';
             displayCuisineResult(json.results);
             cuisineResult=json.results;
+            number=6;
+            loadMoreButton.classList.add('show');
+            loadMoreButton.classList.remove('hide');
+            cuisineResultSection.classList.add('show-grid');
             showTopResults(cuisineResult);
            
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
@@ -134,13 +156,16 @@ function hrefTo(){
 }
 
 /*<p>${cuisine.summary}</p> ZA OPIS RECEPTA ( DODATI LOAD MORE BTN ILI PREBACANJE NA STRANICU RECEPTA) */
-const displayResultCuisine=(cuisine)=>{
-    console.log(cuisine);
+const displayResultCuisine=(cuisine,i)=>{
+    var animationString=getAnimationString(i);
     const div = document.createElement('div');
+    div.classList.add(animationString)
     console.log(cuisine.nutrition.nutrients.Calories);
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
     <div class="data-container">
+        <span class='right'>Calories per serving:&nbsp;&nbsp;</span> 
+        <span  class='left'>${cuisine.nutrition.nutrients[0].amount}kCal</span>
         <span class='right'>Proteins per serving:&nbsp;&nbsp;</span> 
         <span  class='left'>${cuisine.nutrition.nutrients[8].amount}g</span>
         <span class='right'>Carbohydrates:&nbsp;&nbsp;</span> 
@@ -159,7 +184,7 @@ const displayResultCuisine=(cuisine)=>{
             <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
         </div>
     </div>
-    <button onclick='toggleModal()'id="modalBtn">Show more</div>
+    <button id="modalBtn" class='show-more'>Show more</div>
     `
     /*CHECK IF MEAL IS VEGAN (ADD PSEUDO EL VEGAN IF IT IS) */
     if(cuisine.vegan){
@@ -172,6 +197,18 @@ const displayResultCuisine=(cuisine)=>{
     cuisineResultSection.appendChild(div);
     /* aboutCuisineTxt.innerHTML = ""; */
 }
+
+function getAnimationString(i){
+    var animationString=''
+    if((i+1)%3===1){
+        animationString='slide-in-left'
+    }else if((i+1)%3===2){
+        animationString='scale-in-center'
+    }else if((i+1)%3===0){
+        animationString='slide-in-right'
+    }
+    return animationString;
+}
 /*
  var modalBtn = document.createElement("button");
     modalBtn.innerHTML = "CLICK ME";  
@@ -182,69 +219,15 @@ const displayResultCuisine=(cuisine)=>{
 
 
 
-/*******************MODAL***************** */
-
-var modal = document.querySelector(".modal");
-var modalContent = document.querySelector(".modal-content");
-var modalOutput = "";
-
- 
-
-function toggleModal(){
-   
-    modalOutput =`
-      <div class="modalTop">
-        <button onclick='windowOnClick()'class="close-button">&times;</button>
-      </div>
-        <div class="modalTitle">
-            <h1>Naslov</h1>
-        </div>
-
-        <div class="modalMain">
-            <div class="modalLeft">
-                
-                <div class="modalBottom">
-                    <h2>Summary</h2>
-                    <p>Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary Reciepe Summary <a href="#">show more...</a></p>
-                </div>
-            </div>
-
-            <div class="modalRight">
-                <div class="modalTop">
-                    <img src="../resources/images/internationalCuisine.jpg" alt="">
-                </div>
-                
-                <div class="modalBottom">
-                    <div class="modalNutritionFacts">
-                        <h2>Nutrition Facts</h2>
-                        <table id="nutrition">
-                        <tr><td>Calories: </td><td>$cuisine.Calories </td></tr>
-                        <tr><td>Protein: </td><td>(tu se unose proteini)</td></tr>
-                        <tr><td>Fats: </td><td>mmmmasti</td></tr>
-                        <tr><td>Carbs: </td><td>mastii</td></tr>
-                        </table>
-                     
-                    </div>
-                    <div class="modalStikeri">
-                        <h2>Labels</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-  `;
-  modal.classList.toggle("show-modal");
-  modalContent.innerHTML = modalOutput;
-}
-
-function windowOnClick() {
-   modal.classList.remove("show-modal");
-}
-
 
 function displayAboutCuisine(cuisineId) {
+   
     const divF = document.getElementById("flagAboutCuisine");
     const titleF = document.getElementById("flagAboutTitle");
     const contentF = document.getElementById("flagAboutText");
+
+    titleF.classList.add('pre-animation');
+    contentF.classList.add('pre-animation');
     titleF.innerHTML = cuisineId;
 
     for (var key in p) {
@@ -252,6 +235,11 @@ function displayAboutCuisine(cuisineId) {
             contentF.innerHTML = "test" + p[key];
         }
     }
+    setTimeout(function(){
+        titleF.classList.remove('pre-animation');
+        contentF.classList.remove('pre-animation');
+    },100)
+
 }
 
 /* WORLD WIDE CUISINES SELECTED FROM DROPDOWN */

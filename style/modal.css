@@ -113,10 +113,13 @@
 .modalRight .modalBottom {
   display: flex;
   margin-top: 2rem;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 table tr td {
   border: 1px solid var(--fav-font-color);
   padding: 0.5rem;
   text-align: center;
+}
+.health-rating img {
+  width: 100%;
 }

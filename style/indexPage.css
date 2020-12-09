@@ -1,9 +1,9 @@
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
-.show{
-    display: block;
+.show {
+  display: block;
 }
-.show-grid{
-    display: grid;
+.show-grid {
+  display: grid;
 }

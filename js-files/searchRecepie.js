@@ -1,5 +1,6 @@
 const API_KEY10='3cd18534149a4cc1b19ebd6f1c8ef472';
 const API_KEY11='55aaab3f111448719c70a7565dd7bf38';
+const API_KEY5='15656ea8f9d948e981fb876774cc5281';
 const ingridientSearcButton=document.getElementById('ingridient-search');
 const loadMoreButtonIng=document.getElementById('load-more-btn-ing');
 
@@ -27,19 +28,24 @@ function createIngridientsString(){
 }
 
 async function getCuisinesByIng(){
-    loadMoreButtonIng.classList.add('show');
-    loadMoreButtonIng.classList.remove('hide');
-    cuisineResultSection.classList.add('show-grid');
-    cuisineResultSection.classList.remove('hide-grid');
-    numberIng=6;
+
+    cuisineResultSection.innerHTML=loader;
+    cuisineResultSection.classList.remove('hide');
+    
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`/*&type=${checkedValue}*/, {
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY5}${ingString}&number=20`/*&type=${checkedValue}*/, {
     method: 'GET',
-    
-})
+    })
     .then(response => response.json())
     .then((json)=>{
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButtonIng.classList.add('show');
+        loadMoreButtonIng.classList.remove('hide');
+        cuisineResultSection.classList.add('show-grid');
+        cuisineResultSection.classList.remove('hide-grid');
+        numberIng=6;
         console.log(json);
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
         displayResultCousineByIng(json)
@@ -52,7 +58,7 @@ function displayResultCousineByIng(json){
     cuisineResultSection.innerHTML='';
     json.map((recipe,i)=>{
         if(i<numberIng){
-            displayResultRecipeByIng(recipe);
+            displayResultRecipeByIng(recipe,i);
         }
         
     })
@@ -61,15 +67,18 @@ function displayResultCousineByIng(json){
 
 function loadMoreDataIng(){
     numberIng=numberIng+6;
+ 
     displayResultCousineByIng(recepiesByIng)
     if(numberIng>recepiesByIng.length){
         loadMoreButtonIng.classList.add('hide');
-    loadMoreButtonIng.classList.remove('show');
+        loadMoreButtonIng.classList.remove('show');
     }
 }
 
-const displayResultRecipeByIng=(cuisine)=>{
+const displayResultRecipeByIng=(cuisine,i)=>{
+    var animationString=getAnimationString(i);
     const div = document.createElement('div');
+    div.classList.add(animationString);
     div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
         <div class="ing-container">

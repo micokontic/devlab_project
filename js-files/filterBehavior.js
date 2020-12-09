@@ -39,8 +39,12 @@ function showAllCountryFilter(){
 }
 
 function cuisinesBtnsClickHandler(){
+    if(!flagAboutCuisine.classList.contains('show'))
+    {
+    flagAboutCuisine.classList.add('slide-in-left');
     flagAboutCuisine.classList.add('show');
     flagAboutCuisine.classList.remove('hide');
+    }
     displayAboutCuisine(cuisineId);
 }
 
