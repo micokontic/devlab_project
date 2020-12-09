@@ -8,8 +8,12 @@ var requestOptions = {
 };
 
 fetch("https://api.spoonacular.com/recipes/random?apiKey=a807bbb33f68406b846d84b7ad507d55", requestOptions)
-  .then(response => response.text())
-  .then(result => makeSlider(result))
+  .then(response => response.json())
+  .then(json => {
+    result = json;
+    console.log(json.result);
+
+  })
   .catch(error => console.log('error', error));
 
 
@@ -63,14 +67,14 @@ function showImages (curr = 0, prev=0){
     newFood.className = "newFood";
     let newFoodImg = document.createElement("img");
 
-    newFoodImg.src = result['recipes'][i]['image'];
+    newFoodImg.src = result['img'][i];
     newFoodImg.className = "newFoodImg";
 
     let newFoodName = document.createElement(h4);
-    newFoodName.innerText = result['recipes'][i]['title'];
+    newFoodName.innerText = ['title'][i];
 
     let newFoodSummary = document.createElement(p);
-    newFoodSummary = result['recipes'][i]['summary'];
+    newFoodSummary = result['summary'][i];
 
     newFood.appendChild(newFoodImg);
     newFood.appendChild(newFoodName);
@@ -104,7 +108,7 @@ function showImages (curr = 0, prev=0){
 
 if(count === 0){
   
-  slider.firstChild.style.display = "flex";
+  
 
 }
 
@@ -112,7 +116,6 @@ document.querySelector(".prev").addEventListener("click",function(){moveImg(-1)}
 document.querySelector(".next").addEventListener("click",function(){moveImg(1)});
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
-document.querySelector(".slider-content").addEventListener("mouseout",function(){document.removeEventListener('keydown',checkKey)});
 
 setInterval(() => moveImg(-1), 3000);
 
