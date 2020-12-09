@@ -276,23 +276,28 @@ dropdownArray.forEach(item => {
   function showTopResults(cuisineResult){
     showBest(cuisineResult);
   }
+
+
 function showBest(cuisineResult){
 let best = document.querySelector(".topThree");
 let bestArr = [];
 for(let i = 1; i<4; i++){
+    let a = document.createElement("a");
+    a.href = cuisineResult[i].sourceUrl;
+    a.target = '_blank';
     let bestItem = document.createElement("img");
     bestItem.className = "topThreeImg";
     bestItem.src = cuisineResult[i].image;
+    a.appendChild(bestItem);
    /*  console.log(cuisineResult[i].healthScore);
     best.appendChild(bestItem); */
-    bestArr.push([bestItem, cuisineResult[i].healthScore]);
+    bestArr.push([a, cuisineResult[i].healthScore]);
 }
 let sortArr = bestArr.filter(elem => elem[1] !== 0);
 sortArr.sort((a,b) => b[1]-a[1]);
 best.innerHTML = `The healthiest recipes`;
 for(let i = 0; i < 3; i++){
     best.appendChild(sortArr[i][0]);
-    sortArr[i][0].onclick = toggleModal;
     /*console.log("Radiiii radii radiii radiii !!!!") */
 }
 
