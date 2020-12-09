@@ -34,7 +34,7 @@ async function getCuisinesByIng(){
     
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY5}${ingString}&number=20`/*&type=${checkedValue}*/, {
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY10}${ingString}&number=20`/*&type=${checkedValue}*/, {
     method: 'GET',
     })
     .then(response => response.json())

@@ -137,7 +137,7 @@
   width: 90%;
   margin: 2rem auto;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   text-align: center;
 }
 #cuisine-result h2 {

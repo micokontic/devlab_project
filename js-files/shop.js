@@ -28,7 +28,7 @@ if (localStorage.getItem("ingridientsInFridge") === null) {
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY5}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY10}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())
