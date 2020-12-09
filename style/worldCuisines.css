@@ -244,6 +244,40 @@ li.closed {
   margin-top: 5rem;
   overflow-anchor: none;
 }
+@media only screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .sub-headline {
+    font-size: 2.3rem;
+  }
+  .first-letter {
+    font-size: 3.5rem;
+  }
+  .headline {
+    font-size: 1.5rem;
+    margin-top: 0.4rem;
+  }
+  .line {
+    max-width: 5.5rem;
+    height: 0.15rem;
+  }
+  .asterisk {
+    font-size: 0.9rem;
+  }
+  .headline-description h5 {
+    font-size: 0.9rem;
+  }
+  .btn {
+    width: 13rem;
+  }
+  .cta-btn {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+}
 
 /*Animations*/
 @keyframes fadeUp {

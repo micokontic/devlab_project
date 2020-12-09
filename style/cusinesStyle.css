@@ -52,6 +52,19 @@
   transition: 0.3s all;
   opacity: 0;
 }
+@media only screen and (max-width: 768px) {
+  #cuisines {
+    width: 100%;
+    margin: 5rem auto;
+  }
+  .cuisinesBtns {
+    width: 100%;
+  }
+  #all-country-filter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 #italian:hover::before,
 #italian:focus::before {
   content: "Italian";

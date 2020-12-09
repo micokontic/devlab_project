@@ -275,6 +275,11 @@ footer p {
   text-align: center;
   padding: 10px 0px 10px 0px;
 }
+@media only screen and (max-width: 768px) {
+  .side-bar {
+    display: none;
+  }
+}
 
 @media (min-width: 1028px) {
   .header li {

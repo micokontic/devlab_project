@@ -48,3 +48,25 @@
   background-color: var(--fav-font-color);
   opacity: 1;
 }
+@media only screen and (max-width: 768px) {
+  .cuisinesSearch {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+  #all-country-filter {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  #filter {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  #input-text {
+    font-size: 0.8rem;
+  }
+  #search-recipe {
+    margin-top: 2rem;
+  }
+}
