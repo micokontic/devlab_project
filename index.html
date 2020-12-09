@@ -18,29 +18,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./style/modal.css">
     <title>Reciphy</title>
-    <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić,Lazar Vuletić">
+    <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić">
+    <link rel="stylesheet" href="headerAndFooter.css">
+    <link rel="stylesheet" href="index.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;700&display=swap"
         rel="stylesheet">
+       
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0"
+        nonce="zfRUloSX"></script>
+
+
     <header class="header" id="myTopnav">
         <a href="" class="logo">
-            <img src="../resources/images/Logo.png" alt="reciphy logo" width="50%">
-        </a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-     <ul class="menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./pages/fridge.html">Fridge</a></li>
-        <li><a href="./pages/shop.html">Shop</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="./pages/contactUs.html">Contact</a></li>
-        </ul>
-    </header>
+<img src="./Img/Logo1.png" alt="reciphy logo" width="50%">
+</a>
+<input class="menu-btn" type="checkbox" id="menu-btn" />
+<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+<ul class="menu">
+    <li><a href="#work">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#careers">Fridge</a></li>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+</header>
 
 
 <main>
@@ -206,12 +222,25 @@
 
 
 </main>
+           
+
+    <div class="section1">
+        <div class="slider">
+            <div class="prev">&#10094;</div>
+            <div class="sliderContent"></div>
+            <div class="next">&#10095;</div>
+            <h1>beni</h1>
+        </div>
+        <div class="sidebar">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDevelopersLabMe%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+    </div>
 
     <footer>
         <div class="footerContent">
             <div class="firstFooterRow">
 
-                <img src="./Img/FooterLog.png" alt="" width="50%">
+                <img src="./Img/FooterLogo.png" alt="" width="50%">
             </div>
             <div class="secondFooterRow">
                 <h1>Who we are?</h1>
@@ -250,7 +279,8 @@
     <script src="../js-files/searchRecepie.js"></script>
     <script src='./js-files/filterBehavior.js'></script>
     <script src='./js-files/modal.js'></script>
-
+    <script src="script.js"></script>
+    <script src="slider.js"></script>
 </body>
 
 </html>
