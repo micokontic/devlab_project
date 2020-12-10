@@ -2,8 +2,9 @@
     display:flex;
     flex-wrap: nowrap;
     width: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 .sidebar{
     width: 100%;

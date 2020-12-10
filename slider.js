@@ -7,7 +7,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.spoonacular.com/recipes/random?apiKey=e611f39bf8a443e3ae2bfbfc63beb5ff&number=10", requestOptions)
+fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY130}&number=10`, requestOptions)
   .then(response => response.json())
   .then(json => {
     result = json.recipes;
@@ -65,7 +65,6 @@ function makeSlider (result){
     for (let i=1;i<10;i++){
 
       cuisine=result[i];
-      console.log(result[i]);
       let newFood = document.createElement("div");
       newFood.className = "new-food";
 
@@ -133,7 +132,7 @@ document.querySelector(".next").addEventListener("click",function(){moveImg(1)})
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
 
-//setInterval(() => moveImg(-1), 5000);
+setInterval(() => moveImg(-1), 5000);
 
 function checkKey(event){
   let key = event.key;
