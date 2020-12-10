@@ -7,7 +7,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY130}&number=10`, requestOptions)
+fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY20}&number=10`, requestOptions)
   .then(response => response.json())
   .then(json => {
     result = json.recipes;
@@ -69,6 +69,7 @@ function makeSlider (result){
       newFood.className = "new-food";
 
     const div = document.createElement('div');
+    div.dataset.value=("id-value", `${cuisine.id}`)
     div.innerHTML=`<img src='${cuisine.image}' class='slider-card-img' alt='Ingridient Image id-${cuisine.id}'>
             <h2>${cuisine.title}</h2>
             <div class='icons-container'>
@@ -132,7 +133,7 @@ document.querySelector(".next").addEventListener("click",function(){moveImg(1)})
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
 
-setInterval(() => moveImg(-1), 5000);
+//setInterval(() => moveImg(-1), 5000);
 
 function checkKey(event){
   let key = event.key;

@@ -66,7 +66,10 @@ function displayResultCousineByIng(json){
         }
         
     })
-
+    document.querySelectorAll('.byIngCard').forEach(item => {
+        console.log('klik');
+      item.addEventListener('click', sliderClickHandler)
+    })
 }
 
 function loadMoreDataIng(){
@@ -83,6 +86,8 @@ const displayResultRecipeByIng=(cuisine,i)=>{
     var animationString=getAnimationString(i);
     const div = document.createElement('div');
     div.classList.add(animationString);
+    div.classList.add('byIngCard');
+    div.dataset.value=("id-value", `${cuisine.id}`)
     div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
         <div class="ing-container">

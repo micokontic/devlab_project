@@ -15,6 +15,7 @@
     margin: auto;
     position:relative;
     overflow-x: hidden;
+    overflow: visible;
 }
 
 .prev{
@@ -118,4 +119,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.sliderCard{
+    transition: transform .2s;
+}
+.sliderCard:hover{
+    transform: scale(1.1);
 }

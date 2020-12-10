@@ -87,7 +87,7 @@ function toggleModal(cuisine){
                 
                 <div class="modalBottom">
                 <div class="modalTop">
-                    <img src="${imgSubString+'-636x393'+cuisine.imageType}" class="cuisineImgModal" alt="">
+                    <img src="${imgSubString+'-636x393.'+cuisine.imageType}" class="cuisineImgModal" alt="">
                 </div>
                     
                 </div>
