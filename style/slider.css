@@ -1,16 +1,16 @@
 
 
 .slider{
-    width:70%;
-    margin:auto;
+    width:100%;
     display:flex;
     background-color: white;
     position: relative;
-    
+    padding: 3vh;
+    background-color: inherit;
 }
 
 .sliderContent{
-    width:80%;
+    width:95%;
     display:block;
     margin: auto;
     position:relative;
@@ -21,7 +21,11 @@
     left: 100px;
     font-size: 3rem;
     margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .prev:hover{
     cursor: pointer;
 }
@@ -32,7 +36,9 @@
     top:10vw;
     right:1vw;
     font-size: 3rem;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .newFoodGroup{
     width:100%;
@@ -65,4 +71,46 @@
 .newFoodImage:hover{
     opacity: 0.2;
      cursor: pointer
+}
+.newFoodGroup .sliderCard{
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    justify-content:space-between;
+}
+
+.slider-card-img{
+    width: 100%;
+    
+}
+
+.icons-container{
+    display: flex;
+    justify-self: flex-end;
+}
+
+.sliderCard h2{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.newFoodGroup .new-food{
+    width: 80%;
+    margin: 0 auto;
+}
+.new-food{
+    display: flex;
+}
+
+.sliderCard .icons{
+    position: relative;
+    bottom: 0; }
+
+.sliderCard .icons .health-rating{
+    padding:0.4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

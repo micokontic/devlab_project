@@ -157,7 +157,7 @@ async function fetchData(cuisine,dietId,inputTextString){
 
 
 async function getHelthThree(){
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
         method: 'GET',
     })
         .then(response => response.json())
