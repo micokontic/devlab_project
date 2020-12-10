@@ -26,10 +26,14 @@ a{
   .header li a {
     display: block;
     padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
+    
     text-decoration: none;
   }
-  
+
+  .header li{
+    border-right: 1px solid #f4f4f4;
+  }
+
   .header li a:hover,
   .header .menu-btn:hover {
     background-color: #f4f4f4;

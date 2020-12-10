@@ -20,8 +20,8 @@
     <title>Reciphy</title>
     <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić">
     <link rel="stylesheet" href="headerAndFooter.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -44,16 +44,17 @@
 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 <ul class="menu">
     <li><a href="#work">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#careers">Fridge</a></li>
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+    <li>
+        <div class="dropdown">
+            <button class="dropbtn">Ingredients</button>
+            <div class="dropdown-content">
+                <a href="#">Fridge</a>
+                <a href="#">Shop</a>
+                <a href="#">Equipment</a>
+            </div>
         </div>
-    </div>
+    </li>
+    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
 </ul>
 </header>
@@ -84,10 +85,20 @@
 
         <!--SIDE BAR BEST ONES-->
 <div class="sliderBestFb">
-    <div class="slider">Slider</div>
+    <div class="section1">
+        <div class="slider">
+            <div class="prev">&#10094;</div>
+            <div class="sliderContent"></div>
+            <div class="next">&#10095;</div>
+        </div>
+        
+    </div>
     <div class="side-bar">
         <div class="topThree">The healthiest recipes
             <span class="tooltiptext">Top 3 recipes with highest health score</span>
+        </div>
+        <div class="sidebar">
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDevelopersLabMe%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
     </div>
 </div>
@@ -224,16 +235,7 @@
 </main>
            
 
-    <div class="section1">
-        <div class="slider">
-            <div class="prev">&#10094;</div>
-            <div class="sliderContent"></div>
-            <div class="next">&#10095;</div>
-        </div>
-        <div class="sidebar">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDevelopersLabMe%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-        </div>
-    </div>
+   
 
     <footer>
         <div class="footerContent">
