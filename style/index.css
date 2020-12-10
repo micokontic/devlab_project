@@ -13,3 +13,22 @@
 .slider{
     width: 70%;
 }
+
+footer img:hover{
+    background-color: black;
+   border-radius: 15px;
+   animation: hoverSocial .5s forwards;
+}
+
+footer img{
+    padding: 10px ;
+}
+
+@keyframes hoverSocial{
+    0%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+    100%{
+        background-color: black;
+    }
+}

@@ -28,7 +28,7 @@ html {
   padding: 0 10% 0px 0px;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+  
 }
 @font-face {
   font-family: Bite;
@@ -65,7 +65,7 @@ a {
   padding: 0 10% 0px 0px;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+ 
 }
 
 .header li{
@@ -81,7 +81,7 @@ a {
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: #f4f4f4;
+  color: white;
 }
 
 .header .logo {
