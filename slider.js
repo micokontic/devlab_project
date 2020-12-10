@@ -133,7 +133,7 @@ document.querySelector(".next").addEventListener("click",function(){moveImg(1)})
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
 
-//setInterval(() => moveImg(-1), 5000);
+setInterval(() => moveImg(-1), 5000);
 
 function checkKey(event){
   let key = event.key;
