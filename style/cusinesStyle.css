@@ -148,7 +148,7 @@
   background: url("../resources/images/globe.jpg") no-repeat center center/cover;
 }
 #cuisine-result {
-  width: 90%;
+  width: 85%;
   margin: 2rem auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
@@ -156,7 +156,7 @@
 }
 #cuisine-result h2 {
   font-size: 1.2rem;
-  min-height: 4rem;
+  min-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;

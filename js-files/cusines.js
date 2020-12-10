@@ -134,7 +134,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -186,7 +186,8 @@ function hrefTo(){
 const displayResultCuisine=(cuisine,i)=>{
     var animationString=getAnimationString(i);
     const div = document.createElement('div');
-    div.classList.add(animationString)
+    div.classList.add(animationString);
+    let imgSubString= cuisine.image.substring(0, cuisine.image.indexOf('-'));
     console.log(cuisine.nutrition.nutrients.Calories);
     div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>

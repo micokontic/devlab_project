@@ -196,6 +196,11 @@ a {
   margin-bottom: 2vw;
 }
 
+.topThree .health-rating img{
+  width: 7.3125rem;
+  height: 4.93125rem
+}
+
 .side-bar{
   margin: 2vw;
 }

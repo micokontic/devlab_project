@@ -71,6 +71,9 @@ var modalOutput = "";
 
 function toggleModal(cuisine){
    console.log(cuisine);
+   let imgSubString= cuisine.image.substring(0, cuisine.image.indexOf('-'));
+   console.log(imgSubString)
+   console.log(imgSubString+'-636x393'+cuisine.imageType);
     modalOutput =`
       <div class="modalTop">
         <button onclick='windowOnClick()'class="close-button">&times;</button>
@@ -84,7 +87,7 @@ function toggleModal(cuisine){
                 
                 <div class="modalBottom">
                 <div class="modalTop">
-                    <img src="${cuisine.image}" class="cuisineImgModal" alt="">
+                    <img src="${imgSubString+'-636x393'+cuisine.imageType}" class="cuisineImgModal" alt="">
                 </div>
                     
                 </div>
