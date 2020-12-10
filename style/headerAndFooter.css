@@ -183,6 +183,8 @@ footer p {
   font-size: 16px;
   border: none;
   z-index: 100;
+  outline: none;
+  cursor: pointer;
 }
 .dropbtn:hover{
   color: white;
@@ -197,7 +199,7 @@ footer p {
 .dropdown {
   position: relative;
   display: inline-block;
-
+  cursor: pointer;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -270,7 +272,6 @@ footer p {
   }
   .header ul{
     margin-top: 5vh;
-    background-color:;
   }
   .header .menu {
     clear: none;
