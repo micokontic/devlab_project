@@ -7,10 +7,10 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.spoonacular.com/recipes/random?apiKey=e611f39bf8a443e3ae2bfbfc63beb5ff&number=12", requestOptions)
+fetch("https://api.spoonacular.com/recipes/random?apiKey=e611f39bf8a443e3ae2bfbfc63beb5ff&number=20", requestOptions)
   .then(response => response.json())
   .then(json => {
-    result = json;
+    result = json.recipes;
     makeSlider(result);
 
   })
@@ -60,15 +60,44 @@ function makeSlider (result){
   function showImages(curr=0, prev=0){
 
     slider.innerHTML = "";
-    result.array.forEach(element => {
-      let output = `
-      <div>
-      <img src="${result.image}"></img>
-      <h3 class="foodTitle">"${result.title}"</h3>
-      <p>"${result.summary}"</p>
+    let helpList2 = [];
+    for (let i=1;i<10;i++){
 
-      </div>`
-    });
+      let newFood = document.createElement("div");
+      newFood.className = "new-food";
+      
+      let newFoodImg = document.createElement("img");
+      newFoodImg.src = result[i].image;
+      newFoodImg.className = "newFoodImage";
+
+      let newFoodName = document.createElement("p");
+      newFoodName.innerText = result[i].title;
+      newFoodName.className = "newFoodName";
+     
+
+      newFood.appendChild(newFoodImg);
+      newFood.appendChild(newFoodName);
+     
+
+      
+      
+      if (i%3 !== 0){
+        helpList2.push(newFood);
+      }
+      else{
+        helpList2.push(newFood);
+
+        let newFoodGroup = document.createElement("div");
+        newFoodGroup.className = "newFoodGroup";
+        helpList2.forEach((elem)=>newFoodGroup.appendChild(elem));
+        helpList2 = [];
+
+        slider.appendChild(newFoodGroup);
+      
+               
+      }  
+      
+    }
 
   if (curr !==0 && prev!==0){
     foodPrev = document.querySelector(".sliderContent").children[prev-1];
@@ -77,11 +106,10 @@ function makeSlider (result){
     foodCurr.style.display = "flex";
   }
 
-
-
-
+///if(count === 0){
+ /// slider.firstChild.style.display = "flex";
+///}
 }
-
 
 
 document.querySelector(".prev").addEventListener("click",function(){moveImg(-1)});
@@ -89,7 +117,7 @@ document.querySelector(".next").addEventListener("click",function(){moveImg(1)})
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
 
-setInterval(() => moveImg(-1), 3000);
+setInterval(() => moveImg(-1), 5000);
 
 function checkKey(event){
   let key = event.key;
