@@ -78,7 +78,7 @@ function makeSlider (result){
                     <img src='../Img/health-rating.svg' data-value='${cuisine.id}' <span data-value='${cuisine.id}' >${cuisine.healthScore}</span>
                 </div>
                 <div class="health-rating dollar-container" data-value='${cuisine.id}'>
-                    <img src='../Img/icon-dollar.jpg' data-value='${cuisine.id}' <span data-value='${cuisine.id}'>${Math.round(cuisine.pricePerServing)}$</span>
+                    <img src='../Img/icon-dollar.jpg' data-value='${cuisine.id}' <span data-value='${cuisine.id}'>${Math.round(cuisine.pricePerServing)/100}$</span>
                 </div>
                 <div  data-value='${cuisine.id}' class="health-rating dollar-container">
                     <img data-value='${cuisine.id}' src='../Img/time.png' <span data-value='${cuisine.id}' >${cuisine.readyInMinutes}min</span>

@@ -117,7 +117,7 @@ function toggleModal(cuisine){
                         <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
                     </div>
                     <div class="health-rating dollar-containerm">
-                        <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)}$</span>
+                        <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)/100}$</span>
                     </div>
                     <div class="health-rating dollar-containerm">
                         <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
