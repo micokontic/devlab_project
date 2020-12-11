@@ -135,7 +135,7 @@ document.querySelector(".sliderContent").addEventListener("mouseover",function()
 
 moveImg(-1);
 
-setInterval(() => moveImg(-1), 5000);
+/* setInterval(() => moveImg(-1), 5000); */
 
 function checkKey(event){
   let key = event.key;

@@ -218,6 +218,7 @@
 }
 .greenW::before {
   position: absolute;
+  text-align: center;
   top: -0.9rem;
   right: 0.3rem;
   content: "Vegan";
