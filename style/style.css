@@ -171,18 +171,18 @@ a {
 }
 
 .side-bar {
-  width: 30vw;
+  width: 20vw;
 }
 
 .topThree {
   background: url(../resources/images/marbleModal.jpg);
   background-position: center;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   font-family: Bite;
   font-weight: 100;
@@ -194,8 +194,8 @@ a {
 }
 
 .topThree .health-rating img {
-  width: 7.3125rem;
-  height: 4.93125rem;
+  width: 6.3125rem;
+  height: 3.93125rem;
 }
 
 .side-bar {

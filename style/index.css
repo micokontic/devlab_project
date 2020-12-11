@@ -1,7 +1,14 @@
 html {
   overflow-anchor: none;
 }
-
+@font-face {
+  font-family: Bite;
+  src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
+}
+:root {
+  --main-font-color: #facb0b;
+  --fav-font-color: #c59d5f;
+}
 .section1 {
   display: flex;
   flex-wrap: nowrap;
@@ -16,6 +23,47 @@ html {
 }
 .slider {
   width: 70%;
+}
+.animatedTitle {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.animatedTitle h2 {
+  font-family: Bite;
+  color: var(--fav-font-color);
+}
+.animatedTitle h3 {
+  margin-top: 1.2rem;
+  text-transform: uppercase;
+  font-family: consolas;
+  letter-spacing: 5px;
+  color: gray;
+  white-space: nowrap;
+  position: relative;
+}
+.animatedTitle h3:before {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: var(--fav-font-color);
+  overflow: hidden;
+  border-right: 1px solid #000;
+  animation: typing 10s steps(30) infinite;
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 footer img:hover {
