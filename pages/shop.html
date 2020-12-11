@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reciphy Fridge</title>
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/shop.css">
+        <link rel="stylesheet" href="../style/fridge.css">
+        <link rel="stylesheet" href="../style/ingridients.In.Fridge.Cards.css">
+        <link rel="stylesheet" href="../style/fridge-animation.css">
+        <link rel="stylesheet" href="../style/cusinesStyle.css">
+        <link rel="stylesheet" href="../style/pagination.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./resources/favicon/site.webmanifest">
+        
+            
+    </head>
+    <body>
+        <header class="header" id="myTopnav">
+            <a href="" class="logo">
+                <img src="./Img/Logo1.png" alt="reciphy logo" width="50%">
+            </a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="#work">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Ingredients</button>
+                        <div class="dropdown-content">
+                            <a href="#">Fridge</a>
+                            <a href="#">Shop</a>
+                            <a href="#">Equipment</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="./aboutUs.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        
+            <section class="welcome">
+                <div class="container">
+                    <h2 class="sub-headline">
+                        <span class="first-letter">W</span>elcome
+                    </h2>
+                    <h1 class="headline">Reciphy Shop</h1>
+                    <div class="headline-description">
+                        <div class="separator">
+                            <div class="line line-left"></div>
+                            <div class="asterisk"><i class="fas fa-shopping-basket"></i></div>
+                            <div class="line line-right"></div>
+            
+                        </div>
+                        <div class="single-animation">
+                            <h5>Here you can search for the freshest and highest quality groceries!</h5>
+                            <h5>Stack up your fridge now!</h5>
+                            <div class="searchField">
+                            <input type="text" placeholder="Search for groceries"id="ing-search">
+                            <a href="#fridge-wrapper"><button id="ing-search-btn" >Search</button></div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <div id="fridge-wrapper" class="wrapper" >
+                <div id="ingridients-result">
+                    <article id="pagin">
+                        
+                      </article>
+                </div>
+            </div>
+
+            
+
+        <footer>
+            <div class="firstFooterRow">
+                <img src="../resources/images/FooterLog.png" alt="" width="100%">
+            </div>
+            <div class="secondFooterRow">
+                <h1>Who we are?</h1>
+                <p>We are a young team that has only one goal: To learn Java Script. And btw we really don't care about recipes. We just care about Receipt API!</p>
+            </div>
+            <div class="thirdFooterRow">
+                <div class="firstSocial">
+                    <img src="../resources/images/instagram (1).png" alt="">
+                    
+                </div> 
+                <div class="secondSocial">
+                    <img src="../resources/images/instagram (1).png" alt="">
+                    
+                </div>
+                <div class="thirdSocial">
+                    <img src="../resources/images/instagram (1).png" alt="">
+                    
+                </div>
+                <div class="forthSocial">
+                    <img src="../resources/images/instagram (1).png" alt="">
+                    
+                </div>
+                
+            </div>
+            
+            <div class="copyrights">
+                Copyrights by Reciphy
+            </div>
+        </footer>
+
+    </body>
+    <script src='./js-files/consts.js'></script>
+    <script src="../js-files/shop.js" type="module"></script>
+    <script src="../js-files/script.js" type="module"></script>
+    <script src="../js-files/pagination.js"></script>
+
+</html>

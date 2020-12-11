@@ -1,0 +1,136 @@
+.ing-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.used,
+.missing,
+.unused {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ing-container img {
+  width: 35px;
+  height: 35px;
+}
+.white-bck {
+  background-color: white;
+  width: auto;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  border: 0.2rem solid #c59d5f;
+  border-radius: 10px;
+}
+
+.recepie-img {
+  max-width: 90%;
+}
+.ing-container .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*TOOL TIP*/
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.container2 {
+  position: relative;
+  width: 35px;
+  height: 35px;
+}
+.image {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.image + .tooltiptext2 {
+  visibility: hidden;
+  width: 300%;
+  background-color: rgb(62, 62, 62);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 110%;
+  font-size: 130%;
+  font-family: Arial;
+  text-transform: capitalize;
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.image + .tooltiptext2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.image:hover + .tooltiptext2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+/****************************** TEXTO ***************************/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -8px;
+  left: 110%;
+  font-size: 150%;
+  font-family: Arial;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.byIngCard {
+  cursor: pointer;
+}

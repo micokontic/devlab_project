@@ -1,19 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <ul>
-            <li><a href="../index.html">HOME</a></li>
-            <li><a href="fridge.html">FRIDGE</a></li>
-        </ul>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reciphy Fridge</title>
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/fridge.css">
+        <link rel="stylesheet" href="../style/ingridients.In.Fridge.Cards.css">
+        <link rel="stylesheet" href="../style/fridge-animation.css">
+        <link rel="stylesheet" href="../style/headerAndFooter.css">
+        <link rel="stylesheet" href="../style/cusinesStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+            <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./resources/favicon/site.webmanifest">
+
+    </head>
+    <body>
+        <header class="header" id="myTopnav">
+            <a href="" class="logo">
+                <img src="../Img/Logo1.png" alt="reciphy logo" width="50%">
+            </a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="#work">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Ingredients</button>
+                        <div class="dropdown-content">
+                            <a href="#">Fridge</a>
+                            <a href="#">Shop</a>
+                            <a href="#">Equipment</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="./aboutUs.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+
+        <main>
+            <div class="wrapper" >
+                <div id="fridgeText">
+                    <h1 >This is your entire property. Make some delicious food with it.</h1>
+                </div>
+               
+                <div class="cols" id="ingridients">
+                </div> 
+            </div>
+        </main>
+
+        <footer>
+            <div class="footerContent">
+                <div class="firstFooterRow">
     
-</body>
-<script src="../js files/fridge.js" type="module"></script>
+                    <img src="./Img/FooterLogo.png" alt="" width="50%">
+                </div>
+                <div class="secondFooterRow">
+                    <h1>Who we are?</h1>
+                    <p>We are a young team that has only one goal: To learn Java Script. And btw we really don't care about
+                        recipes. We just care about Receipt API!</p>
+                </div>
+                <div class="thirdFooterRow">
+                    <div class="firstSocial">
+                        <a href="https://www.instagram.com/miki_kontic/?hl=sr" target="_blank">
+                            <img src="./Img/instagram (1).png" alt="" width="50%">
+                           
+                        </a>
+                    </div>
+                    <div class="secondSocial">
+                        <a href="https://www.instagram.com/beni_dob/?hl=sr" target="_blank">
+                            <img src="./Img/instagram (1).png" alt="" width="100%">
+                           
+                        </a>
+    
+                    </div>
+                    <div class="thirdSocial">
+                        <a href="https://www.instagram.com/beni_dob/?hl=sr" target="_blank">
+                            <img src="./Img/instagram (1).png" alt="" width="100%">
+                        </a>
+    
+                    </div>
+                   
+    
+                </div>
+            </div>
+            <div class="copyrights">
+                Copyrights by Reciphy
+            </div>
+        </footer>
+        
+
+    </body>
+    <script src='./js-files/consts.js'></script>
+    <script src="../js-files/fridge.js" type="module"></script>
+    <script src="../js-files/script.js" type="module"></script>
 
 </html>

@@ -1,0 +1,290 @@
+@font-face {
+  font-family: Bite;
+  src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
+}
+:root {
+  --main-font-color: #facb0b;
+  --fav-font-color: #c59d5f;
+}
+#cuisines {
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  text-align: center;
+}
+.cuisinesBtns {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+.cuisineBtnWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cuisineBtnWrap span {
+  margin-top: 0.9rem;
+  font-family: Bite;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.cuisineBtn {
+  width: 5rem;
+  padding: 1.5rem 1.4rem;
+  border-radius: 60%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.cuisineBtn::before {
+  content: "";
+  border-radius: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #222222c2;
+  z-index: 2;
+  transition: 0.3s all;
+  opacity: 0;
+  font-family: Tahoma;
+}
+@media only screen and (max-width: 768px) {
+  #cuisines {
+    width: 100%;
+    margin: 5rem auto;
+  }
+  .cuisinesBtns {
+    width: 100%;
+  }
+  #all-country-filter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+#italian:hover::before,
+#italian:focus::before {
+  content: "Italian";
+}
+
+#indian:hover::before,
+#indian:focus::before {
+  content: "Indian";
+}
+
+#chinese:hover::before,
+#chinese:focus::before {
+  content: "Chinese";
+}
+
+#french:hover::before,
+#french:focus::before {
+  content: "French";
+}
+
+#Exploring:hover::before,
+#other:focus::before {
+  content: "Explore";
+}
+
+#world:hover::before,
+#world:focus::before {
+  content: "World";
+}
+
+.cuisineBtn:hover::before {
+  opacity: 1;
+  text-align: center;
+  color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Bite;
+  font-size: 0.7rem;
+}
+
+.cuisineBtn:hover::before,
+.cuisineBtn:focus::before {
+  opacity: 1;
+  text-align: center;
+  color: wheat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lobster";
+  font-size: 1.05rem;
+}
+
+.cuisinesCheckB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.typesCb {
+  margin-top: 0.5rem;
+}
+.cuisineBtn:first-child {
+  background: url("../resources/images/italy.png") no-repeat center center/cover;
+}
+.cuisineBtn:nth-child(2) {
+  background: url("../resources/images/africa.png") no-repeat center
+    center/cover;
+}
+.cuisineBtn:nth-child(3) {
+  background: url("../resources/images/china.png") no-repeat center center/cover;
+}
+.cuisineBtn:nth-child(4) {
+  background: url("../resources/images/france.jpg") no-repeat center
+    center/cover;
+}
+.cuisineBtn:nth-child(6) {
+  background: url("../resources/images/world-flags.png") no-repeat center
+    center/cover;
+}
+.cuisineBtn:nth-child(5) {
+  background: url("../resources/images/world.png") no-repeat center center/cover;
+}
+#cuisine-result {
+  width: 85%;
+  margin: 2rem auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: center;
+  overflow-anchor: none;
+}
+#cuisine-result h2 {
+  font-size: 1.2rem;
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#internationalCuisine {
+  width: 74%;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: Bite;
+  font-weight: 100;
+}
+
+#flagAboutCuisine {
+  text-align: center;
+  font-family: Bite;
+  text-transform: capitalize;
+  font-style: italic;
+}
+#flagAboutText {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+}
+
+#searchNav {
+  position: relative;
+}
+
+/* WORLD WIDE CUISINES */
+.divTest {
+  border: 2px solid var(--fav-font-color);
+  color: var(--fav-font-color);
+  line-height: 1.4rem;
+  padding: 1.1rem;
+  box-shadow: 6px 17px 12px rgba(206, 164, 99, 0.1);
+  transition: transform 0.2s;
+  overflow: hidden;
+  min-width: 0;
+  overflow: visible;
+}
+
+.divTest:hover {
+  transform: scale(1.1);
+}
+
+.cusine-img {
+  width: 100%;
+}
+
+.divTest:hover{
+  transform: scale(1.1);
+}
+
+.cusine-img{
+  width: 100%;
+}
+
+/*.greenW {
+  position: relative;
+  line-height: 2rem;
+}*/
+.redW {
+  color: var(--fav-font-color);
+}
+.greenW::before {
+  position: absolute;
+  text-align: center;
+  top: -0.9rem;
+  right: 0.3rem;
+  content: "Vegan";
+  color: wheat;
+  font-family: Bite;
+  width: 5.3rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  background: rgba(63, 156, 63, 0.863);
+  z-index: 1;
+  font-size: 0.99rem;
+  padding-top: 0.4rem;
+}
+
+.icon-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health-rating img {
+  width: 4.875rem;
+  height: 3.2875rem;
+}
+.dollar-container img {
+  width: 3.2875rem;
+  height: 3.2875rem;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0.5rem;
+  margin-top: 2rem;
+}
+
+.data-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.data-container .right {
+  justify-self: right;
+}
+
+.data-container .left {
+  justify-self: left;
+}
+
+#cuisine-result h1 {
+  font-family: Bite;
+  color: var(--fav-font-color);
+  font-size: 1.7rem;
+}
