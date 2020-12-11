@@ -28,7 +28,11 @@ if (localStorage.getItem("ingridientsInFridge") === null) {
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
+<<<<<<< HEAD
     ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+=======
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY10}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+>>>>>>> origin/VasilijeK
     method: 'GET',
 })
     .then(response => response.json())

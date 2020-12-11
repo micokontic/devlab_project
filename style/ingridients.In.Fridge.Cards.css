@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .wrapper{
     width: 90%;
     margin: 0 auto;
@@ -29,6 +30,39 @@
       -webkit-perspective: 1000px;
               perspective: 1000px;
   }
+=======
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+  /*padding: 3vh 3vw;*/
+}
+
+.cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.col {
+  width: calc(20% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.container {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+>>>>>>> origin/VasilijeK
 
 .cols {
   display: -webkit-box;
@@ -175,6 +209,7 @@
 }
 
 /*.front .inner p:after {
+<<<<<<< HEAD
   content: "";
   width: 10rem;
   height: 2px;
@@ -185,6 +220,18 @@
   right: 0;
   margin: 0 auto;
   bottom: -0.75rem;
+=======
+content: "";
+width: 10rem;
+height: 2px;
+position: absolute;
+background: #e1e6eb;
+display: block;
+left: 0;
+right: 0;
+margin: 0 auto;
+bottom: -0.75rem;
+>>>>>>> origin/VasilijeK
 }*/
 
 .front .inner span {

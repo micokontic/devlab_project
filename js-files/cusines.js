@@ -151,7 +151,6 @@ async function fetchData(cuisine,dietId,inputTextString){
         })
         .catch(error => {
             notFoundError();
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }

@@ -116,7 +116,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Lobster' ;
+  font-family: "Lobster";
   font-size: 1.05rem;
 }
 
@@ -195,10 +195,18 @@
   line-height: 1.4rem;
   padding: 1.1rem;
   box-shadow: 6px 17px 12px rgba(206, 164, 99, 0.1);
-  transition: transform .2s;
+  transition: transform 0.2s;
   overflow: hidden;
-    min-width: 0;
-    overflow: visible;
+  min-width: 0;
+  overflow: visible;
+}
+
+.divTest:hover {
+  transform: scale(1.1);
+}
+
+.cusine-img {
+  width: 100%;
 }
 
 .divTest:hover{
@@ -218,17 +226,19 @@
 }
 .greenW::before {
   position: absolute;
+  text-align: center;
   top: -0.9rem;
   right: 0.3rem;
   content: "Vegan";
   color: wheat;
   font-family: Bite;
   width: 5.3rem;
-  height: 3rem;
+  height: 3.1rem;
   border-radius: 50%;
   background: rgba(63, 156, 63, 0.863);
   z-index: 1;
   font-size: 0.99rem;
+  padding-top: 0.4rem;
 }
 
 .icon-container {
@@ -273,8 +283,8 @@
   justify-self: left;
 }
 
-#cuisine-result h1{
+#cuisine-result h1 {
   font-family: Bite;
-    color: var(--fav-font-color);
-    font-size: 1.7rem;
+  color: var(--fav-font-color);
+  font-size: 1.7rem;
 }

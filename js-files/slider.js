@@ -1,4 +1,3 @@
-
 var myHeaders = new Headers();
 myHeaders.append("Cookie", "__cfduid=d5e9781557ba0e34de0d80e38cef6d12b1607465675");
 

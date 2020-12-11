@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 .slider{
@@ -128,3 +129,131 @@
 .sliderCard:hover{
     transform: scale(1.1);
 }
+=======
+.slider {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  position: relative;
+  padding: 3vh;
+  background-color: inherit;
+}
+
+.sliderContent {
+  width: 95%;
+  display: block;
+  margin: auto;
+  position: relative;
+  overflow-x: hidden;
+  overflow: visible;
+}
+
+.prev {
+  left: 100px;
+  font-size: 3rem;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev:hover {
+  cursor: pointer;
+}
+.next:hover {
+  cursor: pointer;
+}
+.next {
+  top: 10vw;
+  right: 1vw;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newFoodGroup {
+  width: 100%;
+  display: flex;
+  display: none;
+}
+
+.newFoodImage {
+  width: 80%;
+}
+
+.newfoodName {
+  position: absolute;
+  top: 10vw;
+  width: 20vw;
+  height: 3vw;
+  font-size: 3vw;
+  text-align: center;
+  margin-left: 1vw;
+  font-family: "Amatic SC", cursive;
+  display: none;
+}
+
+.newFoodImage:hover + .newfoodName {
+  display: block;
+  transition: ease-in 0.2s;
+}
+.newFoodImage:hover {
+  opacity: 0.2;
+  cursor: pointer;
+}
+.newFoodGroup .sliderCard {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  justify-content: space-between;
+}
+
+.slider-card-img {
+  width: 100%;
+}
+
+.icons-container {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.sliderCard h2 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  min-height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newFoodGroup .new-food {
+  width: 80%;
+  margin: 0 auto;
+}
+.new-food {
+  display: flex;
+}
+
+.sliderCard .icons {
+  position: relative;
+  bottom: 0;
+}
+
+.sliderCard .icons .health-rating {
+  padding: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sliderCard {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.sliderCard:hover {
+  transform: scale(1.1);
+}
+>>>>>>> origin/VasilijeK
