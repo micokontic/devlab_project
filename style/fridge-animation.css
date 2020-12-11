@@ -62,3 +62,11 @@
     opacity: 0;
   }
 }
+
+li a:hover{
+  color: #FACB0B!important;
+}
+
+.dropbtn:hover{
+  color:#FACB0B!important;
+}
