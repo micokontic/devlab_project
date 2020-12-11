@@ -17,11 +17,7 @@ function sliderClickHandler(e){
 
 function getElementById(id){
     console.log(id);
-<<<<<<< HEAD
     fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&includeNutrition=true`, requestOptions)
-=======
-    fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY10}&includeNutrition=true`, requestOptions)
->>>>>>> origin/VasilijeK
     .then(response => response.json())
     .then(json => {
       console.log(json);
