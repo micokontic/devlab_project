@@ -58,7 +58,7 @@ var cuisineResult;
 var helthTree;
 
 searchRecipeButton.addEventListener('click',()=>{
-    fetchData(cuisineId,dietId,inputTextString);
+    fetchData(cuisineId,dietId,inputTextString); 
 })
 
 inputText.addEventListener('input',inputTextHandle);
