@@ -7,7 +7,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY130}&number=10`, requestOptions)
+fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY20}&number=10`, requestOptions)
   .then(response => response.json())
   .then(json => {
     result = json.recipes;

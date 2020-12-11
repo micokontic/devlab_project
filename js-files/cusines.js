@@ -52,6 +52,7 @@ const cuisinesButtons=document.getElementById('cuisinesBtns');
 const topThree=document.querySelector(".topThree");
 const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
 const API_KEY20='75e96fce580b461aa763efbb905fb93d';
+const API_KEY21='3358bc02091c46e7aca7a9a4be12530a';
 
 var ingridientString='';
 var ingridientResult;
@@ -63,7 +64,7 @@ var cuisineResult;
 var helthTree;
 
 searchRecipeButton.addEventListener('click',()=>{
-    fetchData(cuisineId,dietId,inputTextString);
+    fetchData(cuisineId,dietId,inputTextString); 
 })
 
 inputText.addEventListener('input',inputTextHandle);
@@ -136,7 +137,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -156,14 +157,14 @@ async function fetchData(cuisine,dietId,inputTextString){
         })
         .catch(error => {
             notFoundError();
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
 
 
 async function getHelthThree(){
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
         method: 'GET',
     })
         .then(response => response.json())
