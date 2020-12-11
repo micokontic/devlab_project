@@ -160,6 +160,8 @@ a {
 
 #flagAboutCuisine {
   margin-top: 5rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 form {

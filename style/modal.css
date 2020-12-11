@@ -25,6 +25,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: url(../resources/images/marbleModal.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 1rem 1.5rem;
   width: 90vw;
   height: 80vh;
@@ -91,6 +93,9 @@
 .modalLeft .modalNutritionFacts {
   display: flex;
   flex-direction: column;
+  background-color: rgba(247, 244, 244, 0.644);
+
+
 }
 .cuisineImgModal {
   width: 80%;
@@ -104,6 +109,7 @@
   font-size: 1.3rem;
   text-align: center;
 }
+
 
 .modalRight {
   width: 58%;

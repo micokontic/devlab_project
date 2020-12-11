@@ -6,4 +6,18 @@
 }
 .show-grid {
   display: grid;
+  min-height: 0;  /* NEW */
+  min-width: 0;   /* NEW; needed for Firefox */
+}
+
+@media (max-width: 1028px) {
+.show-grid{
+  grid-template-columns: 1fr 1fr !important;
+}
+}
+
+@media only screen and (max-width: 768px) {
+.show-grid{
+  grid-template-columns: 1fr !important;
+}
 }

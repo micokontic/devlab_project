@@ -276,7 +276,7 @@ function displayAboutCuisine(cuisineId) {
 
     for (var key in p) {
         if (p.hasOwnProperty(key) && key === cuisineId) {
-            contentF.innerHTML = "test" + p[key];
+            contentF.innerHTML = p[key];
         }
     }
     setTimeout(function(){
