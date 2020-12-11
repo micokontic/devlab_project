@@ -132,6 +132,9 @@
     .section2 h5{
         color: #FACB0B;
     }
+    .section2 h1{
+        line-height: 10px;
+    }
 
     .dropbtn{
         background-color: rgba(255, 255, 255, 0)!important;
@@ -153,6 +156,10 @@
    
    li a:hover{
        background-color:#FACB0B;
+   }
+
+   .s2img{
+       margin-top: 50px;
    }
 @media (min-width: 1028px) {
 
@@ -217,7 +224,7 @@
 
     .s2Content{
         display: flex;
-        margin-top: 100px;
+        margin-top: 40px;
     }
     .s2Content p {
         font-size: 1.4em;
