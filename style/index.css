@@ -24,6 +24,9 @@ footer img{
     padding: 10px ;
 }
 
+.divTest img .cusine-img{
+    width: 100%;
+}
 @keyframes hoverSocial{
     0%{
         background-color: rgba(255, 255, 255, 0);

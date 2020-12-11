@@ -50,8 +50,13 @@ async function getCuisinesByIng(){
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
         recepiesByIng=json;
         displayResultCousineByIng(json)
+        if(json.length===0){
+            notFoundError()
+        }
     })
-    .catch(error => console.error(error))   
+    .catch(
+    error => {console.error(error)
+        notFoundError()})   
 }
 
 function displayResultCousineByIng(json){
@@ -87,14 +92,14 @@ const displayResultRecipeByIng=(cuisine,i)=>{
     const div = document.createElement('div');
     div.classList.add(animationString);
     div.classList.add('byIngCard');
-    div.dataset.value=("id-value", `${cuisine.id}`)
-    div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
-    <h2>${cuisine.title}</h2>
-        <div class="ing-container">
-            <h4 class="text">USED</h4>
-            <h4 class="used white-bck"></h4>
-            <h4 class="text">MISSING</h4>
-            <h4 class="missing  white-bck"></h4>
+    div.dataset.value=("data-value", `${cuisine.id}`)
+    div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' data-value="${cuisine.id}" alt='Ingridient Image id-${cuisine.id}'>
+    <h2 data-value="${cuisine.id}">${cuisine.title}</h2>
+        <div data-value="${cuisine.id}" class="ing-container">
+            <h4 data-value="${cuisine.id}" class="text">USED</h4>
+            <h4 data-value="${cuisine.id}" class="used white-bck"></h4>
+            <h4 data-value="${cuisine.id}" class="text">MISSING</h4>
+            <h4 data-value="${cuisine.id}" class="missing  white-bck"></h4>
         </div>
     </span>
     `

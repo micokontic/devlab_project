@@ -130,3 +130,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+.byIngCard{
+  cursor: pointer;
+}

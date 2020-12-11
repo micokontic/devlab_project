@@ -51,7 +51,6 @@ const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
 const topThree=document.querySelector(".topThree");
 const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
-
 const API_KEY20='75e96fce580b461aa763efbb905fb93d';
 
 var ingridientString='';
@@ -106,11 +105,9 @@ function inputTextHandle(e){
 }
 
 const displayCuisineResult=(cuisineResult)=>{
-
-    if(number>cuisineResult.length){
-        loadMoreButton.classList.add('hide');
-        loadMoreButton.classList.remove('show');
-    }
+    console.log(number);
+    console.log(cuisineResult.length);
+   
 
     cuisineResultSection.innerHTML='';
     cuisineResult.map((cuisine,i)=>{
@@ -119,6 +116,11 @@ const displayCuisineResult=(cuisineResult)=>{
         }
         
     })
+    if(number>cuisineResult.length){
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        console.log(loadMoreButton.classList);
+    }
 }
 
 async function fetchData(cuisine,dietId,inputTextString){
@@ -134,7 +136,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -143,14 +145,18 @@ async function fetchData(cuisine,dietId,inputTextString){
             displayCuisineResult(json.results);
             cuisineResult=json.results;
             number=6;
-            loadMoreButton.classList.add('show');
-            loadMoreButton.classList.remove('hide');
+            
             cuisineResultSection.classList.add('show-grid');
             showTopResults(cuisineResult);
-           
+           if(json.results.length===0){
+            notFoundError();
+           }
+           loadMoreButton.classList.add('show');
+            loadMoreButton.classList.remove('hide');
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY10}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            notFoundError();
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
@@ -189,7 +195,7 @@ const displayResultCuisine=(cuisine,i)=>{
     div.classList.add(animationString);
     let imgSubString= cuisine.image.substring(0, cuisine.image.indexOf('-'));
     console.log(cuisine.nutrition.nutrients.Calories);
-    div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
+    div.innerHTML=`<img src='${cuisine.image}' class='cusine-img' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
     <div class="data-container">
         <span class='right'>Calories per serving:&nbsp;&nbsp;</span> 
@@ -257,11 +263,6 @@ function getAnimationString(i){
     modalBtn.innerHTML = "CLICK ME";  
     div.appendChild(modalBtn);
 */
-
-
-
-
-
 
 function displayAboutCuisine(cuisineId) {
    
@@ -343,6 +344,16 @@ function showBest(cuisineResult){
     }
 }
 
+function notFoundError(){
+    cuisineResultSection.innerHTML=`<h1 class="scale-in-center">Recipes not found</h1>
+    <img class="scale-in-center" src="../resources/images/utensils.svg" alt='utensils'>`;
+    loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButtonIng.classList.add('hide');
+        loadMoreButtonIng.classList.remove('show');
+}
 
 
 getHelthThree();
