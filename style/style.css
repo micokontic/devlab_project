@@ -21,7 +21,6 @@ html {
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 3;
-  height: 40vh;
 }
 
 .header ul {
@@ -29,7 +28,6 @@ html {
   padding: 0 10% 0px 0px;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
 }
 @font-face {
   font-family: Bite;
@@ -59,7 +57,6 @@ a {
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 3;
-  height: 40vh;
 }
 
 .header ul {
@@ -67,25 +64,28 @@ a {
   padding: 0 10% 0px 0px;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+}
+
+.header li {
+  /*border-right: 1px solid #f4f4f4;*/
 }
 
 .header li a {
   display: block;
   padding: 20px 20px;
-  border-right: 1px solid #f4f4f4;
+
   text-decoration: none;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: #f4f4f4;
+  color: white;
 }
 
 .header .logo {
   display: block;
   float: left;
-  padding: 10px 0px 10px 10px;
+  /*padding: 10px 0px 10px 10px;*/
   text-decoration: none;
   margin: 0;
 }
@@ -169,14 +169,15 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
 .side-bar {
-  width: 20vw;
+  width: 30vw;
 }
+
 .topThree {
   background: url(../resources/images/marbleModal.jpg);
   background-position: center;
-  width: 15vw;
-  height: 35vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -188,7 +189,19 @@ a {
   color: rgba(36, 34, 34, 0.863);
   opacity: 0.8;
   position: relative;
+  margin: 0 auto;
+  margin-bottom: 2vw;
 }
+
+.topThree .health-rating img {
+  width: 7.3125rem;
+  height: 4.93125rem;
+}
+
+.side-bar {
+  margin: 2vw;
+}
+
 .topThree .tooltiptext {
   visibility: hidden;
   width: 10rem;
@@ -228,8 +241,8 @@ a {
 }
 
 .topThreeImg {
-  width: 9vw;
-  margin: 1.5vw auto 0;
+  width: 80%;
+  margin: 1.5vw auto 1vw;
   cursor: pointer;
 }
 .topThreeImg:hover {
@@ -391,6 +404,129 @@ footer p {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+
+@media (min-width: 1028px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .logo {
+    padding-left: 10%;
+  }
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color 0.2s ease-out;
+    width: 28px;
+    text-align: center;
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 100px auto;
+  }
+  .firstFooterRow,
+  .secondFooterRow,
+  .thirdFooterRow {
+    width: 33%;
+  }
+  .firstFooterRow img {
+    width: 50%;
+    margin: auto;
+  }
+  .copyrights {
+    width: 100%;
+  }
+  footer .secondFooterRow h1 {
+    text-align: left;
+  }
+  footer .secondFooterRow p {
+    text-align: left;
+    padding: 0px 50px 0px 0px;
+  }
+  footer img {
+    margin-top: -70px;
+  }
+}
+.firstFooterRow img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+footer h1 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+footer p {
+  color: white;
+  padding: 0px 20px 0px 20px;
+  text-align: center;
+}
+
+.thirdFooterRow {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  justify-items: center;
+  margin: 50px 0px 50px 0px;
+  justify-self: center;
+}
+.thirdFooterRow img {
+  width: 50%;
+  justify-self: center;
+}
+
+.copyrights {
+  background-color: rgb(83, 83, 83);
+  color: white;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.healthiness {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.healthiness-container {
+  position: relative;
+}
+
+iframe {
+  width: 100%;
+  height: 40vh;
 }
 
 @media (min-width: 1028px) {

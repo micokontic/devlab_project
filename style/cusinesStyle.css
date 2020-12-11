@@ -16,6 +16,7 @@
   width: 90%;
   display: flex;
   justify-content: space-evenly;
+  margin: 0 auto;
 }
 .cuisineBtnWrap {
   display: flex;
@@ -51,6 +52,7 @@
   z-index: 2;
   transition: 0.3s all;
   opacity: 0;
+  font-family: Tahoma;
 }
 @media only screen and (max-width: 768px) {
   #cuisines {
@@ -114,8 +116,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Bite;
-  font-size: 0.7rem;
+  font-family: "Lobster";
+  font-size: 1.05rem;
 }
 
 .cuisinesCheckB {
@@ -145,18 +147,19 @@
     center/cover;
 }
 .cuisineBtn:nth-child(5) {
-  background: url("../resources/images/globe.jpg") no-repeat center center/cover;
+  background: url("../resources/images/world.png") no-repeat center center/cover;
 }
 #cuisine-result {
-  width: 90%;
+  width: 85%;
   margin: 2rem auto;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   text-align: center;
+  overflow-anchor: none;
 }
 #cuisine-result h2 {
   font-size: 1.2rem;
-  min-height: 4rem;
+  min-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,9 +192,21 @@
 .divTest {
   border: 2px solid var(--fav-font-color);
   color: var(--fav-font-color);
-  line-height: 2rem;
+  line-height: 1.4rem;
   padding: 1.1rem;
   box-shadow: 6px 17px 12px rgba(206, 164, 99, 0.1);
+  transition: transform 0.2s;
+  overflow: hidden;
+  min-width: 0;
+  overflow: visible;
+}
+
+.divTest:hover {
+  transform: scale(1.1);
+}
+
+.cusine-img {
+  width: 100%;
 }
 
 .greenW {
@@ -209,11 +224,12 @@
   color: wheat;
   font-family: Bite;
   width: 5.3rem;
-  height: 3rem;
+  height: 3.1rem;
   border-radius: 50%;
   background: rgba(63, 156, 63, 0.863);
   z-index: 1;
   font-size: 0.99rem;
+  padding-top: 0.4rem;
 }
 
 .icon-container {
@@ -256,4 +272,10 @@
 
 .data-container .left {
   justify-self: left;
+}
+
+#cuisine-result h1 {
+  font-family: Bite;
+  color: var(--fav-font-color);
+  font-size: 1.7rem;
 }

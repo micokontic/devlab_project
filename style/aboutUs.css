@@ -1,0 +1,225 @@
+.headerBackground {
+  background-image: url(../Img/AboutUsHeaderImage.jpg);
+  background-color: black;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.headerContent {
+  margin: auto;
+  width: 50%;
+  text-align: left;
+  position: relative;
+  top: 20%;
+  animation: slide 2.5s forwards;
+}
+@font-face {
+  font-family: Bite;
+  src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
+}
+
+.headerBackground h1 {
+  font-size: 6rem !important;
+  padding: 0;
+  margin: 0;
+  color: white;
+  line-height: 75px;
+  font-family: Bite, sans-serif;
+}
+
+.headerBackground h5 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0;
+  margin: 30px 0;
+  font-family: Bite;
+}
+
+@keyframes slide {
+  0% {
+    right: 100%;
+  }
+  50% {
+    right: 10%;
+  }
+  100% {
+    right: 20%;
+  }
+}
+
+.s1Title {
+  margin: 150px auto 0px auto;
+  width: 90%;
+  text-align: center;
+}
+.s1Title h1 {
+  font-size: 3rem;
+  color: #facb0b;
+}
+
+.s1Body {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+.s1Body > * {
+  margin-top: 50px;
+}
+.s1Body p {
+  padding: 0px 50px 0px 50px;
+  text-align: left;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+.s1Body h2 {
+  font-size: 3rem;
+  color: #facb0b;
+}
+.seeMoreBtn {
+  color: white;
+  background-color: #facb0b;
+  text-decoration: none;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: none;
+}
+.seeMoreBtn:hover {
+  background-color: white;
+  color: #facb0b;
+  animation: 1s forwards scaleBtn;
+  border: 1px solid #facb0b;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@keyframes scaleBtn {
+  0% {
+    transform: scale(1);
+    border-radius: 0;
+  }
+  100% {
+    transform: scale(1.2);
+    border-radius: 5;
+  }
+}
+
+.hideonMobile {
+  display: none;
+}
+
+.section2 {
+  width: 80%;
+  margin: 100px auto;
+  text-align: center;
+}
+.section2 p {
+  margin-top: 80px;
+}
+
+.section2 h5 {
+  color: #facb0b;
+}
+.section2 h1 {
+  line-height: 10px;
+}
+
+.dropbtn {
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: white !important;
+  font-weight: 700;
+}
+.dropbtn::after {
+  content: url("../Img/Down-Arrow-white.png") !important;
+}
+li a {
+  color: white;
+  font-weight: 700;
+}
+
+#myTopnav {
+  background-color: #e7b90055;
+}
+
+li a:hover {
+  background-color: #facb0b;
+}
+
+.s2img {
+  margin-top: 50px;
+}
+@media (min-width: 1028px) {
+  .headerContent {
+    margin: auto;
+    width: 50%;
+    text-align: left;
+    position: relative;
+    top: 40%;
+    animation: slide 2.5s forwards;
+  }
+
+  #myTopnav {
+    background-color: #ffffff !important;
+  }
+
+  .headerBackground h1 {
+    font-size: 6rem !important;
+    padding: 0;
+    margin: 0;
+    color: white;
+    line-height: 100px;
+    font-family: Bite, sans-serif;
+  }
+
+  .headerBackground h5 {
+    margin-left: 100px;
+  }
+
+  .firstPerson {
+    display: flex;
+    text-align: left;
+  }
+  .s1Body {
+    width: 80%;
+  }
+  .s1Body h2 {
+    font-size: 1.5rem;
+    margin-top: 10%;
+  }
+  .firstPersonText {
+    margin-left: 50px;
+  }
+  .s1Body p {
+    padding: 0;
+    font-size: 1rem;
+  }
+  .secondPerson {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+
+  .hideonDesktop {
+    display: none;
+  }
+  .hideonMobile {
+    display: block;
+  }
+
+  .s2Content {
+    display: flex;
+    margin-top: 40px;
+  }
+  .s2Content p {
+    font-size: 1.4em;
+    text-align: left;
+    line-height: 30px;
+  }
+  .s2Content button {
+    display: block;
+    text-align: left;
+  }
+}

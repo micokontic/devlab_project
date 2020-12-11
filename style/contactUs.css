@@ -2,6 +2,10 @@
   font-family: DScript;
   src: url("../resources/fonts/DancingScript-Regular.ttf");
 }
+
+.header {
+  margin-top: 0px;
+}
 :root {
   --main-font-color: #facb0b;
   --fav-font-color: #c59d5f;
@@ -21,7 +25,7 @@
 /**/
 .content {
   width: 50%;
-  margin: 10rem auto;
+  margin: 2rem auto;
   text-align: center;
   background: #222222e5;
   opacity: 0.9;

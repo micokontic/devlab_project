@@ -1,0 +1,41 @@
+html {
+  overflow-anchor: none;
+}
+
+.section1 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.sidebar {
+  width: 100%;
+  margin: 0 auto;
+}
+.slider {
+  width: 70%;
+}
+
+footer img:hover {
+  background-color: black;
+  border-radius: 15px;
+  animation: hoverSocial 0.5s forwards;
+}
+
+footer img {
+  padding: 10px;
+}
+
+.divTest img .cusine-img {
+  width: 100%;
+}
+@keyframes hoverSocial {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    background-color: black;
+  }
+}

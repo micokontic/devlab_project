@@ -160,6 +160,8 @@ a {
 
 #flagAboutCuisine {
   margin-top: 5rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 form {
@@ -215,11 +217,24 @@ form {
   overflow: auto;
 }
 
-li {
+#filter-all li {
   position: relative;
   height: 4rem;
   background-color: #fafcfd;
   padding: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 1;
+  padding: none;
+}
+
+li {
+  position: relative;
+  height: 4rem;
+  background-color: #fafcfd;
   font-size: 1.1rem;
   display: flex;
   align-items: center;

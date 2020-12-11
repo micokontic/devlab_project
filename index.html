@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
     <title>Cuisine</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/cusinesStyle.css">
@@ -13,84 +13,126 @@
     <link rel="stylesheet" href="../style/filter.css">
     <link rel="stylesheet" href="../style/indexPage.css">
     <link rel="stylesheet" href="../style/animations.css">
-    <link rel="stylesheet" href="./style/range-slider.css">
-    <link rel="stylesheet" href="./style/loader.css">
+    <link rel="stylesheet" href="../style/range-slider.css">
+    <link rel="stylesheet" href="../style/loader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="./style/modal.css">
+    <link rel="stylesheet" href="../style/modal.css">
     <title>Reciphy</title>
-    <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić,Lazar Vuletić">
+    <meta name="author" content="Mićo Kontić,Vasilije Kneževic,Benjamin Dobardžić">
+    <link rel="stylesheet" href="./style/headerAndFooter.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Poppins:wght@300;400;700&display=swap"
         rel="stylesheet">
-        <link rel="icon" href="resources/images/newFavIcon.ico" sizes="16x16" type="image/png"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./resources/favicon/site.webmanifest">
+
+
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0"
+        nonce="zfRUloSX"></script>
+
+
     <header class="header" id="myTopnav">
         <a href="" class="logo">
-            <img src="../resources/images/Logo.png" alt="reciphy logo" width="50%">
+            <img src="./Img/Logo1.png" alt="reciphy logo" width="50%">
         </a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-     <ul class="menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./pages/fridge.html">Fridge</a></li>
-        <li><a href="./pages/shop.html">Shop</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="./pages/contactUs.html">Contact</a></li>
+        <ul class="menu">
+            <li><a href="./index.html">Home</a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Ingredients</button>
+                    <div class="dropdown-content">
+                        <a href="./pages/fridge.html">Fridge</a>
+                        <a href="./pages/shop.html">Shop</a>
+                        <a href="#">Equipment</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="./pages/fridge.html">About</a></li>
+            <li><a href="./pages/contactUs.html">Contact</a></li>
         </ul>
     </header>
 
 
-<main>
-    <section class="welcome">
-    <div class="container">
-        <h2 class="sub-headline">
-            <span class="first-letter">W</span>elcome
-        </h2>
-        <h1 class="headline">Reciphy</h1>
-        <div class="headline-description">
-            <div class="separator">
-                <div class="line line-left"></div>
-                <div class="asterisk"><i class="fas fa-asterisk"></i></div>
-                <div class="line line-right"></div>
+    <main>
+        <section class="welcome">
+            <div class="container">
+                <h2 class="sub-headline">
+                    <span class="first-letter">W</span>elcome
+                </h2>
+                <h1 class="headline">Reciphy</h1>
+                <div class="headline-description">
+                    <div class="separator">
+                        <div class="line line-left"></div>
+                        <div class="asterisk"><i class="fas fa-asterisk"></i></div>
+                        <div class="line line-right"></div>
 
+                    </div>
+                    <div class="single-animation">
+                        <h5>World Cuisine</h5>
+                        <a id="explore-the-world" href="#filter-all-before" class="btn cta-btn">Explore the world</a>
+                        <a id='ingridient-search' href='#cuisine-result' class="btn cta-btn">Cook with what you have</a>
+                    </div>
+                </div>
             </div>
-            <div class="single-animation">
-                <h5>World Cuisine</h5>
-                <a id="explore-the-world" href="#filter-all-before" class="btn cta-btn">Explore the world</a>
-                <a id='ingridient-search' href='#cuisine-result' class="btn cta-btn">Cook with what you have</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!--SIDE BAR BEST ONES-->
-<div class="sliderBestFb">
-    <div class="slider">Slider</div>
-    <div class="side-bar">
-        <div class="topThree">The healthiest recipes
-            <span class="tooltiptext">Top 3 recipes with highest health score</span>
+        <div class="sliderBestFb">
+            <div class="section1">
+                <h2>Feeling lucky?</h2>
+                <h3> Here's some random recipes!</h3>
+                <div class="slider">
+                    <div class="prev">&#10094;</div>
+                    <div class="sliderContent"></div>
+                    <div class="next">&#10095;</div>
+                </div>
+
+            </div>
+            <div class="side-bar">
+                <div class="topThree">The healthiest recipes
+                    <span class="tooltiptext">Top 3 recipes with highest health score</span>
+                </div>
+                <div class="sidebar">
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDevelopersLabMe%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                        width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 
-    
-        
-    <div id="filter-all-before"></div> <!--empty one used for href navigation-->
-    <section id="filter-all">
-            <div id="searchNav"class="cuisinesSearch">
+
+
+        <div id="filter-all-before"></div>
+        <!--empty one used for href navigation-->
+        <section id="filter-all">
+            <div id="searchNav" class="cuisinesSearch">
                 <section id="cuisines">
                     <div class="cuisinesBtns" id='cuisinesBtns'>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines('World')" id="world"></button>
-                    <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="Exploring"></button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="italian"></button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="indian">.</button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="chinese"></button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="french"></button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines('World')" id="world"></button>
+                        <button type="button" class="cuisineBtn" onclick="getCuisines(this.id)" id="Exploring"></button>
                     </div>
                     <!--  <div class="cuisinesCheckB">
                         <div class="typesCb"> 
@@ -105,49 +147,53 @@
                 </section>
 
                 <div id="all-country-filter">
-                    <input class="chosen-value" id='country-filter' type="text" value="" placeholder="Type country to filter" autocomplete="off">
+                    <input  class="chosen-value scale-in-center " id='country-filter' type="text" value=""
+                        placeholder="Type country to filter" autocomplete="off">
                     <ul class="value-list value-list-country">
-                    <li>Any</li>
-                    <li>African</li>
-                    <li>American</li>
-                    <li>British</li>
-                    <li>Cajun</li>
-                    <li>Caribbean</li> 
-                    <li>Chinese</li>
-                    <li>Eastern European</li>
-                    <li>European</li>
-                    <li>French</li>
-                    <li>German</li>
-                    <li>Greek</li>
-                    <li>Indian</li>
-                    <li>Irish</li>
-                    <li>Italian</li>
-                    <li>Japanese</li>
-                    <li>Jewish</li>
-                    <li>Korean</li>
-                    <li>Latin American</li>
-                    <li>Mediterranean</li>
-                    <li>Mexican</li>
-                    <li>Middle Eastern</li>
-                    <li>Nordic</li>
-                    <li>Southern</li>
-                    <li>Spanish</li>
-                    <li>Thai</li>
-                    <li>Vietnamese</li>
+                        <li>Any</li>
+                        <li>African</li>
+                        <li>American</li>
+                        <li>British</li>
+                        <li>Cajun</li>
+                        <li>Caribbean</li>
+                        <li>Chinese</li>
+                        <li>Eastern European</li>
+                        <li>European</li>
+                        <li>French</li>
+                        <li>German</li>
+                        <li>Greek</li>
+                        <li>Indian</li>
+                        <li>Irish</li>
+                        <li>Italian</li>
+                        <li>Japanese</li>
+                        <li>Jewish</li>
+                        <li>Korean</li>
+                        <li>Latin American</li>
+                        <li>Mediterranean</li>
+                        <li>Mexican</li>
+                        <li>Middle Eastern</li>
+                        <li>Nordic</li>
+                        <li>Southern</li>
+                        <li>Spanish</li>
+                        <li>Thai</li>
+                        <li>Vietnamese</li>
                     </ul>
+
                 </div>
 
-                
-                    <div id="filter">
-                        <div class="cuisinesSearch">
-                            <form>
-                                <input class="chosen-value" id="input-text" type="text" value="" placeholder="What would you like to eat?">
-                            </form>
-                        </div>
 
-                        <div>
-                            <input class="chosen-value" id="diet-filter" type="text" value="" placeholder="Type diet to filter" autocomplete="off">
-                            <ul class="value-list value-list-diet">
+                <div id="filter">
+                    <div class="cuisinesSearch">
+                        <form>
+                            <input class="chosen-value" id="input-text" type="text" value=""
+                                placeholder="What would you like to eat?" autocomplete="off">
+                        </form>
+                    </div>
+
+                    <div>
+                        <input class="chosen-value" id="diet-filter" type="text" value=""
+                            placeholder="Type diet to filter" autocomplete="off">
+                        <ul class="value-list value-list-diet">
                             <li>Any</li>
                             <li>Gluten Free</li>
                             <li>Ketogenic</li>
@@ -159,59 +205,62 @@
                             <li>Paleo</li>
                             <li>Primal</li>
                             <li>Whole30</li>
-                            </ul>
-                        </div>
-                        <div class="slider-container">
-                            <section class="range-slider">
+                        </ul>
+                    </div>
+                    <div class="slider-container">
+                        <section class="range-slider">
                             <span class="rangeValues"></span>
                             <input value="50" min="50" max="800" step="5" type="range">
                             <input value="800" min="50" max="800" step="5" type="range">
-                            </section>
-                        </div>
-
-                        <div id='search-recepie-div'>
-                            <a href="#cuisine-result-href"><button id='search-recipe'>Search</button></a>
-                        </div>  
+                        </section>
                     </div>
-                
+
+                    <div id='search-recepie-div' class="pointer-cursor">
+                        <a href="#cuisine-result-href"><button class="btn cta-btn" id='search-recipe'>Search for you recipe</button></a>
+                    </div>
+                </div>
+
             </div>
-            
+
         </section>
 
 
-    <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
-    <div id="flagAboutCuisine" >
-        <div class="introductionTitle">
-        <h1 id="flagAboutTitle" class="html-animation-container"></h1>
+        <!--COPIED FROM INDEX.HTML (SHOW DETAILS FOR SELECTED CUISINE)-->
+        <div id="flagAboutCuisine">
+            <div class="introductionTitle">
+                <h1 id="flagAboutTitle" class="html-animation-container"></h1>
+            </div>
+            <div class="introductionText">
+                <p id="flagAboutText" class="html-animation-container"></p>
+            </div>
         </div>
-        <div class="introductionText">
-            <p id="flagAboutText" class="html-animation-container"></p>
+        <div id="cuisine-result-href"></div>
+        <section id="cuisine-result" class="hide"></section>
+        <button id="load-more-btn" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
+        <button id="load-more-btn-ing" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
+
+
+        <!------------------MODAL---------------------->
+        <div class="modal">
+            <div class="modal-content">
+
+            </div>
         </div>
-    </div>
-    <div id="cuisine-result-href"></div>
-    <section id="cuisine-result" class="hide"></section>
-    <button id="load-more-btn" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
-    <button id="load-more-btn-ing" class='hide load-more-btn-style cursor-pointer'>LOAD MORE</button>
-    
-    
-<!------------------MODAL---------------------->
-<div class="modal">
-    <div class="modal-content">
-      
-    </div>
-</div>
 
 
 
 
 
-</main>
+    </main>
+
+
+
 
     <footer>
         <div class="footerContent">
             <div class="firstFooterRow">
 
-                <img src="./Img/FooterLog.png" alt="" width="50%">
+                <img src="./Img/FooterLogo.png" alt="" width="50%">
             </div>
             <div class="secondFooterRow">
                 <h1>Who we are?</h1>
@@ -220,21 +269,25 @@
             </div>
             <div class="thirdFooterRow">
                 <div class="firstSocial">
-                    <img src="./Img/instagram (1).png" alt="">
-
+                    <a href="https://www.instagram.com/miki_kontic/?hl=sr" target="_blank">
+                        <img src="./Img/instagram (1).png" alt="" width="50%">
+                       
+                    </a>
                 </div>
                 <div class="secondSocial">
-                    <img src="./Img/instagram (1).png" alt="">
+                    <a href="https://www.instagram.com/beni_dob/?hl=sr" target="_blank">
+                        <img src="./Img/instagram (1).png" alt="" width="100%">
+                       
+                    </a>
 
                 </div>
                 <div class="thirdSocial">
-                    <img src="./Img/instagram (1).png" alt="">
+                    <a href="https://www.instagram.com/beni_dob/?hl=sr" target="_blank">
+                        <img src="./Img/instagram (1).png" alt="" width="100%">
+                    </a>
 
                 </div>
-                <div class="forthSocial">
-                    <img src="./Img/instagram (1).png" alt="">
-
-                </div>
+               
 
             </div>
         </div>
@@ -250,7 +303,9 @@
     <script src="../js-files/searchRecepie.js"></script>
     <script src='./js-files/filterBehavior.js'></script>
     <script src='./js-files/modal.js'></script>
-
+ 
+    <script src="./js-files/slider.js"></script>
+    <script src="./js-files/fetchingById.js"></script>
 </body>
 
 </html>
