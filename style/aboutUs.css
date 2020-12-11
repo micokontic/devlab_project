@@ -1,5 +1,5 @@
 .headerBackground {
-        background-image: url(./Img/AboutUsHeaderImage.jpg);
+        background-image: url(../Img/AboutUsHeaderImage.jpg);
         background-color: black;
         height: 100vh;
         background-size: cover;
@@ -18,22 +18,28 @@
         animation: slide 2.5s forwards;
         
     }
+    @font-face {
+        font-family: Bite;
+        src: url("../resources/fonts/BiteChocolate-2RGl.ttf");
+      }
 
     .headerBackground h1 {
-        font-size: 5rem!important;
+        font-size: 6rem!important;
         padding: 0;
         margin: 0;
         color: white;
-        line-height: 55px;
-    
+        line-height: 75px;
+        font-family: Bite,sans-serif;
     }
 
     .headerBackground h5 {
         color: white;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 300;
         padding: 0;
         margin: 30px 0;
+        font-family: Bite;
+        
     }
 
     @keyframes slide{
@@ -126,6 +132,28 @@
     .section2 h5{
         color: #FACB0B;
     }
+
+    .dropbtn{
+        background-color: rgba(255, 255, 255, 0)!important;
+        color: white!important;
+        font-weight: 700;
+    }
+    .dropbtn::after{
+        content: url("../Img/Down-Arrow-white.png")!important;
+    }
+    li a{
+        color: white;
+        font-weight: 700;
+      
+    }
+  
+    #myTopnav{
+        background-color: #e7b90055;
+    }
+   
+   li a:hover{
+       background-color:#FACB0B;
+   }
 @media (min-width: 1028px) {
 
     .headerContent {
@@ -135,6 +163,23 @@
         position: relative;
         top: 40%;
         animation: slide 2.5s forwards;
+}
+
+#myTopnav{
+    background-color: #ffffff!important;
+}
+
+.headerBackground h1 {
+    font-size: 6rem!important;
+    padding: 0;
+    margin: 0;
+    color: white;
+    line-height: 100px;
+    font-family: Bite,sans-serif;
+}
+
+.headerBackground h5{
+    margin-left: 100px;
 }
 
     .firstPerson{
