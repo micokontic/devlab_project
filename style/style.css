@@ -66,10 +66,6 @@ a {
   overflow: hidden;
 }
 
-.header li {
-  /*border-right: 1px solid #f4f4f4;*/
-}
-
 .header li a {
   display: block;
   padding: 20px 20px;
