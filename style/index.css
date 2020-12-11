@@ -53,6 +53,14 @@ html {
   border-right: 1px solid #000;
   animation: typing 10s steps(30) infinite;
 }
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .sliderBestFb {
+    display: none;
+  }
+}
 @keyframes typing {
   0% {
     width: 0;

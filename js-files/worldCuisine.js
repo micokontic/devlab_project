@@ -1,6 +1,9 @@
 const inputField = document.querySelector('#country-filter');
 const dropdown = document.querySelector('.value-list-country');
 const dropdownArray = [... document.querySelectorAll('.value-list-country li')];
+
+
+
 console.log(typeof dropdownArray)
 //dropdown.classList.add('open');
 
