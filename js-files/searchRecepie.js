@@ -32,11 +32,7 @@ async function getCuisinesByIng(){
     
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-<<<<<<< HEAD
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}${ingString}&number=20`/*&type=${checkedValue}*/, {
-=======
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY10}${ingString}&number=20`/*&type=${checkedValue}*/, {
->>>>>>> origin/VasilijeK
     method: 'GET',
     })
     .then(response => response.json())
@@ -49,11 +45,7 @@ async function getCuisinesByIng(){
         cuisineResultSection.classList.remove('hide-grid');
         numberIng=6;
         console.log(json);
-<<<<<<< HEAD
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}${ingString}&number=20`);
-=======
-        console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
->>>>>>> origin/VasilijeK
         recepiesByIng=json;
         displayResultCousineByIng(json)
         if(json.length===0){
