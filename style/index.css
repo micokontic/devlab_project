@@ -1,3 +1,7 @@
+html{
+    overflow-anchor: none;
+}
+
 .section1{
     display:flex;
     flex-wrap: nowrap;
