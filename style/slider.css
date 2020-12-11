@@ -123,6 +123,7 @@
 
 .sliderCard{
     transition: transform .2s;
+    cursor: pointer;
 }
 .sliderCard:hover{
     transform: scale(1.1);

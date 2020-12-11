@@ -51,6 +51,7 @@
   z-index: 2;
   transition: 0.3s all;
   opacity: 0;
+  font-family: Tahoma;
 }
 @media only screen and (max-width: 768px) {
   #cuisines {
@@ -114,8 +115,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Bite;
-  font-size: 0.7rem;
+  font-family: 'Lobster' ;
+  font-size: 1.05rem;
 }
 
 .cuisinesCheckB {
@@ -145,7 +146,7 @@
     center/cover;
 }
 .cuisineBtn:nth-child(5) {
-  background: url("../resources/images/globe.jpg") no-repeat center center/cover;
+  background: url("../resources/images/world.png") no-repeat center center/cover;
 }
 #cuisine-result {
   width: 85%;
@@ -192,6 +193,11 @@
   line-height: 2rem;
   padding: 1.1rem;
   box-shadow: 6px 17px 12px rgba(206, 164, 99, 0.1);
+  transition: transform .2s;
+}
+
+.divTest:hover{
+  transform: scale(1.1);
 }
 
 .greenW {
@@ -256,4 +262,10 @@
 
 .data-container .left {
   justify-self: left;
+}
+
+#cuisine-result h1{
+  font-family: Bite;
+    color: var(--fav-font-color);
+    font-size: 1.7rem;
 }

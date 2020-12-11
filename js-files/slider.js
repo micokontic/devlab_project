@@ -7,7 +7,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY20}&number=10`, requestOptions)
+fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY10}&number=10`, requestOptions)
   .then(response => response.json())
   .then(json => {
     result = json.recipes;
@@ -69,19 +69,19 @@ function makeSlider (result){
       newFood.className = "new-food";
 
     const div = document.createElement('div');
-    div.dataset.value=("id-value", `${cuisine.id}`)
-    div.innerHTML=`<img src='${cuisine.image}' class='slider-card-img' alt='Ingridient Image id-${cuisine.id}'>
-            <h2>${cuisine.title}</h2>
-            <div class='icons-container'>
-            <div class='icons'>
-                <div class="health-rating">
-                    <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
+    div.dataset.value=("data-value", `${cuisine.id}`)
+    div.innerHTML=`<img data-value="${cuisine.id}" src='${cuisine.image}' class='slider-card-img' alt='Ingridient Image id-${cuisine.id}'>
+            <h2 data-value="${cuisine.id}" >${cuisine.title}</h2>
+            <div class='icons-container' data-value='${cuisine.id}'>
+            <div class='icons' data-value='${cuisine.id}'>
+                <div class="health-rating" data-value='${cuisine.id}'>
+                    <img src='../Img/health-rating.svg' data-value='${cuisine.id}' <span data-value='${cuisine.id}' >${cuisine.healthScore}</span>
                 </div>
-                <div class="health-rating dollar-container">
-                    <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)}$</span>
+                <div class="health-rating dollar-container" data-value='${cuisine.id}'>
+                    <img src='../Img/icon-dollar.jpg' data-value='${cuisine.id}' <span data-value='${cuisine.id}'>${Math.round(cuisine.pricePerServing)}$</span>
                 </div>
-                <div class="health-rating dollar-container">
-                    <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
+                <div  data-value='${cuisine.id}' class="health-rating dollar-container">
+                    <img data-value='${cuisine.id}' src='../Img/time.png' <span data-value='${cuisine.id}' >${cuisine.readyInMinutes}min</span>
                 </div>
             </div>
             </div>
@@ -132,6 +132,8 @@ document.querySelector(".prev").addEventListener("click",function(){moveImg(-1)}
 document.querySelector(".next").addEventListener("click",function(){moveImg(1)});
 
 document.querySelector(".sliderContent").addEventListener("mouseover",function(){document.addEventListener('keydown',checkKey)});
+
+moveImg(-1);
 
 setInterval(() => moveImg(-1), 5000);
 
