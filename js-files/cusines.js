@@ -37,10 +37,7 @@ const loader = `<div id="loading-contaier">
 </div>
 </div>`;
 
-const API_KEY1='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
-const API_KEY2='42c7c7a52bf844368878a3d8c96378ed';
-const API_KEY3='d22eaf828c6c4cecb77af573b2673b48';
-const API_KEY4='f8d70dbfbd8e4b0fbc6fa095abe2a2db';
+
 const LINK_COMPLEX_SEARCH_RECEPIES='https://api.spoonacular.com/recipes/complexSearch?apiKey=';
 const cuisineBtn = document.querySelectorAll(".cuisineBtn");
 const cuisineResultSection = document.getElementById("cuisine-result");
@@ -50,8 +47,6 @@ const inputText=document.getElementById('input-text');
 const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
 const topThree=document.querySelector(".topThree");
-const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
-const API_KEY20='75e96fce580b461aa763efbb905fb93d';
 
 var ingridientString='';
 var ingridientResult;
@@ -136,7 +131,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -156,14 +151,14 @@ async function fetchData(cuisine,dietId,inputTextString){
         })
         .catch(error => {
             notFoundError();
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY3}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
 
 }
 
 
 async function getHelthThree(){
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY4}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
         method: 'GET',
     })
         .then(response => response.json())

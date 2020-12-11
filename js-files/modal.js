@@ -18,7 +18,7 @@ recipeCard.addEventListener('click',(e)=>{
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY20}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())

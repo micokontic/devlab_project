@@ -51,7 +51,7 @@ function displayIngridientsInFridge(){
 
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
-    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY11}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
+    ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
     method: 'GET',
 })
     .then(response => response.json())

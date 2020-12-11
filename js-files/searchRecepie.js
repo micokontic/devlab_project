@@ -1,6 +1,4 @@
-const API_KEY10='3cd18534149a4cc1b19ebd6f1c8ef472';
-const API_KEY11='55aaab3f111448719c70a7565dd7bf38';
-const API_KEY5='15656ea8f9d948e981fb876774cc5281';
+
 const ingridientSearcButton=document.getElementById('ingridient-search');
 const loadMoreButtonIng=document.getElementById('load-more-btn-ing');
 
@@ -34,7 +32,7 @@ async function getCuisinesByIng(){
     
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY10}${ingString}&number=20`/*&type=${checkedValue}*/, {
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}${ingString}&number=20`/*&type=${checkedValue}*/, {
     method: 'GET',
     })
     .then(response => response.json())
@@ -47,7 +45,7 @@ async function getCuisinesByIng(){
         cuisineResultSection.classList.remove('hide-grid');
         numberIng=6;
         console.log(json);
-        console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
+        console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY}${ingString}&number=20`);
         recepiesByIng=json;
         displayResultCousineByIng(json)
         if(json.length===0){

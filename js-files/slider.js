@@ -1,3 +1,4 @@
+
 var myHeaders = new Headers();
 myHeaders.append("Cookie", "__cfduid=d5e9781557ba0e34de0d80e38cef6d12b1607465675");
 
@@ -7,7 +8,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY10}&number=10`, requestOptions)
+fetch(`https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=10`, requestOptions)
   .then(response => response.json())
   .then(json => {
     result = json.recipes;
@@ -55,7 +56,7 @@ function makeSlider (result){
       }
 
       showImages(curr, prev);
-    }
+  }
   
 
   function showImages(curr=0, prev=0){
