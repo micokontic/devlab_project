@@ -21,6 +21,8 @@ cuisinesBtns.addEventListener('click',cuisinesBtnsClickHandler)
 function showFilter(){
     filterAll.classList.add('slide-in-right');
     filterAll.classList.add('show');
+    loadMoreButtonIng.classList.add('hide');
+    loadMoreButtonIng.classList.remove('show');
     cuisineResultSection.innerHTML='';
 }
 

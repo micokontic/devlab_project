@@ -15,6 +15,7 @@ recipeCard.addEventListener('click',(e)=>{
     }
 })
 
+
 async function ingredientSearch(){
     ingridientString=ingridientSearchInput.value;
     ingridientResult=await fetch(`${LINK_INGREDIENT_SEARCH}${API_KEY20}${ingredientSearchString}${ingridientString}&sortDirection=desc&sort=popularity`, {
@@ -28,6 +29,25 @@ async function ingredientSearch(){
     .catch(error => console.error(error))
 }
 
+async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+  }
+
+
 const displayIngridientResults=(ingridientResult)=>{
     ingridientResultSection.innerHTML='';
     ingridientResult.map((ing)=>{
@@ -40,17 +60,6 @@ var modal = document.querySelector(".modal");
 var modalContent = document.querySelector(".modal-content");
 var output = "";
 
-/*function toggleModal(recipe){
-    modal.classList.toggle("show-modal");
-    for(let i = 0; i < recipe.length; i++){
-        output += `<li>recipe[i].id</li>`
-    }
-    console.log(output);
-}*/
-
-/*modalBtn.addEventListener('click', toggleModal);
-
-
 
 /*******************MODAL***************** */
 
@@ -62,6 +71,9 @@ var modalOutput = "";
 
 function toggleModal(cuisine){
    console.log(cuisine);
+   let imgSubString= cuisine.image.substring(0, cuisine.image.indexOf('-'));
+   console.log(imgSubString)
+   console.log(imgSubString+'-636x393'+cuisine.imageType);
     modalOutput =`
       <div class="modalTop">
         <button onclick='windowOnClick()'class="close-button">&times;</button>
@@ -75,7 +87,7 @@ function toggleModal(cuisine){
                 
                 <div class="modalBottom">
                 <div class="modalTop">
-                    <img src="${cuisine.image}" class="cuisineImgModal" alt="">
+                    <img src="${imgSubString+'-636x393.'+cuisine.imageType}" class="cuisineImgModal" alt="">
                 </div>
                     
                 </div>

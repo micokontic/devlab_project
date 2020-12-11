@@ -34,7 +34,7 @@ async function getCuisinesByIng(){
     
     /*var checkedValue = document.querySelector('.messageCheckbox:checked').value;*/
     var ingString=createIngridientsString();
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY5}${ingString}&number=20`/*&type=${checkedValue}*/, {
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY10}${ingString}&number=20`/*&type=${checkedValue}*/, {
     method: 'GET',
     })
     .then(response => response.json())
@@ -48,21 +48,33 @@ async function getCuisinesByIng(){
         numberIng=6;
         console.log(json);
         console.log(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${API_KEY11}${ingString}&number=20`);
-        displayResultCousineByIng(json)
         recepiesByIng=json;
+        displayResultCousineByIng(json)
+        if(json.length===0){
+            notFoundError()
+        }
     })
-    .catch(error => console.error(error))   
+    .catch(
+    error => {console.error(error)
+        notFoundError()})   
 }
 
 function displayResultCousineByIng(json){
     cuisineResultSection.innerHTML='';
+    if(numberIng>recepiesByIng.length){
+        loadMoreButtonIng.classList.add('hide');
+        loadMoreButtonIng.classList.remove('show');
+    }
     json.map((recipe,i)=>{
         if(i<numberIng){
             displayResultRecipeByIng(recipe,i);
         }
         
     })
-
+    document.querySelectorAll('.byIngCard').forEach(item => {
+        console.log('klik');
+      item.addEventListener('click', sliderClickHandler)
+    })
 }
 
 function loadMoreDataIng(){
@@ -79,13 +91,15 @@ const displayResultRecipeByIng=(cuisine,i)=>{
     var animationString=getAnimationString(i);
     const div = document.createElement('div');
     div.classList.add(animationString);
-    div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
-    <h2>${cuisine.title}</h2>
-        <div class="ing-container">
-            <h4 class="text">USED</h4>
-            <h4 class="used white-bck"></h4>
-            <h4 class="text">MISSING</h4>
-            <h4 class="missing  white-bck"></h4>
+    div.classList.add('byIngCard');
+    div.dataset.value=("data-value", `${cuisine.id}`)
+    div.innerHTML=`<img class='recepie-img'src='${cuisine.image}' data-value="${cuisine.id}" alt='Ingridient Image id-${cuisine.id}'>
+    <h2 data-value="${cuisine.id}">${cuisine.title}</h2>
+        <div data-value="${cuisine.id}" class="ing-container">
+            <h4 data-value="${cuisine.id}" class="text">USED</h4>
+            <h4 data-value="${cuisine.id}" class="used white-bck"></h4>
+            <h4 data-value="${cuisine.id}" class="text">MISSING</h4>
+            <h4 data-value="${cuisine.id}" class="missing  white-bck"></h4>
         </div>
     </span>
     `

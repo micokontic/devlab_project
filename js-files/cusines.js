@@ -49,8 +49,8 @@ const searchRecipeButton=document.getElementById('search-recipe');
 const inputText=document.getElementById('input-text');
 const loadMoreButton=document.getElementById('load-more-btn');
 const cuisinesButtons=document.getElementById('cuisinesBtns');
+const topThree=document.querySelector(".topThree");
 const API_KEY130='fe9a8fb4723e408a86f0cd486190dc03';
-
 const API_KEY20='75e96fce580b461aa763efbb905fb93d';
 
 var ingridientString='';
@@ -60,6 +60,7 @@ var dietId='';
 var inputTextString='';
 var number=6;
 var cuisineResult;
+var helthTree;
 
 searchRecipeButton.addEventListener('click',()=>{
     fetchData(cuisineId,dietId,inputTextString);
@@ -79,6 +80,15 @@ cuisinesButtons.addEventListener('click',(e)=>{
     }
 })
 
+topThree.addEventListener('click',(e)=>{
+    if(e.target.classList.contains('topThreeImg')){
+        child=e.target.parentNode;
+        var i = 0;
+        while( (child = child.previousSibling) != null ) 
+        i++;
+        toggleModal(helthTree[i-1+3]);
+    }
+})
 
 async function getCuisines(cuisine){
    /*  console.log(cuisineId); */
@@ -95,11 +105,9 @@ function inputTextHandle(e){
 }
 
 const displayCuisineResult=(cuisineResult)=>{
-
-    if(number>cuisineResult.length){
-        loadMoreButton.classList.add('hide');
-        loadMoreButton.classList.remove('show');
-    }
+    console.log(number);
+    console.log(cuisineResult.length);
+   
 
     cuisineResultSection.innerHTML='';
     cuisineResult.map((cuisine,i)=>{
@@ -108,6 +116,11 @@ const displayCuisineResult=(cuisineResult)=>{
         }
         
     })
+    if(number>cuisineResult.length){
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        console.log(loadMoreButton.classList);
+    }
 }
 
 async function fetchData(cuisine,dietId,inputTextString){
@@ -123,7 +136,7 @@ async function fetchData(cuisine,dietId,inputTextString){
         cuisineString=`&cuisine=${cuisine}`;
     }
 
-    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&minCalories=${sliderValue.min}&maxCalories=${sliderValue.max}&addRecipeInformation=true&addRecipeNutrition=true&number=50`/*&type=${checkedValue}*/, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -132,15 +145,34 @@ async function fetchData(cuisine,dietId,inputTextString){
             displayCuisineResult(json.results);
             cuisineResult=json.results;
             number=6;
-            loadMoreButton.classList.add('show');
-            loadMoreButton.classList.remove('hide');
+            
             cuisineResultSection.classList.add('show-grid');
             showTopResults(cuisineResult);
-           
+           if(json.results.length===0){
+            notFoundError();
+           }
+           loadMoreButton.classList.add('show');
+            loadMoreButton.classList.remove('hide');
         })
         .catch(error => {
-            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY20}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
+            notFoundError();
+            console.log(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}${cuisineString}&diet='${dietId}${inputTextString}&addRecipeInformation=true&addRecipeNutrition=true&number=50`)
             console.error(error)})
+
+}
+
+
+async function getHelthThree(){
+    fetch(`${LINK_COMPLEX_SEARCH_RECEPIES}${API_KEY130}&addRecipeInformation=true&addRecipeNutrition=true&number=6&sort=healthiness&sortDirection=desc`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then((json)=>{
+            console.log(json);
+            helthTree=json.results;
+            showTopResults(json.results);
+        })
+        .catch(error => {console.error(error)})
 
 }
 
@@ -160,9 +192,10 @@ function hrefTo(){
 const displayResultCuisine=(cuisine,i)=>{
     var animationString=getAnimationString(i);
     const div = document.createElement('div');
-    div.classList.add(animationString)
+    div.classList.add(animationString);
+    let imgSubString= cuisine.image.substring(0, cuisine.image.indexOf('-'));
     console.log(cuisine.nutrition.nutrients.Calories);
-    div.innerHTML=`<img src='${cuisine.image}' alt='Ingridient Image id-${cuisine.id}'>
+    div.innerHTML=`<img src='${cuisine.image}' class='cusine-img' alt='Ingridient Image id-${cuisine.id}'>
     <h2>${cuisine.title}</h2>
     <div class="data-container">
         <span class='right'>Calories per serving:&nbsp;&nbsp;</span> 
@@ -213,16 +246,23 @@ function getAnimationString(i){
     }
     return animationString;
 }
+
+function getAnimationString(i){
+    var animationString=''
+    if((i+1)%3===1){
+        animationString='slide-in-left'
+    }else if((i+1)%3===2){
+        animationString='scale-in-center'
+    }else if((i+1)%3===0){
+        animationString='slide-in-right'
+    }
+    return animationString;
+}
 /*
  var modalBtn = document.createElement("button");
     modalBtn.innerHTML = "CLICK ME";  
     div.appendChild(modalBtn);
 */
-
-
-
-
-
 
 function displayAboutCuisine(cuisineId) {
    
@@ -236,7 +276,7 @@ function displayAboutCuisine(cuisineId) {
 
     for (var key in p) {
         if (p.hasOwnProperty(key) && key === cuisineId) {
-            contentF.innerHTML = "test" + p[key];
+            contentF.innerHTML = p[key];
         }
     }
     setTimeout(function(){
@@ -273,51 +313,47 @@ dropdownArray.forEach(item => {
 
   /*SIDE BAR TOP THREE */
 
-  function showTopResults(cuisineResult){
+function showTopResults(cuisineResult){
+    
     showBest(cuisineResult);
-  }
-
+}
 
 function showBest(cuisineResult){
-let best = document.querySelector(".topThree");
-let bestArr = [];
-for(let i = 1; i<4; i++){
-    let a = document.createElement("a");
-    a.href = cuisineResult[i].sourceUrl;
-    a.target = '_blank';
-    let bestItem = document.createElement("img");
-    bestItem.className = "topThreeImg";
-    bestItem.src = cuisineResult[i].image;
-    a.appendChild(bestItem);
-   /*  console.log(cuisineResult[i].healthScore);
-    best.appendChild(bestItem); */
-    bestArr.push([a, cuisineResult[i].healthScore]);
-}
-let sortArr = bestArr.filter(elem => elem[1] !== 0);
-sortArr.sort((a,b) => b[1]-a[1]);
-best.innerHTML = `The healthiest recipes`;
-for(let i = 0; i < 3; i++){
-    best.appendChild(sortArr[i][0]);
-    /*console.log("Radiiii radii radiii radiii !!!!") */
-}
+    console.log(cuisineResult[0]);
+    let best = document.querySelector(".topThree");
+    let bestArr = [];
+    for(let i = 3; i<6; i++){
+        let bestItem = document.createElement("img");
+        bestItem.className = "topThreeImg";
+        bestItem.src = cuisineResult[i].image;
+    /*  console.log(cuisineResult[i].healthScore);
+        best.appendChild(bestItem); */
+        bestArr.push([bestItem, cuisineResult[i].healthScore]);
+    }
 
-
-}
-
-
-/*
-function prepareLinks() {
-    var links = document.getElementsByTagName('a');
-
-    for(var i = 0; i < links.length; i++) {
-        var thisLink = links[i];
-
-        if(thisLink.getAttribute('class') == 'imgLink') {
-            thisLink.onclick = function() {
-                showPic(this.href);
-                return false;
-            };
-        }
+    best.innerHTML = `The healthiest recipes`;
+    for(let i = 0; i < 3; i++){
+        let bestItemDiv=document.createElement("div");
+        bestItemDiv.appendChild(bestArr[i][0]);
+        bestItemDiv.innerHTML+=`<div class="health-rating healthiness">
+            <img src='../Img/health-rating.svg'>
+    </div>`
+        bestItemDiv.classList.add('healthiness-container')
+    best.appendChild(bestItemDiv);
+        /*console.log("Radiiii radii radiii radiii !!!!") */
     }
 }
-*/
+
+function notFoundError(){
+    cuisineResultSection.innerHTML=`<h1 class="scale-in-center">Recipes not found</h1>
+    <img class="scale-in-center" src="../resources/images/utensils.svg" alt='utensils'>`;
+    loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButton.classList.add('hide');
+        loadMoreButton.classList.remove('show');
+        loadMoreButtonIng.classList.add('hide');
+        loadMoreButtonIng.classList.remove('show');
+}
+
+
+getHelthThree();
