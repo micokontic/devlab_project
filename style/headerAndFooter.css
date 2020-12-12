@@ -9,7 +9,18 @@ body {
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 3;
-  height: 20vh;
+  height: 12vh;
+ 
+}
+.header ul li{
+  background-color: #facb0b;
+}
+
+header a{
+  color:black
+}
+header .dropbtn{
+  color: black;
 }
 
 .header ul {
@@ -24,6 +35,9 @@ body {
   padding: 20px 20px;
 
   text-decoration: none;
+}
+.header li a:hover{
+  background-color: #facb0b;
 }
 
 .header li {
@@ -51,6 +65,7 @@ body {
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
+  float: right;
   padding: 28px 20px;
   position: relative;
   user-select: none;
@@ -166,32 +181,32 @@ footer p {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: rgb(253, 253, 253);
+  background-color: #facb0b;
   color: black;
   padding: 22px;
   font-size: 16px;
   border: none;
-  z-index: 100;
+  z-index: 100!important;
   outline: none;
   cursor: pointer;
 }
 .dropbtn:hover {
-  color: white;
+  color: #facb0b;
 }
 .dropbtn::after {
   content: url("../Img/down-arrow\\(1\).png");
-  width: 5px;
-  margin-left: 15px;
+  margin-top: 1rem;
+  
 }
 
-/* The container <div> - needed to position the dropdown content */
+
 .dropdown {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-/* Dropdown Content (Hidden by Default) */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -218,7 +233,7 @@ footer p {
   }
 }
 
-/* Links inside the dropdown */
+
 .dropdown-content a {
   color: white;
   padding: 12px 16px;
@@ -227,18 +242,16 @@ footer p {
   transition: all 0.5s ease;
 }
 
-/* Change color of dropdown links on hover */
+
 .dropdown-content a:hover {
-  background-color: rgb(53, 53, 53);
+  background-color: rgb(53, 53, 53)!important;
   transform: translateY(0);
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: rgba(255, 255, 255, 0);
 }
@@ -256,13 +269,21 @@ footer p {
   .header li {
     float: left;
   }
+  .dropbtn {
+    background-color: rgb(253, 253, 253);
+  }
 
   .header li a {
     padding: 20px 30px;
   }
   .header ul {
-    margin-top: 5vh;
+    margin-top: 2.5vh;
   }
+
+  .header ul li{
+    background-color: transparent;
+  }
+  
   .header .menu {
     clear: none;
     float: right;

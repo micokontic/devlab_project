@@ -23,6 +23,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  --main-font-color: #facb0b;
+  cursor: pointer;
+
 }
 
 .prev:hover {
@@ -38,6 +41,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  --main-font-color: #facb0b;
+  cursor: pointer;
+
 }
 .newFoodGroup {
   width: 100%;

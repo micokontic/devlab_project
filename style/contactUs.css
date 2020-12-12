@@ -21,12 +21,13 @@
   background-size: cover;
   background-position: center;
   font-family: DScript;
+  padding: 2rem;
   
 }
 /**/
 .content {
   width: 50%;
-  margin: 2rem auto;
+  margin: 0rem auto;
   text-align: center;
   background: #222222e5;
   opacity: 0.9;
@@ -93,6 +94,11 @@ input {
 }
 .contactForm .btn:hover {
   box-shadow: 0px 2px 30px 2px #57401d96;
+}
+.dropdown-content a:hover {
+  background-color: rgb(53, 53, 53)!important;
+  transform: translateY(0);
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {

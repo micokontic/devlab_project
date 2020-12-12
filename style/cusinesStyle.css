@@ -209,18 +209,10 @@
   width: 100%;
 }
 
-.divTest:hover{
-  transform: scale(1.1);
-}
-
-.cusine-img{
-  width: 100%;
-}
-
-/*.greenW {
+.greenW {
   position: relative;
   line-height: 2rem;
-}*/
+}
 .redW {
   color: var(--fav-font-color);
 }
