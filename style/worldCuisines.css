@@ -227,8 +227,6 @@ form {
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s;
-  opacity: 1;
-  padding:none;
 }
 
 li {
@@ -248,7 +246,7 @@ li:hover {
   /*color: white;          kicasto? :'D */
 }
 
-li.closed {
+#filter-all li.closed {
   max-height: 0;
   overflow: hidden;
   padding: 0;
