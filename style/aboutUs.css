@@ -54,6 +54,8 @@
   margin: 150px auto 0px auto;
   width: 90%;
   text-align: center;
+  font-family: "Dancing Script",sans-serif ;
+  
 }
 .s1Title h1 {
   font-size: 3rem;
@@ -151,6 +153,29 @@ li a:hover {
 .s2img {
   margin-top: 50px;
 }
+
+.firstPerson, .secondPerson, .thirdPerson{
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.253);
+  padding: 30px 30px 0px 30px;
+}  
+#section1Background{
+    position: absolute;
+    z-index: -100;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+  }
+
+  .numbers{
+    position: absolute;
+    font-size: 30rem;
+    font-family: "Dancing Script",sans-serif;
+    z-index: -100;
+    opacity: 0.05;
+    left: 40vh;
+  }
+   
+
 @media (min-width: 1028px) {
   .headerContent {
     margin: auto;
@@ -178,12 +203,22 @@ li a:hover {
     margin-left: 100px;
   }
 
+  .section1{
+    position: relative;
+  }
+
+
+  .s1Title h1 {
+    font-size: 5rem;
+  }
+
+
   .firstPerson {
     display: flex;
     text-align: left;
   }
   .s1Body {
-    width: 80%;
+    width: 50%;
   }
   .s1Body h2 {
     font-size: 1.5rem;
@@ -214,12 +249,49 @@ li a:hover {
     margin-top: 40px;
   }
   .s2Content p {
-    font-size: 1.4em;
+    font-size: 1.1em;
     text-align: left;
     line-height: 30px;
+    
   }
   .s2Content button {
     display: block;
     text-align: left;
   }
+
+  .s2img {
+    width: 50%;
+  }
+  .s2Text{
+    width: 50%;
+  }
+
+  .ourSocial img{
+    width: 40px;
+    padding: 5px;
+    border-radius: 10px;
+    transform: scale (1);
+    
+  }
+  .ourSocial img:hover{
+    animation: hoverSocial2 1s forwards;
+  }
+  .ourSocial{
+    margin-top: 2vh;
+    margin-left: -15px;
+  }
+
+  
+@keyframes hoverSocial2 {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+    transform: rotate(0deg) scale(1);
+    
+  }
+  100% {
+    background-color: black;
+    transform: rotate(360deg) scale(1.5);
+  }
+ 
+}
 }

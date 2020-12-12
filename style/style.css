@@ -159,6 +159,8 @@ a {
 
 /*SLIDER, SIDEBAR*/
 
+/*SLIDER, SIDEBAR*/
+
 .sliderBestFb {
   margin: 3rem auto;
   display: flex;
@@ -166,7 +168,7 @@ a {
 }
 
 .side-bar {
-  width: 30vw;
+  width: 20vw;
 }
 
 .topThree {
