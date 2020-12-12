@@ -1,6 +1,7 @@
 const inputFieldDiet = document.querySelector('#diet-filter');
 const dropdownDiet = document.querySelector('.value-list-diet');
 const dropdownArrayDiet = [... document.querySelectorAll('.value-list-diet li')];
+
 console.log(typeof dropdownArrayDiet);
 //dropdownDiet.classList.add('open');
 
