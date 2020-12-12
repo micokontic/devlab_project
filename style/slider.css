@@ -25,16 +25,26 @@
   align-items: center;
   --main-font-color: #facb0b;
   cursor: pointer;
+  color: #facb0b;
+  opacity: 0.7;
+  transition: transform .2s;
 
 }
 
 .prev:hover {
   cursor: pointer;
+  opacity: 1;
+  transform: scale(1.2);
+
+
 }
 .next:hover {
   cursor: pointer;
+  opacity: 1;
+  transform: scale(1.2);
 }
 .next {
+  transition: transform .2s;
   top: 10vw;
   right: 1vw;
   font-size: 3rem;
@@ -43,6 +53,8 @@
   align-items: center;
   --main-font-color: #facb0b;
   cursor: pointer;
+  color:  #facb0b;
+  opacity: 0.7;
 
 }
 .newFoodGroup {
