@@ -150,9 +150,15 @@ li a:hover {
   background-color: #facb0b;
 }
 
+.ourSocial img{
+  width: 50%;
+}
+
 .s2img {
   margin-top: 50px;
 }
+
+
 
 .firstPerson, .secondPerson, .thirdPerson{
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.253);
