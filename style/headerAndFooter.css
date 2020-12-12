@@ -267,6 +267,10 @@ footer p {
   }
 }
 
+.activeHeaderLink{
+  color: #facb0b;
+}
+
 @media (min-width: 1028px) {
   .header li {
     float: left;
