@@ -100,6 +100,7 @@
 .newFoodGroup .new-food {
   width: 80%;
   margin: 0 auto;
+  height: 28rem;
 }
 .new-food {
   display: flex;
