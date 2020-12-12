@@ -308,8 +308,7 @@ footer p {
     max-height: none;
   }
   .header .logo {
-    padding-left: 10%;
-  }
+/*padding-left: 10%;*/  }
   .header .menu-icon {
     cursor: pointer;
     display: inline-block;
@@ -416,7 +415,7 @@ footer p {
     max-height: none;
   }
   .header .logo {
-    padding-left: 10%;
+    /*padding-left: 10%;*/
   }
   .header .menu-icon {
     cursor: pointer;
@@ -539,8 +538,7 @@ iframe {
     max-height: none;
   }
   .header .logo {
-    padding-left: 10%;
-  }
+/*padding-left: 10%;*/  }
   .header .menu-icon {
     display: none;
   }
@@ -647,7 +645,7 @@ iframe {
     max-height: none;
   }
   .header .logo {
-    padding-left: 10%;
+    /*padding-left: 10%;*/
   }
   .header .menu-icon {
     display: none;

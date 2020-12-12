@@ -9,7 +9,7 @@ body {
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 3;
-  height: 12vh;
+  height: 13vh;
  
 }
 .header ul li{
@@ -48,9 +48,13 @@ header .dropbtn{
 .header .logo {
   display: block;
   float: left;
-  padding: 10px 0px 10px 10px;
+  /*padding: 10px 0px 10px 10px;*/
   text-decoration: none;
   margin: 0;
+  box-sizing: content-box;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* menu */
@@ -291,13 +295,14 @@ footer p {
   .header img {
     padding: 10px;
     border-radius: 10px;
+    box-sizing: border-box;
   }
   .header img:hover {
     animation: hoverSocial 1s forwards;
   }
 
   .header .logo {
-    padding-left: 10%;
+    /*padding-left: 10%;*/
   }
 
   .header .menu-icon {

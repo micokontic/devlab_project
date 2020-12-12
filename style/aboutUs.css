@@ -131,15 +131,15 @@
 
 .dropbtn {
   background-color: rgba(255, 255, 255, 0) !important;
-  color: white !important;
-  font-weight: 700;
+  /*color: white !important;*/
+  /*font-weight: 700;*/
 }
 .dropbtn::after {
   content: url("../Img/Down-Arrow-white.png") !important;
 }
 li a {
   color: white;
-  font-weight: 700;
+  /*font-weight: 700;*/
 }
 
 #myTopnav {
