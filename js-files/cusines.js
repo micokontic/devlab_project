@@ -203,13 +203,13 @@ const displayResultCuisine=(cuisine,i)=>{
     </div>
     <div class='icons'>
         <div class="health-rating">
-            <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
+            <img src='./Img/health-rating.svg' <span>${cuisine.healthScore}</span>
         </div>
         <div class="health-rating dollar-container">
-            <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)/100}$</span>
+            <img src='./Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)/100}$</span>
         </div>
         <div class="health-rating dollar-container">
-            <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
+            <img src='./Img/time.png' <span>${cuisine.readyInMinutes}min</span>
         </div>
     </div>
     <button id="modalBtn" class='show-more'>Show more</div>
@@ -330,7 +330,7 @@ function showBest(cuisineResult){
         let bestItemDiv=document.createElement("div");
         bestItemDiv.appendChild(bestArr[i][0]);
         bestItemDiv.innerHTML+=`<div class="health-rating healthiness">
-            <img src='../Img/health-rating.svg'>
+            <img src='./Img/health-rating.svg'>
     </div>`
         bestItemDiv.classList.add('healthiness-container')
     best.appendChild(bestItemDiv);
