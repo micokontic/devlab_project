@@ -10,7 +10,14 @@ const ingridients=document.getElementById('ingridients');
 
 var ingridientString='';
 var ingridientResult;
+if (localStorage.getItem("ingridientsInFridge") === null) {
+    localStorage.setItem('ingridientsInFridge', JSON.stringify([]));
+}
+
 var ingridientsInFridge=JSON.parse(localStorage.getItem('ingridientsInFridge'));
+
+
+
 var nombrePage=0;
 
 ingridientResultSection.addEventListener('click',addToFridge);
