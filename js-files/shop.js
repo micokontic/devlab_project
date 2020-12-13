@@ -98,8 +98,8 @@ const displayResultIngridient=(ing)=>{
                     <div class="back-content"> 
                         <p>Add to fridge</br><img class="utensils-img add-to-fridge"
                          src="../resources/images/fridge.svg" 
-                         onmouseover="this.src='../resources/images/fridge-open.svg'"
-                         onmouseout="this.src='../resources/images/fridge.svg'"
+                         onmouseover="this.src='./resources/images/fridge-open.svg'"
+                         onmouseout="this.src='./resources/images/fridge.svg'"
                          ></p>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ function addToFridge(e) {
         if(!containsObject(ingridientResult[index],ingridientsInFridge)){
             ingridientsInFridge.push(ingridientResult[index]);
             localStorage.setItem('ingridientsInFridge', JSON.stringify(ingridientsInFridge));
-            e.target.src='../resources/images/fridge.svg';
+            e.target.src='./resources/images/fridge.svg';
             textNode.nodeValue=`${ingridientResult[index].name} added to fridge!`;
             setTimeout(()=>{
                 parentDiv.classList.add('slide-out-bck-tr');

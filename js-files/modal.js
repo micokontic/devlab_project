@@ -114,13 +114,13 @@ function toggleModal(cuisine){
                     <div class="modalStikerim">
                         <div class='iconsm'>
                     <div class="health-ratingm">
-                        <img src='../Img/health-rating.svg' <span>${cuisine.healthScore}</span>
+                        <img src='./Img/health-rating.svg' <span>${cuisine.healthScore}</span>
                     </div>
                     <div class="health-rating dollar-containerm">
-                        <img src='../Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)/100}$</span>
+                        <img src='./Img/icon-dollar.jpg' <span>${Math.round(cuisine.pricePerServing)/100}$</span>
                     </div>
                     <div class="health-rating dollar-containerm">
-                        <img src='../Img/time.png' <span>${cuisine.readyInMinutes}min</span>
+                        <img src='./Img/time.png' <span>${cuisine.readyInMinutes}min</span>
                     </div>
                 </div>
                     </div>
