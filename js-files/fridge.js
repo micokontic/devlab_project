@@ -85,7 +85,7 @@ const displayResultIngridient=(ing)=>{
                     <div class="back-content"> 
                         <p>Add to fridge</br><img class="utensils-img add-to-fridge"
                          src="../resources/images/fridge.svg" 
-                         onmouseover="this.src='../resources/images/fridge-open.svg'"
+                         onmouseover="this.src='../resources/images/fridgeopen.svg'"
                          onmouseout="this.src='../resources/images/fridge.svg'"
                          ></p>
                     </div>
