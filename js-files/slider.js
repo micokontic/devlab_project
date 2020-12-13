@@ -75,13 +75,13 @@ function makeSlider (result){
             <div class='icons-container' data-value='${cuisine.id}'>
             <div class='icons' data-value='${cuisine.id}'>
                 <div class="health-rating" data-value='${cuisine.id}'>
-                    <img src='../Img/health-rating.svg' data-value='${cuisine.id}' <span data-value='${cuisine.id}' >${cuisine.healthScore}</span>
+                    <img src='./Img/health-rating.svg' data-value='${cuisine.id}' <span data-value='${cuisine.id}' >${cuisine.healthScore}</span>
                 </div>
                 <div class="health-rating dollar-container" data-value='${cuisine.id}'>
-                    <img src='../Img/icon-dollar.jpg' data-value='${cuisine.id}' <span data-value='${cuisine.id}'>${Math.round(cuisine.pricePerServing)/100}$</span>
+                    <img src='./Img/icon-dollar.jpg' data-value='${cuisine.id}' <span data-value='${cuisine.id}'>${Math.round(cuisine.pricePerServing)/100}$</span>
                 </div>
                 <div  data-value='${cuisine.id}' class="health-rating dollar-container">
-                    <img data-value='${cuisine.id}' src='../Img/time.png' <span data-value='${cuisine.id}' >${cuisine.readyInMinutes}min</span>
+                    <img data-value='${cuisine.id}' src='./Img/time.png' <span data-value='${cuisine.id}' >${cuisine.readyInMinutes}min</span>
                 </div>
             </div>
             </div>
